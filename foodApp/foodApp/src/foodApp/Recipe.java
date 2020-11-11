@@ -2,12 +2,12 @@ package foodApp;
 
 public class Recipe {
 
-	double[] veggiesFruits = new double[]{ 400, 520, 575};		//veggiesFruits[0] = quantity in g for a small portion in a day
-	double[] carbs = new double[]{ 200, 300, 400};				//carbs[1] = quantity in g for a medium portion in a day
-	double[] dairy = new double[]{ 300, 345, 345};				//dairy[2] = quantity in g for a large portion in a day
-	double[] meatFishEggs = new double[]{ 300, 420, 550};
+	private double[] veggiesFruits = new double[]{ 400, 520, 575};		//veggiesFruits[0] = quantity in g for a small portion in a day
+	private double[] carbs = new double[]{ 200, 300, 400};				//carbs[1] = quantity in g for a medium portion in a day
+	private double[] dairy = new double[]{ 300, 345, 345};				//dairy[2] = quantity in g for a large portion in a day
+	private double[] meatFishEggs = new double[]{ 300, 420, 550};
 
-	double totVeggies = 0, totCarbs = 0, totDairy = 0, totMeat = 0;
+	private double totVeggies = 0, totCarbs = 0, totDairy = 0, totMeat = 0;
 
 	String name;
 	
