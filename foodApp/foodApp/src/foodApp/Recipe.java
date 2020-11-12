@@ -50,15 +50,15 @@ public class Recipe {
 		}
 	}
 
-	public void info(Food[] arrayFood) {		//Will print the amount of food needed
+	public void info() {		//Will print the amount of food needed
+
 			System.out.println("");
 			System.out.println("To make a " + this.name + ", you will need:");
 			System.out.println("");
-			System.out.println(totVeggies + " grams of " + arrayFood[0]);
-			System.out.println(totCarbs + " grams of " + arrayFood[1]);
-			System.out.println(totDairy + " grams of " + arrayFood[2]);
-			System.out.println(totMeat + " grams of " + arrayFood[3]);
-			System.out.println(totCheese + " grams of " + arrayFood[4]);
+			System.out.println(totVeggies + " grams of Veggies/Fruits.");
+			System.out.println(totCarbs + " grams of Carbs.");
+			System.out.println(totDairy + " grams of Dairy products.");
+			System.out.println(totMeat + " grams of Meat/Fish.");
+			System.out.println(totCheese + " grams of Cheese.");
 		}
-
 }

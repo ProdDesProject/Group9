@@ -23,17 +23,12 @@ public class main {
 
 		//Adding the ingredients to a list
 		//Needed only to print the infos about the recipe
-		Food[] list = new Food[5];
-		list[0] = salad;
-		list[1] = bread;
-		list[2] = yogurt;
-		list[3] = ham;
-		list[4] = emmental;
+		Food[] list = new Food[]{salad, bread, yogurt, ham, emmental};
 
 		//Creating a new recipe with these ingredients and the portions entered by the user
 		Recipe sandwich = new Recipe("lunch", "sandwich", portions);
 
-		sandwich.info(list);
+		sandwich.info();
 
 	}
 
