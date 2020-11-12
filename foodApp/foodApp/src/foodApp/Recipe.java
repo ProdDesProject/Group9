@@ -7,11 +7,11 @@ public class Recipe {
 	private double[] dairy = new double[]{ 300, 345, 345};				//dairy[2] = quantity in g for a large portion in a day
 	private double[] meatFishEggs = new double[]{ 300, 420, 550};
 
-	private double totVeggies = 0, totCarbs = 0, totDairy = 0, totMeat = 0;
+	private double totVeggies = 0, totCarbs = 0, totDairy = 0, totMeat = 0, totCheese = 0;
 
 	String name;
 	
-	public Recipe(Food[] arrayFood, String type, String name, int[] portions) {
+	public Recipe(String type, String name, int[] portions) {
 
 		this.name = name;
 		for (int i = 0; i < 3; i++) {
@@ -46,6 +46,7 @@ public class Recipe {
 				totMeat = totMeat + meatFishEggs[i]*0.35*portions[i];
 
 			}
+			totCheese = totCheese + 30*portions[i];
 		}
 	}
 
@@ -57,6 +58,7 @@ public class Recipe {
 			System.out.println(totCarbs + " grams of " + arrayFood[1]);
 			System.out.println(totDairy + " grams of " + arrayFood[2]);
 			System.out.println(totMeat + " grams of " + arrayFood[3]);
+			System.out.println(totCheese + " grams of " + arrayFood[4]);
 		}
 
 }

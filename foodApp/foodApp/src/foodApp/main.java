@@ -5,7 +5,7 @@ public class main {
 	public static void main(String[] args) {
 
 		//portions[0] is the number of small portions, 1 => medium and 2 => large
-		int[] portions = new int[]{2, 8, 5};
+		int[] portions = new int[]{1, 2, 1};
 
 		//Creation of two new users
 		User Jorge = new User("Jorge", 21, "male");
@@ -15,20 +15,23 @@ public class main {
 		Ouma.info();
 
 		//Creating new ingredients
-		Dairy cheese = new Dairy();
-		Carbs bread = new Carbs();
-		MeatFishEggs ham = new MeatFishEggs();
 		Veggies salad = new Veggies();
+		Carbs bread = new Carbs();
+		Dairy yogurt = new Dairy();
+		MeatFishEggs ham = new MeatFishEggs();
+		Cheese emmental = new Cheese();
 
 		//Adding the ingredients to a list
-		Food[] list = new Food[4];
-		list[0] = cheese;
+		//Needed only to print the infos about the recipe
+		Food[] list = new Food[5];
+		list[0] = salad;
 		list[1] = bread;
-		list[2] = ham;
-		list[3] = salad;
+		list[2] = yogurt;
+		list[3] = ham;
+		list[4] = emmental;
 
 		//Creating a new recipe with these ingredients and the portions entered by the user
-		Recipe sandwich = new Recipe(list, "lunch", "sandwich", portions);
+		Recipe sandwich = new Recipe("lunch", "sandwich", portions);
 
 		sandwich.info(list);
 
