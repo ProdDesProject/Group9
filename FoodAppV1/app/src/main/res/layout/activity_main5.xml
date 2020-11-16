@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity5">
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="322dp"
-        android:layout_height="104dp"
-        android:text="Other ingredients"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="369dp" />
-
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/logo5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
@@ -30,6 +22,36 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_gallery" />
 
+    <TextView
+        android:id="@+id/Shopping_list_text"
+        android:text="Shopping list"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/logo5"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:gravity="center_horizontal" />
+
+    <TextView
+        android:id="@+id/Other_ingredients_text"
+        android:text="Other ingredients"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Shopping_list_text"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:gravity="center_horizontal" />
+
+
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floatingActionButton6"
         android:layout_width="46dp"
@@ -37,37 +59,40 @@
         android:clickable="true"
         app:srcCompat="@android:drawable/ic_menu_help"
         tools:layout_editor_absoluteX="320dp"
-        tools:layout_editor_absoluteY="113dp" />
+        tools:layout_editor_absoluteY="113dp"
+        tools:ignore="MissingConstraints" />
+
+
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/button_modify_list"
         android:layout_width="157dp"
         android:layout_height="67dp"
-        android:text="Modify list"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="622dp" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="322dp"
-        android:layout_height="104dp"
-        android:layout_marginStart="41dp"
-        android:layout_marginLeft="41dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginRight="42dp"
-        android:layout_marginBottom="498dp"
-        android:text="Shopping list"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="622dp"
+        android:layout_marginEnd="218dp"
+        android:layout_marginRight="218dp"
+        android:layout_marginBottom="42dp"
+        android:text="Modify"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/button_save"
         android:layout_width="151dp"
         android:layout_height="69dp"
+        android:layout_marginStart="218dp"
+        android:layout_marginLeft="218dp"
+        android:layout_marginTop="620dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginRight="42dp"
+        android:layout_marginBottom="42dp"
         android:text="Save"
-        tools:layout_editor_absoluteX="218dp"
-        tools:layout_editor_absoluteY="620dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</RelativeLayout>
