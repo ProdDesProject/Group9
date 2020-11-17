@@ -11,8 +11,14 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    //Name the user will enter
+    //Username the user will enter
     public static final String textInput = "com.example.foodappv1.textInputEditText";
+    //Meal name the user will enter
+    public static final String mealName = "com.example.foodappv1.meal_text";
+    //Type of meal the user will check
+    public static final String breakfast = "com.example.foodappv1.radio_one";
+    public static final String lunch = "com.example.foodappv1.radio_two";
+    public static final String dinner = "com.example.foodappv1.radio_three";
 
     private Button button;
     @Override
@@ -54,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             Food[] list = new Food[]{salad, bread, yogurt, ham, emmental};
 
             //Creating a new recipe with these ingredients and the portions entered by the user
-            Recipe sandwich = new Recipe("lunch", "sandwich", portions);
+            Recipe sandwich = new Recipe("lunch", mealName, portions);
 
             sandwich.info();
 
