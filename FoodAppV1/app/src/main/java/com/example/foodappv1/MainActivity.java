@@ -11,6 +11,9 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    //Name the user will enter
+    public static final String textInput = "com.example.foodappv1.textInputEditText";
+
     private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +37,10 @@ public class MainActivity extends AppCompatActivity {
             //portions[0] is the number of small portions, 1 => medium and 2 => large
             int[] portions = new int[]{1, 2, 1};
 
-            //Creation of two new users
-            User Jorge = new User("Jorge", 21, "male");
-            User Ouma = new User("Ouma", 21, "female");
-            //Print users infos
-            Jorge.info();
-            Ouma.info();
+            //Creation of the user
+            User user1 = new User(textInput);
+            //Print user infos
+            user1.info();
 
             //Creating new ingredients
             Veggies salad = new Veggies();
