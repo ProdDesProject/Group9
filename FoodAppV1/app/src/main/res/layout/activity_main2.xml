@@ -1,123 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity2">
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="80dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="653dp"
-        android:layout_marginEnd="301dp"
-        android:layout_marginRight="301dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_today" />
-
-    <ImageButton
-        android:id="@+id/imageButton2"
-        android:layout_width="80dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="315dp"
-        android:layout_marginLeft="315dp"
-        android:layout_marginTop="653dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_edit" />
-
-    <RadioButton
-        android:id="@+id/radioButton"
-        android:layout_width="176dp"
-        android:layout_height="84dp"
-        android:layout_marginStart="117dp"
-        android:layout_marginLeft="117dp"
-        android:layout_marginTop="288dp"
-        android:layout_marginEnd="118dp"
-        android:layout_marginRight="118dp"
-        android:layout_marginBottom="359dp"
-        android:text="Breakfast"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="328dp"
-        android:layout_height="137dp"
-        android:layout_marginStart="41dp"
-        android:layout_marginLeft="41dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginRight="42dp"
-        android:layout_marginBottom="498dp"
-        android:text="What meal do you want to plan, UserName?"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <RadioButton
-        android:id="@+id/radioButton2"
-        android:layout_width="176dp"
-        android:layout_height="84dp"
-        android:layout_marginStart="117dp"
-        android:layout_marginLeft="117dp"
-        android:layout_marginTop="372dp"
-        android:layout_marginEnd="118dp"
-        android:layout_marginRight="118dp"
-        android:layout_marginBottom="275dp"
-        android:text="Lunch"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <RadioButton
-        android:id="@+id/radioButton3"
-        android:layout_width="176dp"
-        android:layout_height="84dp"
-        android:layout_marginStart="117dp"
-        android:layout_marginLeft="117dp"
-        android:layout_marginEnd="118dp"
-        android:layout_marginRight="118dp"
-        android:layout_marginBottom="191dp"
-        android:text="Dinner"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="80dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="165dp"
-        android:layout_marginLeft="165dp"
-        android:layout_marginTop="653dp"
-        android:layout_marginEnd="166dp"
-        android:layout_marginRight="166dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="?attr/actionModePasteDrawable" />
-
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/logo1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="17dp"
@@ -131,4 +21,67 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/ic_menu_gallery" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/meal_text"
+        android:text="What meal do you want to plan, UserName?"
+        android:textSize="25sp"
+        android:textAlignment="center"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/logo1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:gravity="center_horizontal" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/radioGroup">
+
+        <RadioButton
+            android:id="@+id/radio_one"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Breakfast"
+            android:onClick="checkButton"
+            android:checked="true"/>
+        <RadioButton
+            android:id="@+id/radio_two"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lunch"
+            android:onClick="checkButton"/>
+        <RadioButton
+            android:id="@+id/radio_three"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dinner"
+            android:onClick="checkButton"/>
+    </RadioGroup>
+    <Button
+        android:id="@+id/button_apply"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="470sp"
+        android:layout_marginBottom="100sp"
+        android:text="apply" />
+
+</RelativeLayout>
