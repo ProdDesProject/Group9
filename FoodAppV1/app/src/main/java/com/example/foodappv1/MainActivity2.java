@@ -25,7 +25,8 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
     RadioButton radioButton;
     TextView textView;
     TextView name_display;
-    String meal;
+    //String meal;
+    public static String meal;
     String name;
     ImageButton calendarButton;
 
@@ -93,6 +94,10 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
     public void openActivity3() {
         Intent intent = new Intent (this, MainActivity3.class);
         startActivity(intent);
+    }
+
+    public static String getMealType(){;
+        return meal;
     }
 
     @Override

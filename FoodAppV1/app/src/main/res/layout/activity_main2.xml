@@ -44,14 +44,14 @@
 
         <RadioButton
             android:id="@+id/radio_one"
-            android:textSize="22sp"
-            android:textAlignment="center"
-            android:gravity="center_horizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Breakfast"
+            android:checked="false"
+            android:gravity="center_horizontal"
             android:onClick="checkButton"
-            android:checked="true"/>
+            android:text="Breakfast"
+            android:textAlignment="center"
+            android:textSize="22sp" />
         <RadioButton
             android:id="@+id/radio_two"
             android:textSize="22sp"

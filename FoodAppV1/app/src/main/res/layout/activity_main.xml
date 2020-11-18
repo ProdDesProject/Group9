@@ -39,32 +39,33 @@
         android:layout_marginTop="150dp"
         android:gravity="center_horizontal" />
 
+
     <Button
         android:id="@+id/button_next"
-        android:text="next"
-        android:textSize="18sp"
-        android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="270sp"
+        android:layout_marginStart="260sp"
+        android:layout_marginLeft="260sp"
+        android:layout_marginTop="460sp"
         android:layout_marginEnd="15sp"
+        android:layout_marginRight="15sp"
         android:layout_marginBottom="100sp"
-        android:layout_marginTop="470sp"
-        android:layout_marginLeft="270sp"
-        android:layout_marginRight="15sp" />
-
+        android:text="next"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/name_field"
-        android:hint="Type your name ..."
-        android:textSize="18sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15sp"
-        android:layout_marginEnd="120sp"
-        android:layout_marginBottom="100sp"
-        android:layout_marginTop="470sp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
         android:layout_marginLeft="15sp"
-        android:layout_marginRight="120sp" />
+        android:layout_marginTop="470sp"
+        android:layout_marginEnd="120sp"
+        android:layout_marginRight="120sp"
+        android:layout_marginBottom="100sp"
+        android:hint="Type your name ..."
+        android:textSize="18sp" />
 
 </RelativeLayout>

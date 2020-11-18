@@ -15,11 +15,10 @@ public class MainActivity extends AppCompatActivity {
     //Username the user will enter
     public static final String textInput = "com.example.foodappv1.textInputEditText";
     //Meal name the user will enter
+    //Not true for the moment, this is not the right text box
     public static final String mealName = "com.example.foodappv1.meal_text";
-    //Type of meal the user will check
-    public static final String breakfast = "com.example.foodappv1.radio_one";
-    public static final String lunch = "com.example.foodappv1.radio_two";
-    public static final String dinner = "com.example.foodappv1.radio_three";
+    //Meal Type the user will enter
+    public static String meal = MainActivity2.getMealType();
     //Number of each portion the user will enter
     public static final String smallPortions = "com.example.foodappv1.editTextNumber";
     public static final String mediumPortions = "com.example.foodappv1.editTextNumber3";
@@ -68,7 +67,6 @@ public class MainActivity extends AppCompatActivity {
             int M = strgToInt(mediumPortions);
             int L = strgToInt(largePortions);
 
-
             //portions[0] is the number of small portions, 1 => medium and 2 => large
             int[] portions = new int[]{S, M, L};
 
@@ -77,9 +75,10 @@ public class MainActivity extends AppCompatActivity {
             //Print user infos
             user1.info();
 
-            //Creating a new recipe with these ingredients and the portions entered by the user
-            Recipe recipe1 = new Recipe("lunch", mealName, portions, mealDate);
-
+            //Creating a new recipe with the type of meal, the ingredients,
+            //the portions and the date entered by the user
+            Recipe recipe1 = new Recipe(meal, mealName, portions, mealDate);
+            //Print recipe infos
             recipe1.info();
 
         }
