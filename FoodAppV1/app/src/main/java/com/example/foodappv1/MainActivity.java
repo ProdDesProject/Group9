@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.content.Intent;
-import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -28,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     //Date the user will enter
     public static final String mealDate = "com.example.foodappv1.editTextDate";
 
-
     private Button button;
     EditText name_fld;
     String st;
@@ -37,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
         int e = Integer.parseInt(strg);
         return e;
     }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     public void openActivity2() {
         Intent intent = new Intent (this, MainActivity2.class);
         startActivity(intent);
@@ -79,21 +77,8 @@ public class MainActivity extends AppCompatActivity {
             //Print user infos
             user1.info();
 
-            //Creating new ingredients
-            //ONLY FOR TEST
-            Veggies salad = new Veggies();
-            Carbs bread = new Carbs();
-            Dairy yogurt = new Dairy();
-            MeatFishEggs ham = new MeatFishEggs();
-            Cheese emmental = new Cheese();
-
-            //Adding the ingredients to a list
-            //Needed only to print the infos about the recipe
-            //ONLY FOR TEST
-            Food[] list = new Food[]{salad, bread, yogurt, ham, emmental};
-
             //Creating a new recipe with these ingredients and the portions entered by the user
-            Recipe recipe1 = new Recipe("lunch", mealName, portions);
+            Recipe recipe1 = new Recipe("lunch", mealName, portions, mealDate);
 
             recipe1.info();
 

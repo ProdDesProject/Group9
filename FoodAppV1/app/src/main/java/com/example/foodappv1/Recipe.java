@@ -11,7 +11,7 @@ public class Recipe {
 
 	String name;
 	
-	public Recipe(String type, String name, int[] portions) {
+	public Recipe(String type, String name, int[] portions, String date) {
 
 		this.name = name;
 		for (int i = 0; i < 3; i++) {
