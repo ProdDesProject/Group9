@@ -20,6 +20,12 @@ public class MainActivity extends AppCompatActivity {
     public static final String breakfast = "com.example.foodappv1.radio_one";
     public static final String lunch = "com.example.foodappv1.radio_two";
     public static final String dinner = "com.example.foodappv1.radio_three";
+    //Number of each portion the user will enter
+    public static final String smallPortions = "com.example.foodappv1.editTextNumber";
+    public static final String mediumPortions = "com.example.foodappv1.editTextNumber3";
+    public static final String largePortions = "com.example.foodappv1.editTextNumber2";
+    //Date the user will enter
+    public static final String mealDate = "com.example.foodappv1.editTextDate";
 
     private Button button;
     EditText name_fld;
