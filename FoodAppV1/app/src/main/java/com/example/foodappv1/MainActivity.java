@@ -27,9 +27,17 @@ public class MainActivity extends AppCompatActivity {
     //Date the user will enter
     public static final String mealDate = "com.example.foodappv1.editTextDate";
 
+
     private Button button;
     EditText name_fld;
     String st;
+
+    public static int strgToInt(String strg){
+        int e = Integer.parseInt(strg);
+        return e;
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,8 +64,14 @@ public class MainActivity extends AppCompatActivity {
     }
         public static void main(String[] args) {
 
+            //Convert portion strings to int
+            int S = strgToInt(smallPortions);
+            int M = strgToInt(mediumPortions);
+            int L = strgToInt(largePortions);
+
+
             //portions[0] is the number of small portions, 1 => medium and 2 => large
-            int[] portions = new int[]{1, 2, 1};
+            int[] portions = new int[]{S, M, L};
 
             //Creation of the user
             User user1 = new User(textInput);
@@ -65,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
             user1.info();
 
             //Creating new ingredients
+            //ONLY FOR TEST
             Veggies salad = new Veggies();
             Carbs bread = new Carbs();
             Dairy yogurt = new Dairy();
@@ -73,12 +88,13 @@ public class MainActivity extends AppCompatActivity {
 
             //Adding the ingredients to a list
             //Needed only to print the infos about the recipe
+            //ONLY FOR TEST
             Food[] list = new Food[]{salad, bread, yogurt, ham, emmental};
 
             //Creating a new recipe with these ingredients and the portions entered by the user
-            Recipe sandwich = new Recipe("lunch", mealName, portions);
+            Recipe recipe1 = new Recipe("lunch", mealName, portions);
 
-            sandwich.info();
+            recipe1.info();
 
         }
 
