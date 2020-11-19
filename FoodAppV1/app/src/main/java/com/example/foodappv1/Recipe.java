@@ -16,6 +16,7 @@ public class Recipe {
 
 		this.name = name;
 		this.date = date;
+
 		for (int i = 0; i < 3; i++) {
 
 			if (type == "lunch") {			//if the meal is a lunch
