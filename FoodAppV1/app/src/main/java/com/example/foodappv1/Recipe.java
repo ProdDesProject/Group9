@@ -10,10 +10,12 @@ public class Recipe {
 	private double totVeggies = 0, totCarbs = 0, totDairy = 0, totMeat = 0, totCheese = 0;
 
 	String name;
+	String date;
 	
 	public Recipe(String type, String name, int[] portions, String date) {
 
 		this.name = name;
+		this.date = date;
 		for (int i = 0; i < 3; i++) {
 
 			if (type == "lunch") {			//if the meal is a lunch
@@ -53,7 +55,7 @@ public class Recipe {
 	public void info() {		//Will print the amount of food needed
 
 			System.out.println("");
-			System.out.println("To make a " + this.name + ", you will need:");
+			System.out.println("You want to cook " + this.name + " on the " + this.date + ", you will need:");
 			System.out.println("");
 			System.out.println(totVeggies + " grams of Veggies/Fruits.");
 			System.out.println(totCarbs + " grams of Carbs.");
