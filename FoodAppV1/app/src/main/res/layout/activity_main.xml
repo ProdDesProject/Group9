@@ -66,6 +66,11 @@
         android:layout_marginRight="120sp"
         android:layout_marginBottom="100sp"
         android:hint="Type your name ..."
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:layout_alignParentLeft="true" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </RelativeLayout>
