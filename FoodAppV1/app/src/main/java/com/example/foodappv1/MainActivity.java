@@ -1,6 +1,6 @@
 package com.example.foodappv1;
-//SQLiteOpenHelper(Context context, String meal, SQLiteDatabase.CursorFactory factory, int mysql)
-
+//SQLiteOpenHelper(Context context, String meal, SQLiteDatabase.CursorFactory factory, int mysql)SQLiteOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version)
+//test
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
