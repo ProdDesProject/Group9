@@ -63,14 +63,13 @@
         tools:ignore="MissingConstraints" />
 
 
-
     <Button
         android:id="@+id/button_modify_list"
         android:layout_width="157dp"
         android:layout_height="67dp"
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
-        android:layout_marginTop="622dp"
+        android:layout_marginTop="550dp"
         android:layout_marginEnd="218dp"
         android:layout_marginRight="218dp"
         android:layout_marginBottom="42dp"
@@ -86,7 +85,7 @@
         android:layout_height="69dp"
         android:layout_marginStart="218dp"
         android:layout_marginLeft="218dp"
-        android:layout_marginTop="620dp"
+        android:layout_marginTop="550dp"
         android:layout_marginEnd="42dp"
         android:layout_marginRight="42dp"
         android:layout_marginBottom="42dp"
