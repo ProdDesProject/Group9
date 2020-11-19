@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     //Not true for the moment, this is not the right text box
     public static final String mealName = "com.example.foodappv1.meal_text";
     //Meal Type the user will enter
-    public static String meal = MainActivity2.getMealType();
+    public static String mealType = MainActivity2.getMealType();
     //Number of each portion the user will enter
     public static final String smallPortions = "com.example.foodappv1.editTextNumber";
     public static final String mediumPortions = "com.example.foodappv1.editTextNumber3";
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
             //Creating a new recipe with the type of meal, the ingredients,
             //the portions and the date entered by the user
-            Recipe recipe1 = new Recipe(meal, mealName, portions, mealDate);
+            Recipe recipe1 = new Recipe(mealType, mealName, portions, mealDate);
             //Print recipe infos
             recipe1.info();
 

@@ -55,6 +55,9 @@ public class Recipe {
 
 	public void info() {		//Will print the amount of food needed
 
+			//Shopping list creation
+			double[] shoppingList = new double[]{totVeggies, totCarbs, totDairy, totMeat, totCheese};
+
 			System.out.println("");
 			System.out.println("You want to cook " + this.name + " on the " + this.date + ", you will need:");
 			System.out.println("");
