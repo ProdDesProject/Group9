@@ -6,84 +6,112 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity4">
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="17dp"
-        android:layout_marginLeft="17dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="362dp"
-        android:layout_marginRight="362dp"
-        android:layout_marginBottom="682dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_gallery" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="328dp"
-        android:layout_height="137dp"
-        android:layout_marginStart="41dp"
-        android:layout_marginLeft="41dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginRight="42dp"
-        android:layout_marginBottom="498dp"
-        android:text="Please, add your ingredients"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="160dp"
-        android:layout_height="67dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginTop="550dp"
-        android:layout_marginEnd="218dp"
-        android:layout_marginRight="218dp"
-        android:layout_marginBottom="42dp"
-        android:text="Add Ingredient"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button_continue"
-        android:layout_width="151dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="218dp"
-        android:layout_marginLeft="218dp"
-        android:layout_marginTop="550dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginRight="42dp"
-        android:layout_marginBottom="42dp"
-        android:text="Continue"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton5"
-        android:layout_width="46dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="323dp"
-        android:layout_marginLeft="323dp"
-        android:layout_marginTop="96dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginRight="42dp"
-        android:layout_marginBottom="589dp"
-        android:clickable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_help" />
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Add your ingredients here"
+                android:textSize="18sp"
+                tools:layout_gravity="center_horizontal"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="OR"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:layout_gravity="center_horizontal"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
+            <Button
+                android:id="@+id/imageView4"
+                android:layout_width="165dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="false"
+                android:text="Choose Recipe"
+                tools:layout_gravity="center_horizontal"/>
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="455dp"
+            android:background="#F0F7F8">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal">
+
+            <View
+                android:id="@+id/divider3"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="165dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:text="Add Ingredient"
+                android:textSize="16sp"
+                tools:layout_gravity="center_vertical" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/button_continue"
+                android:layout_width="165dp"
+                android:layout_height="65dp"
+                android:layout_weight="1"
+                android:text="Continue"
+                android:textSize="16sp"
+                tools:layout_gravity="center_vertical" />
+
+            <View
+                android:id="@+id/divider2"
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+    </LinearLayout>
 </RelativeLayout>
