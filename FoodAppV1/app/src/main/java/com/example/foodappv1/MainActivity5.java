@@ -1,20 +1,32 @@
 package com.example.foodappv1;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 
 public class MainActivity5 extends AppCompatActivity {
     private Button button;
     private Button button2;
+    TextView list; //nm = new modification
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
         button =(Button) findViewById(R.id.button_save);
+        list = (TextView) findViewById(R.id.Shopping_list_text);
+
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -25,11 +37,77 @@ public class MainActivity5 extends AppCompatActivity {
         button2 =(Button) findViewById(R.id.button_modify_list);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
+
             public void onClick(View v) {
-                openActivity5();
+                //openActivity5(); //nm
+                new Async().execute(); //nm
             }
         });
+
+
     }
+ //nm for all this class
+    class Async extends AsyncTask<Void, Void, Void> {
+
+
+
+        String records = "",error="";
+
+        @Override
+
+        protected Void doInBackground(Void... voids) {
+
+            try
+
+            {
+
+                Class.forName("com.mysql.jdbc.Driver");
+
+                Connection connection = DriverManager.getConnection("jdbc:mysql://http://stulinux159.ipt.oamk.fi/crew.php", "root", "CrewErasmus@2020*");
+
+                Statement statement = connection.createStatement();
+
+                ResultSet resultSet = statement.executeQuery("INSERT INTO `user_usr`(`usr_name`) VALUES ('test') ");
+
+                while(resultSet.next()) {
+
+                    records += resultSet.getString(1) + " " + resultSet.getString(2) + "\n";
+
+                }
+
+            }
+
+            catch(Exception e)
+
+            {
+
+                error = e.toString();
+
+            }
+
+            return null;
+
+        }
+
+
+
+        @Override
+
+        protected void onPostExecute(Void aVoid) {
+
+            list.setText(records);
+
+            if(error != "")
+
+                list.setText(error);
+
+            super.onPostExecute(aVoid);
+
+        }
+
+    }
+// end modification
+
     public void openActivity6() {
         Intent intent = new Intent (this, MainActivity6.class);
         startActivity(intent);
