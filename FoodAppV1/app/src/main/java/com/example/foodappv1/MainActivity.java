@@ -25,6 +25,13 @@ public class MainActivity extends AppCompatActivity {
     public static final String largePortions = "com.example.foodappv1.editTextNumber2";
     //Date the user will enter
     public static final String mealDate = "com.example.foodappv1.editTextDate";
+    /*Ingredients and categories the user will enter
+    * public static final String ingredient1 = "com.example.foodappv1.text_ingredient1";
+    * public static final String category1 = "com.example.foodappv1.text_category1";
+    * public static final String ingredient2 = "com.example.foodappv1.text_ingredient2";
+    * public static final String category2 = "com.example.foodappv1.text_category2";
+    * public static final String ingredient3 = "com.example.foodappv1.text_ingredient3";
+    * public static final String category3 = "com.example.foodappv1.text_category3";*/
 
     private Button button;
     EditText name_fld;
