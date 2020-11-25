@@ -20,8 +20,8 @@ import java.util.Calendar;
 
 public class MainActivity2 extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     Button button;
-    //ImageButton recipes = findViewById(R.id.recipes_button);
-    //ImageButton meals = findViewById(R.id.meals_button);
+    ImageButton recipes;
+    ImageButton meals;
     Button buttonApply;
     RadioGroup radioGroup;
     RadioButton radioButton;
@@ -39,6 +39,8 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
         radioGroup = findViewById(R.id.radioGroup);
         name_display= findViewById(R.id.meal_text);
         calendarButton= findViewById(R.id.calendar_button);
+        recipes = findViewById(R.id.recipes_button);
+        meals = findViewById(R.id.meals_button);
         buttonApply = findViewById(R.id.button_apply);
         button = findViewById(R.id.button_apply);
         name=getIntent().getExtras().getString("Name value");
@@ -54,22 +56,6 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
             }
         });
 
-       /* recipes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PopUp popUp = new PopUp();
-                popUp.showPopupWindow(v, "List of recipes from database");
-            }
-        });*/
-
-        /*meals.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PopUp popUp = new PopUp();
-                popUp.showPopupWindow(v, "List of meals from database");
-            }
-        });*/
-
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +66,24 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
                 startActivity(i);
                 finish();
                 openActivity3();
+            }
+        });
+
+        recipes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopUp popUp = new PopUp();
+                popUp.showPopupWindow(v, "List of recipes from database");
+
+            }
+        });
+
+        meals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopUp popUp = new PopUp();
+                popUp.showPopupWindow(v, "List of meals from database");
+
             }
         });
 
