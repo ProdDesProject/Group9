@@ -148,7 +148,7 @@
             android:layout_height="wrap_content" />
 
         <ImageButton
-            android:id="@+id/modify_meal_button"
+            android:id="@+id/recipes_button"
             android:layout_width="60dp"
             android:layout_height="60dp"
             app:srcCompat="@android:drawable/ic_menu_edit" />

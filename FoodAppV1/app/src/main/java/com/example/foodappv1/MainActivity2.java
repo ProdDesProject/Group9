@@ -20,6 +20,8 @@ import java.util.Calendar;
 
 public class MainActivity2 extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     Button button;
+    ImageButton recipes = findViewById(R.id.recipes_button);
+    ImageButton meals = findViewById(R.id.meals_button);
     Button buttonApply;
     RadioGroup radioGroup;
     RadioButton radioButton;
@@ -49,6 +51,22 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
                 int radioId = radioGroup.getCheckedRadioButtonId();
                 radioButton = findViewById(radioId);
                 textView.setText("Your choice: " + radioButton.getText());
+            }
+        });
+
+        recipes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopUp popUp = new PopUp();
+                popUp.showPopupWindow(v, "List of recipes from database");
+            }
+        });
+
+        recipes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopUp popUp = new PopUp();
+                popUp.showPopupWindow(v, "List of meals from database");
             }
         });
 

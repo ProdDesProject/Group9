@@ -13,7 +13,8 @@ import android.widget.TextView;
 import java.util.Calendar;
 
 public class MainActivity3 extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
-    private Button button;
+    private Button chooseRecipe;
+    private Button addRecipe;
     Button meal_date;
     TextView show_meal_date;
     DatePickerDialog datePickerDialog;
@@ -28,14 +29,23 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
-        button =(Button) findViewById(R.id.button_create_recipe);
+        addRecipe = (Button) findViewById(R.id.button_add_recipe);
+        chooseRecipe = (Button) findViewById(R.id.button_choose_recipe);
         meal_date= findViewById(R.id.date_button);
         show_meal_date=findViewById(R.id.meal_date_field);
         display_meal_name=findViewById(R.id.plan_meal_text);
         //meal_name=getIntent().getExtras().getString("Meal name");
         //display_meal_name.setText("What meal do you want to plan, " + String.valueOf(meal_name));
 
-        button.setOnClickListener(new View.OnClickListener() {
+        chooseRecipe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopUp popUp = new PopUp();
+                popUp.showPopupWindow(v, "List of recipes from database");
+            }
+        });
+
+        addRecipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 openActivity4();
