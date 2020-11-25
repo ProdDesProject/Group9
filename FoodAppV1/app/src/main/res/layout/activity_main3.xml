@@ -22,22 +22,49 @@
         android:textSize="25sp" />
 
 
-    <Button
-        android:id="@+id/button_add_ingredients"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="15sp"
-        android:layout_marginLeft="15sp"
-        android:layout_marginTop="590sp"
-        android:layout_marginEnd="15sp"
-        android:layout_marginRight="15sp"
-        android:layout_marginBottom="70sp"
-        android:gravity="center_horizontal"
-        android:text="add ingredients"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="18sp" />
+        android:layout_height="80dp"
+        android:layout_below="@id/meal_text"
+        android:layout_marginTop="420dp"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/choose_recipe"
+            android:layout_width="165dp"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            android:text="Choose Recipe"
+            android:textSize="16sp"
+            tools:layout_gravity="center_vertical" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/button_add_ingredients"
+            android:layout_width="165dp"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            android:text="Create Recipe"
+            android:textSize="16sp"
+            tools:layout_gravity="center_vertical" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
 
 
     <LinearLayout
