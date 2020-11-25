@@ -62,7 +62,7 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
             }
         });
 
-        recipes.setOnClickListener(new View.OnClickListener() {
+        meals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PopUp popUp = new PopUp();
