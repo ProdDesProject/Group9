@@ -4,75 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity3">
-
-
-    <TextView
-        android:id="@+id/meal_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/logo1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="15sp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="15sp"
-        android:gravity="center_horizontal"
-        android:text="Plan your MealName"
-        android:textAlignment="center"
-        android:textSize="25sp" />
-
+    tools:context=".MainActivity3"
+    android:layout_marginStart="25sp"
+    android:layout_marginLeft="25sp"
+    android:layout_marginTop="25dp"
+    android:layout_marginEnd="25sp"
+    android:layout_marginRight="25sp"
+    android:layout_marginBottom="25sp">
 
     <LinearLayout
+        android:id="@+id/section31"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_below="@id/meal_text"
-        android:layout_marginTop="420dp"
-        android:orientation="horizontal">
+        android:layout_height="60sp"
+        android:orientation="horizontal"
+        android:gravity="left|center_vertical">
 
-        <View
-            android:id="@+id/divider3"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/choose_recipe"
-            android:layout_width="165dp"
-            android:layout_height="65dp"
-            android:layout_weight="1"
-            android:text="Choose Recipe"
-            android:textSize="16sp"
-            tools:layout_gravity="center_vertical" />
-
-        <View
-            android:id="@+id/divider"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/button_add_ingredients"
-            android:layout_width="165dp"
-            android:layout_height="65dp"
-            android:layout_weight="1"
-            android:text="Create Recipe"
-            android:textSize="16sp"
-            tools:layout_gravity="center_vertical" />
-
-        <View
-            android:id="@+id/divider2"
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
+        <ImageView
+            android:id="@+id/logo1"
+            android:layout_width="40sp"
+            android:layout_height="40sp"
+            app:srcCompat="@mipmap/ic_launcher" />
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/section32"
+        android:layout_below="@+id/section31"
+        android:layout_width="match_parent"
+        android:layout_height="90sp"
+        android:gravity="center_horizontal|center_vertical">
+
+        <TextView
+            android:id="@+id/plan_meal_text"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_marginStart="15sp"
+            android:layout_marginEnd="15sp"
+            android:fontFamily="casual"
+            android:gravity="center_horizontal"
+            android:text="Plan your MealName"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="25sp" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="330dp"
         android:layout_height="260dp"
-        android:layout_alignTop="@id/meal_text"
+        android:id="@+id/section33"
+        android:layout_below="@+id/section32"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="40dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -81,21 +62,25 @@
             android:layout_height="65dp"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView4"
+            <Button
+                android:id="@+id/date_button"
                 android:layout_width="165dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Date:"
-                android:textSize="20sp" />
+                android:textSize="15sp"
+                android:background="@drawable/button_bg_rounded_corners"/>
 
-            <EditText
-                android:id="@+id/editTextDate"
+            <TextView
+                android:id="@+id/meal_date_field"
                 android:layout_width="165dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="date" />
+                android:hint="Tap on date"
+                android:textSize="15sp"
+                android:textAlignment="center"
+                android:gravity="center_horizontal" />
         </LinearLayout>
 
         <LinearLayout
@@ -109,7 +94,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Small Portions:"
-                android:textSize="20sp" />
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/editTextNumber"
@@ -127,11 +112,11 @@
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="165dp"
+                android:layout_width="157dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Medium Portions:"
-                android:textSize="20sp" />
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/editTextNumber3"
@@ -153,7 +138,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="Large Portions:"
-                android:textSize="20sp" />
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/editTextNumber2"
@@ -165,5 +150,43 @@
         </LinearLayout>
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/section34"
+        android:layout_width="match_parent"
+        android:layout_height="80sp"
+        android:layout_below="@+id/section33"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal|center_vertical">
+
+        <Button
+            android:id="@+id/button_add_recipe"
+            android:text="Add recipe"
+            android:background="@drawable/button_bg_rounded_corners"
+            android:layout_width="120sp"
+            android:layout_height="50sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            />
+
+        <Space
+            android:layout_width="50sp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/button_create_recipe"
+            android:text="Create recipe"
+            android:background="@drawable/button_bg_rounded_corners"
+            android:layout_width="120sp"
+            android:layout_height="50sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
 
 </RelativeLayout>

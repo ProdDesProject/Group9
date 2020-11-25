@@ -34,7 +34,7 @@ public class MainActivity6 extends AppCompatActivity implements DatePickerDialog
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main6);
         radioGroup = findViewById(R.id.radioGroup2);
-        name_display= findViewById(R.id.meal_text2);
+        name_display= findViewById(R.id.added_meal_text);
         calendarButton= findViewById(R.id.calendar_button2);
         buttonApply = findViewById(R.id.button_apply2);
         button = findViewById(R.id.button_apply2);

@@ -4,69 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:layout_marginStart="25sp"
+    android:layout_marginLeft="25sp"
+    android:layout_marginTop="25dp"
+    android:layout_marginEnd="25sp"
+    android:layout_marginRight="25sp"
+    android:layout_marginBottom="25sp">
 
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="132dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="139dp"
-        android:layout_marginLeft="139dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="140dp"
-        android:layout_marginRight="140dp"
-        android:layout_marginBottom="599dp"
-        android:contentDescription="logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_wannabe"
-        tools:srcCompat="@android:drawable/ic_menu_gallery" />
-
-    <TextView
-        android:id="@+id/welcome"
-        android:text="Hi there! Welcome to AppName!"
-        android:textSize="25sp"
-        android:textAlignment="center"
-        android:layout_marginStart="15sp"
-        android:layout_marginEnd="15sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/logo"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
-        android:gravity="center_horizontal" />
-
-
-    <Button
-        android:id="@+id/button_next"
+    <LinearLayout
+        android:id="@+id/section11"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="260sp"
-        android:layout_marginLeft="260sp"
-        android:layout_marginTop="460sp"
-        android:layout_marginEnd="15sp"
-        android:layout_marginRight="15sp"
-        android:layout_marginBottom="100sp"
-        android:text="next"
-        android:textColor="@color/white"
-        android:textSize="18sp" />
+        android:layout_height="100sp"
+        android:orientation="horizontal"
+        android:gravity="center|center_vertical">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/name_field"
+        <ImageView
+            android:id="@+id/logo1"
+            android:layout_width="80sp"
+            android:layout_height="80sp"
+            app:srcCompat="@mipmap/ic_launcher" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/section12"
+        android:layout_below="@+id/section11"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="15sp"
-        android:layout_marginTop="470sp"
-        android:layout_marginEnd="120sp"
-        android:layout_marginRight="120sp"
-        android:layout_marginBottom="100sp"
-        android:hint="Type your name ..."
-        android:textSize="18sp"
-        android:layout_alignParentLeft="true" />
+        android:layout_height="100sp"
+        android:gravity="center_horizontal|center_vertical">
 
+        <TextView
+            android:id="@+id/welcome_text"
+            android:layout_width="match_parent"
+            android:layout_height="80sp"
+            android:layout_marginStart="15sp"
+            android:layout_marginEnd="15sp"
+            android:fontFamily="casual"
+            android:gravity="center_horizontal"
+            android:text="Hi there! Welcome to dinner is readydo!"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textSize="25sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80sp"
+        android:layout_below="@+id/section12"
+        android:layout_marginTop="200sp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal|center_vertical">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name_field"
+            android:layout_width="170sp"
+            android:layout_height="50sp"
+            android:textSize="12sp"
+            android:hint="Type your name" />
+
+        <Space
+            android:layout_width="20sp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/button_next"
+            android:text="Next"
+            android:background="@drawable/button_bg_rounded_corners"
+            android:layout_width="120sp"
+            android:layout_height="50sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+            />
+
+
+    </LinearLayout>
 </RelativeLayout>

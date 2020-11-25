@@ -25,7 +25,7 @@ public class MainActivity5 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
         button =(Button) findViewById(R.id.button_save);
-        list = (TextView) findViewById(R.id.Shopping_list_text);
+        list = (TextView) findViewById(R.id.shopping_list_text);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,12 +34,12 @@ public class MainActivity5 extends AppCompatActivity {
             }
         });
 
-        button2 =(Button) findViewById(R.id.button_modify_list);
+        button2 =(Button) findViewById(R.id.button_modify);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
 
             public void onClick(View v) {
-                //openActivity5(); //nm
+                openActivity4(); //nm
                 new Async().execute(); //nm
             }
         });
@@ -113,8 +113,8 @@ public class MainActivity5 extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openActivity5() {
-        Intent intent = new Intent (this, MainActivity5.class);
+    public void openActivity4() {
+        Intent intent = new Intent (this, MainActivity4.class);
         startActivity(intent);
     }
 }
