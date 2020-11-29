@@ -18,6 +18,10 @@ public class MainActivity4 extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Recipe sandwich = new Recipe(MainActivity2.getMealType(), "snack", MainActivity.getPortions(), MainActivity.mealDate);
+                //I created a sandwich :)
+                sandwich.info();
                 openActivity5();
             }
         });

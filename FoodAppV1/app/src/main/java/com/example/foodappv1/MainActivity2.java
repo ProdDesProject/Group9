@@ -53,6 +53,7 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
                 int radioId = radioGroup.getCheckedRadioButtonId();
                 radioButton = findViewById(radioId);
                 textView.setText("Your choice: " + radioButton.getText());
+
             }
         });
 
@@ -95,6 +96,7 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
             }
         });
     }
+
 
     private void showDatePickerDialog() {
         DatePickerDialog datePickerDialog = new DatePickerDialog(
