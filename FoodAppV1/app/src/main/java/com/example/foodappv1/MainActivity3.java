@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.Calendar;
@@ -25,6 +26,20 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
     String meal_name;
     TextView display_meal_name;
 
+    EditText nameFieldSmall;
+    EditText nameFieldMedium;
+    EditText nameFieldBig;
+    String small;
+    String medium;
+    String big;
+
+
+
+    public static int strgToInt(String strg){
+        int e = Integer.parseInt(strg);
+        return e;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +49,11 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
         meal_date= findViewById(R.id.date_button);
         show_meal_date=findViewById(R.id.meal_date_field);
         display_meal_name=findViewById(R.id.plan_meal_text);
+
+        nameFieldSmall= (EditText) findViewById(R.id.editTextNumber);
+        nameFieldMedium= (EditText) findViewById(R.id.editTextNumber3);
+        nameFieldBig= (EditText) findViewById(R.id.editTextNumber2);
+
         //meal_name=getIntent().getExtras().getString("Meal name");
         //display_meal_name.setText("What meal do you want to plan, " + String.valueOf(meal_name));
 
@@ -48,6 +68,15 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
         addRecipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i= new Intent( MainActivity3.this, MainActivity4.class);
+                small=nameFieldSmall.getText().toString();
+                medium=nameFieldMedium.getText().toString();
+                big=nameFieldBig.getText().toString();
+                i.putExtra( "Name value",small);
+                i.putExtra( "Name value",medium);
+                i.putExtra( "Name value",big);
+                startActivity(i);
+                finish();
                 openActivity4();
             }
         });

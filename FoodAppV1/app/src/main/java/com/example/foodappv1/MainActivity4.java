@@ -9,6 +9,17 @@ import android.widget.Button;
 
 public class MainActivity4 extends AppCompatActivity {
     private Button button;
+
+    //name=getIntent().getExtras().getString("Name value");
+
+    //portions[0] is the number of small portions, 1 => medium and 2 => large
+    //public static int[] portions = new int[]{S, M, L};
+
+    public static int strgToInt(String strg){
+        int e = Integer.parseInt(strg);
+        return e;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,9 +30,9 @@ public class MainActivity4 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Recipe sandwich = new Recipe(MainActivity2.getMealType(), "snack", MainActivity.getPortions(), MainActivity.mealDate);
+                //Recipe sandwich = new Recipe(MainActivity2.getMealType(), "snack", portions, MainActivity.mealDate);
                 //I created a sandwich :)
-                sandwich.info();
+                //sandwich.info();
                 openActivity5();
             }
         });

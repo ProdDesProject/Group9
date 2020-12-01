@@ -1,5 +1,7 @@
 package com.example.foodappv1;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class Recipe {
 
 	private double[] veggiesFruits = new double[]{ 400, 520, 575};		//veggiesFruits[0] = quantity in g for a small portion in a day

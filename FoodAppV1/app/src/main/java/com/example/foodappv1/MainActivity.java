@@ -25,10 +25,11 @@ public class MainActivity extends AppCompatActivity {
     public static final String largePortions = "com.example.foodappv1.editTextNumber2";
     //Date the user will enter
     public static final String mealDate = "com.example.foodappv1.editTextDate";
-    static int S = strgToInt(smallPortions);
-    static int M = strgToInt(mediumPortions);
-    static int L = strgToInt(largePortions);
-    static int[] portions = new int[]{S, M, L};
+
+   // static int S = strgToInt(smallPortions);
+    //static int M = strgToInt(mediumPortions);
+    //static int L = strgToInt(largePortions);
+    //static int[] portions = new int[]{S, M, L};
 
     /*Ingredients and categories the user will enter
     * public static final String[] ingredient = new String[4];
@@ -116,8 +117,8 @@ public class MainActivity extends AppCompatActivity {
             recipe1.info();
 
         }
-    public static int[] getPortions(){;
-        return portions;
-    }
+    //public static int[] getPortions(){;
+        //return portions;
+    //}
 
     }
