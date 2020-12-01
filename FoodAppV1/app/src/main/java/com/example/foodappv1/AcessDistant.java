@@ -17,7 +17,7 @@ public class AcessDistant implements AsyncResponse {
 
         //Log.d(tag:"Server", msg:"***********"+output);
         //%
-        String[] message = output.split(regex: "%");
+        //String[] message = output.split(regex: "%");
     }
 }
 
