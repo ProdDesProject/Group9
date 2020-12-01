@@ -1,16 +1,19 @@
 package com.example.foodappv1;
 //SQLiteOpenHelper(Context context, String meal, SQLiteDatabase.CursorFactory factory, int mysql)
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class MainActivity extends AppCompatActivity {
+
+    private static AcessDistant accessDistant;
+
 
     //Username the user will enter
     public static final String textInput = "com.example.foodappv1.textInputEditText";

@@ -1,18 +1,12 @@
 package com.example.foodappv1;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
 
 
 public class MainActivity5 extends AppCompatActivity {
@@ -39,14 +33,15 @@ public class MainActivity5 extends AppCompatActivity {
             @Override
 
             public void onClick(View v) {
-                //openActivity4(); //nm
-                new Async().execute(); //nm
+                openActivity4(); //nm
+                //new Async().execute(); //nm
             }
         });
 
 
     }
  //nm for all this class
+    /*
     class Async extends AsyncTask<Void, Void, Void> {
 
 
@@ -106,6 +101,8 @@ public class MainActivity5 extends AppCompatActivity {
         }
 
     }
+
+     */
 // end modification
 
     public void openActivity6() {

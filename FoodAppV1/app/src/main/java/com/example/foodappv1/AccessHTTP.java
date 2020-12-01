@@ -20,7 +20,7 @@ public class AccessHTTP extends AsyncTask<String, Integer, Long > {
 
     private ArrayList<NameValuePair> parameters;
     private String ret= null;
-    private AsyncResponse delegate = null;
+    public AsyncResponse delegate = null;
 
 
 
