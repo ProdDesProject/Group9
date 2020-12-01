@@ -39,7 +39,7 @@ public class MainActivity5 extends AppCompatActivity {
             @Override
 
             public void onClick(View v) {
-                openActivity4(); //nm
+                //openActivity4(); //nm
                 new Async().execute(); //nm
             }
         });
@@ -63,11 +63,11 @@ public class MainActivity5 extends AppCompatActivity {
 
                 Class.forName("com.mysql.jdbc.Driver");
 
-                Connection connection = DriverManager.getConnection("jdbc:mysql://http://stulinux159.ipt.oamk.fi/crew.php", "root", "CrewErasmus@2020*");
+                Connection connection = DriverManager.getConnection("jdbc:mysql://http://stulinux159.ipt.oamk.fi/info.php", "crew", "CrewErasmus@2020*");
 
                 Statement statement = connection.createStatement();
 
-                ResultSet resultSet = statement.executeQuery("INSERT INTO `user_usr`(`usr_name`) VALUES ('test') ");
+                ResultSet resultSet = statement.executeQuery("INSERT INTO `user_usr`(`usr_name`) VALUES ('test2') ");
 
                 while(resultSet.next()) {
 
