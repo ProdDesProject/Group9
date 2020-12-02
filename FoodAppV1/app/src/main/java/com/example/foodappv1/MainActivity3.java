@@ -72,9 +72,9 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
                 small=nameFieldSmall.getText().toString();
                 medium=nameFieldMedium.getText().toString();
                 big=nameFieldBig.getText().toString();
-                i.putExtra( "Name value",small);
-                i.putExtra( "Name value",medium);
-                i.putExtra( "Name value",big);
+                i.putExtra( "small value", small);
+                i.putExtra( "medium value", medium);
+                i.putExtra( "big value", big);
                 startActivity(i);
                 finish();
                 openActivity4();
