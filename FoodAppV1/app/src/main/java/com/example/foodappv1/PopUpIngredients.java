@@ -2,20 +2,22 @@ package com.example.foodappv1;
 
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.PopupWindow;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
-public class PopUp {
+public class PopUpIngredients {
 
-    public void showPopupWindow(final View view, String list) {
+
+    public void showPopupWindow(final View view) {
 
         //Create a View object yourself through inflater
         LayoutInflater inflater = (LayoutInflater) view.getContext().getSystemService(view.getContext().LAYOUT_INFLATER_SERVICE);
-        View popupView = inflater.inflate(R.layout.pop_up, null);
+        View popupView = inflater.inflate(R.layout.pop_up_ingredients, null);
 
         //Specify the length and width through constants
         int width = RelativeLayout.LayoutParams.MATCH_PARENT;
@@ -31,23 +33,23 @@ public class PopUp {
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
 
         //Initialize the elements of our window, install the handler
+        EditText txtIngredient = (EditText) popupView.findViewById(R.id.ingredient_name);
+        String ingredient = txtIngredient.getText().toString();
 
-        TextView text = popupView.findViewById(R.id.popUpText);
-        text.setText(list);
+        RadioGroup radioGrp = (RadioGroup) popupView.findViewById(R.id.radioGroup_ingredients);
+        int radioId = radioGrp.getCheckedRadioButtonId();
+        RadioButton radioButton = popupView.findViewById(radioId);
 
-
-
-        //Handler for clicking on the inactive zone of the window
-
-        popupView.setOnTouchListener(new View.OnTouchListener() {
+        Button add = popupView.findViewById(R.id.add_ingredient);
+        add.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-                //Close the window when clicked
+            public void onClick(View v) {
+                //TODO
+                //close Window
                 popupWindow.dismiss();
-                return true;
             }
         });
+
     }
 
 }

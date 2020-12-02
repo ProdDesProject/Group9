@@ -8,8 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+
 public class MainActivity4 extends AppCompatActivity {
-    private Button button;
+    private Button btn_continue;
+    private Button btn_addIngredient;
+
 
     private TextView ingredients;
 
@@ -44,8 +47,8 @@ public class MainActivity4 extends AppCompatActivity {
         //This is a test
         ingredients.setText("Portions: " + intSmall + intMedium + intBig + "?");
 
-        button =(Button) findViewById(R.id.button_continue);
-        button.setOnClickListener(new View.OnClickListener() {
+        btn_continue = findViewById(R.id.button_continue);
+        btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -55,6 +58,17 @@ public class MainActivity4 extends AppCompatActivity {
                 openActivity5();
             }
         });
+
+        btn_addIngredient = findViewById(R.id.button_add_ingredient);
+        btn_addIngredient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopUpIngredients popUp = new PopUpIngredients();
+                popUp.showPopupWindow(v);
+            }
+        });
+
+
     }
     public void openActivity5() {
         Intent intent = new Intent (this, MainActivity5.class);

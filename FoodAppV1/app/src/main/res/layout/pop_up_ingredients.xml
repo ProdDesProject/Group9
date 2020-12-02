@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFFFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/ingredient_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup_ingredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/meat_fish"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Meat/Fish" />
+
+                <RadioButton
+                    android:id="@+id/fruits_veggies"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fruits/Veggies" />
+
+                <RadioButton
+                    android:id="@+id/eggs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Eggs" />
+
+                <RadioButton
+                    android:id="@+id/cheese"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cheese" />
+
+                <RadioButton
+                    android:id="@+id/dairy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Dairy" />
+
+                <RadioButton
+                    android:id="@+id/carbs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pasta/Rice/Potato" />
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/add_ingredient"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Add" />
+
+    </LinearLayout>
+
+</RelativeLayout>
