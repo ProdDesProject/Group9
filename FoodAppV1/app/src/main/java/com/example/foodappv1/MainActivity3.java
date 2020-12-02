@@ -29,9 +29,9 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
     EditText nameFieldSmall;
     EditText nameFieldMedium;
     EditText nameFieldBig;
-    String small;
-    String medium;
-    String big;
+    int small;
+    int medium;
+    int big;
 
 
 
@@ -69,9 +69,9 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
             @Override
             public void onClick(View v) {
                 Intent i= new Intent( MainActivity3.this, MainActivity4.class);
-                small=nameFieldSmall.getText().toString();
-                medium=nameFieldMedium.getText().toString();
-                big=nameFieldBig.getText().toString();
+                small=Integer.parseInt(nameFieldSmall.getText().toString());
+                medium=Integer.parseInt(nameFieldMedium.getText().toString());
+                big=Integer.parseInt(nameFieldBig.getText().toString());
                 i.putExtra( "small value", small);
                 i.putExtra( "medium value", medium);
                 i.putExtra( "big value", big);

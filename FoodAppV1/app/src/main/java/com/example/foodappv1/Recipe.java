@@ -1,23 +1,31 @@
 package com.example.foodappv1;
 
+import android.widget.TextView;
+
+
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Recipe {
+public class Recipe extends AppCompatActivity{
 
 	private double[] veggiesFruits = new double[]{ 400, 520, 575};		//veggiesFruits[0] = quantity in g for a small portion in a day
 	private double[] carbs = new double[]{ 200, 300, 400};				//carbs[1] = quantity in g for a medium portion in a day
 	private double[] dairy = new double[]{ 300, 345, 345};				//dairy[2] = quantity in g for a large portion in a day
 	private double[] meatFishEggs = new double[]{ 300, 420, 550};
 
+	private TextView name_display1;
+
 	private double totVeggies = 0, totCarbs = 0, totDairy = 0, totMeat = 0, totCheese = 0;
 
 	String name;
 	String date;
+
+
 	
 	public Recipe(String type, String name, int[] portions, String date) {
 
 		this.name = name;
 		this.date = date;
+
 
 		for (int i = 0; i < 3; i++) {
 
@@ -60,7 +68,10 @@ public class Recipe {
 			//Shopping list creation
 			double[] shoppingList = new double[]{totVeggies, totCarbs, totDairy, totMeat, totCheese};
 
-			System.out.println("");
+		    name_display1 = findViewById(R.id.shopping_list_text);
+			name_display1.setText("TESTIIIIING.");
+
+			/*System.out.println("");
 			System.out.println("You want to cook " + this.name + " on the " + this.date + ", you will need:");
 			System.out.println("");
 			System.out.println(totVeggies + " grams of Veggies/Fruits.");
@@ -68,5 +79,7 @@ public class Recipe {
 			System.out.println(totDairy + " grams of Dairy products.");
 			System.out.println(totMeat + " grams of Meat/Fish.");
 			System.out.println(totCheese + " grams of Cheese.");
+
+			 */
 		}
 }

@@ -113,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
             //the portions and the date entered by the user
             Recipe recipe1 = new Recipe(mealType, mealName, portions, mealDate);
             //Print recipe infos
-            recipe1.info();
+            //recipe1.info();
 
         }
     //public static int[] getPortions(){;

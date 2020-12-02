@@ -10,9 +10,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class MainActivity5 extends AppCompatActivity {
+    private static TextView list; //nm = new modification
     private Button button;
     private Button button2;
-    TextView list; //nm = new modification
+
+
+    public static TextView getList() {
+
+        return list;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +26,7 @@ public class MainActivity5 extends AppCompatActivity {
         setContentView(R.layout.activity_main5);
         button =(Button) findViewById(R.id.button_save);
         list = (TextView) findViewById(R.id.shopping_list_text);
+
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
