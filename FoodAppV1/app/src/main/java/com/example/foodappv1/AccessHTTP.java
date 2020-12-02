@@ -1,6 +1,7 @@
 package com.example.foodappv1;
 
 import android.os.AsyncTask;
+import android.util.Log;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -60,15 +61,15 @@ public class AccessHTTP extends AsyncTask<String, Integer, Long > {
             ret = EntityUtils.toString(response.getEntity());
 
         } catch (UnsupportedEncodingException e){
-            e.toString();
+
+            Log.d(  "Error encoding","**************"+e.toString());
 
         } catch (ClientProtocolException e) {
-            e.toString();
 
+            Log.d(  "Error protocol","**************"+e.toString());
         } catch (IOException e) {
 
-            e.toString();
-        }
+            Log.d(  "Error I/O","**************"+e.toString());        }
         return null;
     }
 
