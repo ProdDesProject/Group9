@@ -16,7 +16,6 @@ public class MainActivity5 extends AppCompatActivity {
 
 
     public static TextView getList() {
-
         return list;
     }
 
@@ -24,8 +23,8 @@ public class MainActivity5 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
-        button =(Button) findViewById(R.id.button_save);
-        list = (TextView) findViewById(R.id.shopping_list_text);
+        button =findViewById(R.id.button_save);
+        list = findViewById(R.id.shopping_list_text);
 
 
         button.setOnClickListener(new View.OnClickListener() {
@@ -35,7 +34,7 @@ public class MainActivity5 extends AppCompatActivity {
             }
         });
 
-        button2 =(Button) findViewById(R.id.button_modify);
+        button2 = findViewById(R.id.button_modify);
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
 
