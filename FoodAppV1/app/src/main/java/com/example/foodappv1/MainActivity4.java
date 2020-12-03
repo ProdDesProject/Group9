@@ -35,7 +35,7 @@ public class MainActivity4 extends AppCompatActivity {
         int[] portions = new int[]{intSmall, intMedium, intBig};
 
         //This is a test
-        ingredients.setText("Portions: " + intSmall + intMedium + intBig + "?");
+        ingredients.setText("Portions: " + intSmall + " " + intMedium + " " + intBig + "?");
 
         btn_continue = findViewById(R.id.button_continue);
         btn_continue.setOnClickListener(new View.OnClickListener() {
