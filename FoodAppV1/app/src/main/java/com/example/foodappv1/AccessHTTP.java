@@ -63,7 +63,6 @@ public class AccessHTTP extends AsyncTask<String, Integer, Long > {
         } catch (UnsupportedEncodingException e){
 
             Log.d(  "Error encoding","**************"+e.toString());
-
         } catch (ClientProtocolException e) {
 
             Log.d(  "Error protocol","**************"+e.toString());
