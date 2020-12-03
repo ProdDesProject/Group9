@@ -68,9 +68,6 @@ public class Recipe extends AppCompatActivity{
 			//Shopping list creation
 			double[] shoppingList = new double[]{totVeggies, totCarbs, totDairy, totMeat, totCheese};
 
-		    //name_display1 = findViewById(R.id.shopping_list_text);
-			//name_display1.setText("TESTIIIIING.");
-
 			/*System.out.println("");
 			System.out.println("You want to cook " + this.name + " on the " + this.date + ", you will need:");
 			System.out.println("");
