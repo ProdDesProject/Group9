@@ -18,20 +18,13 @@ import android.widget.Toast;
 
 import java.util.Calendar;
 
-public class MainActivity2 extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+public class MainActivity2 extends AppCompatActivity {
     Button button;
-    ImageButton recipes;
-    ImageButton meals;
-    Button buttonApply;
     RadioGroup radioGroup;
     RadioButton radioButton;
-    TextView textView;
     TextView name_display;
-    TextView name_display1;
-    //String meal;
     public static String meal;
     String name;
-    ImageButton calendarButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,26 +32,9 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
         setContentView(R.layout.activity_main2);
         radioGroup = findViewById(R.id.radioGroup);
         name_display= findViewById(R.id.meal_text);
-        name_display1 = findViewById(R.id.ingredients_list_text);
-        calendarButton= findViewById(R.id.calendar_button);
-        recipes = findViewById(R.id.recipes_button);
-        meals = findViewById(R.id.meals_button);
-        buttonApply = findViewById(R.id.button_apply);
         button = findViewById(R.id.button_apply);
         name=getIntent().getExtras().getString("Name value");
         name_display.setText("What meal do you want to plan, " + String.valueOf(name) + "?");
-
-
-        buttonApply.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int radioId = radioGroup.getCheckedRadioButtonId();
-                radioButton = findViewById(radioId);
-                textView.setText("Your choice: " + radioButton.getText());
-
-            }
-        });
-
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,46 +47,8 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
                 openActivity3();
             }
         });
-
-        recipes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PopUp popUp = new PopUp();
-                popUp.showPopupWindow(v, "List of recipes from database");
-
-            }
-        });
-
-        meals.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                PopUp popUp = new PopUp();
-                popUp.showPopupWindow(v, "List of meals from database");
-
-            }
-        });
-
-        calendarButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDatePickerDialog();
-
-            }
-        });
     }
 
-
-    private void showDatePickerDialog() {
-        DatePickerDialog datePickerDialog = new DatePickerDialog(
-                this,
-                this,
-                Calendar.getInstance().get(Calendar.YEAR),
-                Calendar.getInstance().get(Calendar.MONTH),
-                Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
-
-        );
-        datePickerDialog.show();
-    }
     public void checkButton(View v) {
         int radioId = radioGroup.getCheckedRadioButtonId();
         radioButton = findViewById(radioId);
@@ -126,8 +64,4 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
         return meal;
     }
 
-    @Override
-    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-
-    }
 }
