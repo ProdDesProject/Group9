@@ -14,10 +14,6 @@ public class MainActivity4 extends AppCompatActivity {
 
     private TextView ingredients;
 
-    String strSmall;
-    String strMedium;
-    String strBig;
-
     int intSmall;
     int intMedium;
     int intBig;
@@ -32,20 +28,16 @@ public class MainActivity4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
         ingredients = findViewById(R.id.ingredients_text);
-        strSmall=getIntent().getExtras().getString( "small value");
-        strMedium=getIntent().getExtras().getString( "medium value");
-        strBig=getIntent().getExtras().getString( "big value");
-
-        intSmall = strgToInt(strSmall);
-        intMedium = strgToInt(strMedium);
-        intBig = strgToInt(strBig);
+        intSmall=strgToInt(getIntent().getExtras().getString( "small value"));
+        intMedium=strgToInt(getIntent().getExtras().getString( "medium value"));
+        intBig=strgToInt(getIntent().getExtras().getString( "big value"));
 
         int[] portions = new int[]{intSmall, intMedium, intBig};
 
         //This is a test
         ingredients.setText("Portions: " + intSmall + intMedium + intBig + "?");
 
-        btn_continue =(Button) findViewById(R.id.button_continue);
+        btn_continue = findViewById(R.id.button_continue);
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

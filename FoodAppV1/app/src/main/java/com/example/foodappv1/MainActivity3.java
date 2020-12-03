@@ -33,26 +33,19 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
     int medium;
     int big;
 
-
-
-    public static int strgToInt(String strg){
-        int e = Integer.parseInt(strg);
-        return e;
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
-        addRecipe = (Button) findViewById(R.id.button_add_recipe);
-        chooseRecipe = (Button) findViewById(R.id.button_choose_recipe);
+        addRecipe = findViewById(R.id.button_add_recipe);
+        chooseRecipe = findViewById(R.id.button_choose_recipe);
         meal_date= findViewById(R.id.date_button);
         show_meal_date=findViewById(R.id.meal_date_field);
         display_meal_name=findViewById(R.id.plan_meal_text);
 
-        nameFieldSmall= (EditText) findViewById(R.id.editTextNumber);
-        nameFieldMedium= (EditText) findViewById(R.id.editTextNumber3);
-        nameFieldBig= (EditText) findViewById(R.id.editTextNumber2);
+        nameFieldSmall= findViewById(R.id.editTextNumber);
+        nameFieldMedium= findViewById(R.id.editTextNumber3);
+        nameFieldBig= findViewById(R.id.editTextNumber2);
 
         //meal_name=getIntent().getExtras().getString("Meal name");
         //display_meal_name.setText("What meal do you want to plan, " + String.valueOf(meal_name));
@@ -100,7 +93,7 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
         });
     }
 
-    private void showDatePickerDialog() {
+    /*private void showDatePickerDialog() {
         DatePickerDialog datePickerDialog = new DatePickerDialog(
                 this,
                 this,
@@ -110,7 +103,7 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
 
         );
         datePickerDialog.show();
-    }
+    }*/
     public void openActivity4() {
         Intent intent = new Intent (this, MainActivity4.class);
         startActivity(intent);
