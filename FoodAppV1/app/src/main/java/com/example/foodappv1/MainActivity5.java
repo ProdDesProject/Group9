@@ -13,7 +13,17 @@ public class MainActivity5 extends AppCompatActivity {
     private static TextView list; //nm = new modification
     private Button button;
     private Button button2;
+    private TextView shopping_list;
+    private TextView other_ingredients;
 
+    int intSmall;
+    int intMedium;
+    int intLarge;
+
+    public static int strgToInt(String strg){
+        int e = Integer.parseInt(strg);
+        return e;
+    }
 
     public static TextView getList() {
         return list;
@@ -25,7 +35,15 @@ public class MainActivity5 extends AppCompatActivity {
         setContentView(R.layout.activity_main5);
         button =findViewById(R.id.button_save);
         list = findViewById(R.id.shopping_list_text);
+        shopping_list = findViewById(R.id.shopping_list);
+        other_ingredients = findViewById(R.id.other_ingredients);
 
+        /*intSmall=strgToInt(getIntent().getExtras().getString( "small value"));
+        intMedium=strgToInt(getIntent().getExtras().getString( "medium value"));
+        intLarge=strgToInt(getIntent().getExtras().getString( "big value"));*/
+
+        //This is a test
+        //shopping_list.setText("Portions: 7 8 7");
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

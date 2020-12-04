@@ -1,16 +1,18 @@
 package com.example.foodappv1;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
 
@@ -55,34 +57,34 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
                 openActivity3();
             }
         });
-    }
+        recipes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PopUp popUp = new PopUp();
+                popUp.showPopupWindow(v, "List of recipes from database");
 
-    recipes.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            PopUp popUp = new PopUp();
-            popUp.showPopupWindow(v, "List of recipes from database");
-
-        }
-    });
+            }
+        });
 
         meals.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            PopUp popUp = new PopUp();
-            popUp.showPopupWindow(v, "List of meals from database");
+            @Override
+            public void onClick(View v) {
+                PopUp popUp = new PopUp();
+                popUp.showPopupWindow(v, "List of meals from database");
 
-        }
-    });
+            }
+        });
 
         calendarButton.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            showDatePickerDialog();
+            @Override
+            public void onClick(View v) {
+                showDatePickerDialog();
 
-        }
-    });
-}
+            }
+        });
+    }
+
+
 
 
     private void showDatePickerDialog() {
