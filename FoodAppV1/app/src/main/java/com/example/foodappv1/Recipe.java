@@ -63,20 +63,12 @@ public class Recipe extends AppCompatActivity{
 		}
 	}
 
-	public void info() {		//Will print the amount of food needed
+	public String info() {		//Will print the amount of food needed
 
 			//Shopping list creation
 			double[] shoppingList = new double[]{totVeggies, totCarbs, totDairy, totMeat, totCheese};
 
-			/*System.out.println("");
-			System.out.println("You want to cook " + this.name + " on the " + this.date + ", you will need:");
-			System.out.println("");
-			System.out.println(totVeggies + " grams of Veggies/Fruits.");
-			System.out.println(totCarbs + " grams of Carbs.");
-			System.out.println(totDairy + " grams of Dairy products.");
-			System.out.println(totMeat + " grams of Meat/Fish.");
-			System.out.println(totCheese + " grams of Cheese.");
+			return ("You want to cook " + this.name + " on the " + this.date + ", you will need:\n" + totVeggies + " grams of Veggies/Fruits.\n" + totCarbs + " grams of Carbs.\n" + totDairy + " grams of Dairy products.\n" + totMeat + " grams of Meat/Fish.\n" + totCheese + " grams of Cheese.");
 
-			 */
 		}
 }

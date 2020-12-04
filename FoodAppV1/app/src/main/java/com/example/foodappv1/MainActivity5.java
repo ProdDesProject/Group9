@@ -13,8 +13,9 @@ public class MainActivity5 extends AppCompatActivity {
     private static TextView list; //nm = new modification
     private Button button;
     private Button button2;
-    private TextView shopping_list;
+    TextView shopping_list;
     private TextView other_ingredients;
+    int[] portions = new int[]{0, 0, 0};
 
     int intSmall;
     int intMedium;
@@ -33,9 +34,13 @@ public class MainActivity5 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
+        portions = getIntent().getExtras().getIntArray("portions");
+        Recipe sandwich = new Recipe(MainActivity2.getMealType(), "a sandwich", portions, MainActivity.mealDate);
+
         button =findViewById(R.id.button_save);
         list = findViewById(R.id.shopping_list_text);
         shopping_list = findViewById(R.id.shopping_list);
+        shopping_list.setText(sandwich.info());
         other_ingredients = findViewById(R.id.other_ingredients);
 
         /*intSmall=strgToInt(getIntent().getExtras().getString( "small value"));

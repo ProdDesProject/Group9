@@ -28,23 +28,24 @@ public class MainActivity4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
         ingredients = findViewById(R.id.ingredients_text);
-        intSmall=strgToInt(getIntent().getExtras().getString( "small value"));
-        intMedium=strgToInt(getIntent().getExtras().getString( "medium value"));
-        intBig=strgToInt(getIntent().getExtras().getString( "big value"));
+        Intent i = getIntent();
+        intSmall=strgToInt(i.getStringExtra( "small value"));
+        intMedium=strgToInt(i.getStringExtra( "medium value"));
+        intBig=strgToInt(i.getStringExtra( "big value"));
 
         int[] portions = new int[]{intSmall, intMedium, intBig};
 
         //This is a test
-        ingredients.setText("Portions: " + intSmall + " " + intMedium + " " + intBig + "?");
+        //ingredients.setText("Portions: " + getIntent().getExtras().getString( "small value") + "?");
 
         btn_continue = findViewById(R.id.button_continue);
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Recipe sandwich = new Recipe(MainActivity2.getMealType(), "snack", portions, MainActivity.mealDate);
-                //I created a sandwich :)
-                sandwich.info();
+                Intent i= new Intent( MainActivity4.this, MainActivity5.class);
+                i.putExtra("portions", portions);
+                startActivity(i);
+                finish();
                 openActivity5();
             }
         });
@@ -62,4 +63,5 @@ public class MainActivity4 extends AppCompatActivity {
         Intent intent = new Intent (this, MainActivity5.class);
         startActivity(intent);
     }
+
 }
