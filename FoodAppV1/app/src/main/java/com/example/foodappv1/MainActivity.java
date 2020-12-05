@@ -51,19 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
     // end modification
 
-    //Username the user will enter
-    public static final String textInput = "com.example.foodappv1.textInputEditText";
-    //Meal name the user will enter
-    //Not true for the moment, this is not the right text box
-    public static final String mealName = "com.example.foodappv1.meal_text";
-    //Meal Type the user will enter
-    public static String mealType = MainActivity2.getMealType();
-    //Number of each portion the user will enter
-    public static final String smallPortions = "com.example.foodappv1.editTextNumber";
-    public static final String mediumPortions = "com.example.foodappv1.editTextNumber3";
-    public static final String largePortions = "com.example.foodappv1.editTextNumber2";
     //Date the user will enter
-    public static final String mealDate = "com.example.foodappv1.editTextDate";
+    public static final String mealDate = "com.example.foodappv1.meal_date_field";
 
 
     /*Ingredients and categories the user will enter
@@ -114,14 +103,6 @@ public class MainActivity extends AppCompatActivity {
     }
         public static void main(String[] args) {
 
-            //Convert portion strings to int
-            int S = strgToInt(smallPortions);
-            int M = strgToInt(mediumPortions);
-            int L = strgToInt(largePortions);
-
-            //portions[0] is the number of small portions, 1 => medium and 2 => large
-            int[] portions = new int[]{S, M, L};
-
             /*for(int i; i=0; i++){
                 if(category[i]=="Carbs"){
                     Carbs ingredient[i] = new Carbs();
@@ -140,20 +121,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }*/
 
-            //Creation of the user
-            User user1 = new User(textInput);
-            //Print user infos
-            user1.info();
-
-            //Creating a new recipe with the type of meal, the ingredients,
-            //the portions and the date entered by the user
-            Recipe recipe1 = new Recipe(mealType, mealName, portions, mealDate);
-            //Print recipe infos
-            //recipe1.info();
-
         }
-    //public static int[] getPortions(){;
-        //return portions;
-    //}
 
     }

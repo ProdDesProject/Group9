@@ -35,9 +35,6 @@ public class MainActivity4 extends AppCompatActivity {
 
         int[] portions = new int[]{intSmall, intMedium, intBig};
 
-        //This is a test
-        //ingredients.setText("Portions: " + getIntent().getExtras().getString( "small value") + "?");
-
         btn_continue = findViewById(R.id.button_continue);
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override

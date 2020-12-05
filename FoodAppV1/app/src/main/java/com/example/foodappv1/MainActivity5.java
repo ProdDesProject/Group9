@@ -15,7 +15,7 @@ public class MainActivity5 extends AppCompatActivity {
     private Button button2;
     TextView shopping_list;
     private TextView other_ingredients;
-    int[] portions = new int[]{0, 0, 0};
+    int[] portions;
 
     int intSmall;
     int intMedium;
@@ -46,9 +46,6 @@ public class MainActivity5 extends AppCompatActivity {
         /*intSmall=strgToInt(getIntent().getExtras().getString( "small value"));
         intMedium=strgToInt(getIntent().getExtras().getString( "medium value"));
         intLarge=strgToInt(getIntent().getExtras().getString( "big value"));*/
-
-        //This is a test
-        //shopping_list.setText("Portions: 7 8 7");
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

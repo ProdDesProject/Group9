@@ -26,7 +26,6 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
     TextView textView;
     TextView name_display;
     TextView name_display1;
-    //String meal;
     public static String meal;
     String name;
     ImageButton calendarButton;
@@ -85,8 +84,6 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
             }
         });
     }
-
-
 
 
     private void showDatePickerDialog() {
