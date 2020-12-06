@@ -26,15 +26,16 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
     TextView textView;
     TextView name_display;
     TextView name_display1;
-    public static String meal;
+    String meal;
     String name;
+    String test;
     ImageButton calendarButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        radioGroup = findViewById(R.id.radioGroup);
+        radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         name_display= findViewById(R.id.meal_text);
         name_display1 = findViewById(R.id.ingredients_list_text);
         calendarButton= findViewById(R.id.calendar_button);
@@ -51,11 +52,27 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
             @Override
             public void onClick(View v) {
                 Intent i= new Intent( MainActivity2.this, MainActivity3.class);
-                meal=radioButton.getText().toString();
-                i.putExtra( "Meal name",meal);
-                startActivity(i);
-                finish();
-                openActivity3();
+                //meal=radioButton.getText().toString();
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+                    radioButton = (RadioButton) findViewById(selectedId);
+                    meal = (String) radioButton.getText();
+                    switch (meal){
+                        case "Lunch":
+                            meal = "lunch";
+                            break;
+                        case "Breakfast":
+                            meal = "breakfast";
+                            break;
+                        case "Dinner":
+                            meal = "dinner";
+                            break;
+
+                    }
+                    i.putExtra("Meal name", meal);
+                    startActivity(i);
+                    finish();
+                    openActivity3();
+
             }
         });
         recipes.setOnClickListener(new View.OnClickListener() {
@@ -107,10 +124,6 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
     public void openActivity3() {
         Intent intent = new Intent (this, MainActivity3.class);
         startActivity(intent);
-    }
-
-    public static String getMealType(){;
-        return meal;
     }
 
     @Override

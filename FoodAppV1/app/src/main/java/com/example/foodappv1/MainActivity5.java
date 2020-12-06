@@ -16,6 +16,8 @@ public class MainActivity5 extends AppCompatActivity {
     TextView shopping_list;
     private TextView other_ingredients;
     int[] portions;
+    String date;
+    String mealType;
 
     int intSmall;
     int intMedium;
@@ -35,7 +37,9 @@ public class MainActivity5 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
         portions = getIntent().getExtras().getIntArray("portions");
-        Recipe sandwich = new Recipe(MainActivity2.getMealType(), "a sandwich", portions, MainActivity.mealDate);
+        date = getIntent().getExtras().getString("date");
+        mealType = getIntent().getExtras().getString("Meal name");
+        Recipe sandwich = new Recipe(mealType, "a sandwich", portions, date);
 
         button =findViewById(R.id.button_save);
         list = findViewById(R.id.shopping_list_text);

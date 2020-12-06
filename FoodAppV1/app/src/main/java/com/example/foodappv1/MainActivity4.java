@@ -17,6 +17,8 @@ public class MainActivity4 extends AppCompatActivity {
     int intSmall;
     int intMedium;
     int intBig;
+    String date;
+    String mealType;
 
     public static int strgToInt(String strg){
         int e = Integer.parseInt(strg);
@@ -32,6 +34,8 @@ public class MainActivity4 extends AppCompatActivity {
         intSmall=strgToInt(i.getStringExtra( "small value"));
         intMedium=strgToInt(i.getStringExtra( "medium value"));
         intBig=strgToInt(i.getStringExtra( "big value"));
+        date=i.getStringExtra("date");
+        mealType=i.getStringExtra("Meal name");
 
         int[] portions = new int[]{intSmall, intMedium, intBig};
 
@@ -41,6 +45,8 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i= new Intent( MainActivity4.this, MainActivity5.class);
                 i.putExtra("portions", portions);
+                i.putExtra("date", date);
+                i.putExtra("Meal name", mealType);
                 startActivity(i);
                 finish();
                 openActivity5();

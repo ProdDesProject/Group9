@@ -18,6 +18,7 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
     private Button addRecipe;
     Button meal_date;
     TextView show_meal_date;
+    TextView whatMeal;
     DatePickerDialog datePickerDialog;
     int year;
     int month;
@@ -32,15 +33,21 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
     String small;
     String medium;
     String big;
+    String dateString;
+    String mealType;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
+        Intent i = getIntent();
+        mealType=i.getExtras().getString( "Meal name");
         addRecipe = findViewById(R.id.button_add_recipe);
         chooseRecipe = findViewById(R.id.button_choose_recipe);
         meal_date= findViewById(R.id.date_button);
         show_meal_date=findViewById(R.id.meal_date_field);
+        whatMeal=findViewById(R.id.plan_meal_text);
+        whatMeal.setText("Plan your " + mealType);
         display_meal_name=findViewById(R.id.plan_meal_text);
 
         nameFieldSmall= findViewById(R.id.editTextNumber);
@@ -65,9 +72,12 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
                 small=nameFieldSmall.getText().toString();
                 medium=nameFieldMedium.getText().toString();
                 big=nameFieldBig.getText().toString();
+                dateString=show_meal_date.getText().toString();
                 i.putExtra( "small value", small);
                 i.putExtra( "medium value", medium);
                 i.putExtra( "big value", big);
+                i.putExtra( "date", dateString);
+                i.putExtra( "Meal name", mealType);
                 startActivity(i);
                 finish();
                 openActivity4();
