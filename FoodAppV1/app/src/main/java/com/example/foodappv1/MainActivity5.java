@@ -46,7 +46,7 @@ public class MainActivity5 extends AppCompatActivity {
         list = findViewById(R.id.shopping_list_text);
         shopping_list = findViewById(R.id.shopping_list);
         shopping_list.setText(sandwich.info());
-        other_ingredients = findViewById(R.id.other_ingredients);
+        other_ingredients = findViewById(R.id.other_ingredients_list);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override

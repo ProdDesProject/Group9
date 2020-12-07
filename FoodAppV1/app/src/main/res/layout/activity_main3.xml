@@ -10,20 +10,21 @@
     android:layout_marginTop="25dp"
     android:layout_marginEnd="25sp"
     android:layout_marginRight="25sp"
-    android:layout_marginBottom="25sp">
+    android:layout_marginBottom="25sp"
+    android:background="@color/background">
 
-    <LinearLayout
+     <LinearLayout
         android:id="@+id/section31"
         android:layout_width="match_parent"
-        android:layout_height="60sp"
+        android:layout_height="80sp"
         android:orientation="horizontal"
         android:gravity="left|center_vertical">
 
         <ImageView
             android:id="@+id/logo1"
-            android:layout_width="40sp"
-            android:layout_height="40sp"
-            app:srcCompat="@mipmap/ic_launcher" />
+            android:layout_width="80dp"
+            android:layout_height="80sp"
+            app:srcCompat="@drawable/logo" />
     </LinearLayout>
 
     <LinearLayout
@@ -31,143 +32,189 @@
         android:layout_below="@+id/section31"
         android:layout_width="match_parent"
         android:layout_height="90sp"
-        android:gravity="center_horizontal|center_vertical">
+        android:gravity="center_horizontal|center_vertical"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp">
 
-        <TextView
-            android:id="@+id/plan_meal_text"
-            android:layout_width="match_parent"
-            android:layout_height="50sp"
-            android:layout_marginStart="15sp"
-            android:layout_marginEnd="15sp"
-            android:fontFamily="casual"
-            android:gravity="center_horizontal"
-            android:text="Plan your MealName"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textSize="25sp" />
+    <TextView
+        android:id="@+id/plan_meal_text"
+        android:layout_width="match_parent"
+        android:layout_height="70sp"
+        android:fontFamily="@font/kalam"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Plan your MealName"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="23sp"
+        android:background="@drawable/text_view_bg"
+        android:textColor="@color/text_view_font"
+        />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="330dp"
-        android:layout_height="260dp"
+        android:layout_width="match_parent"
+        android:layout_height="340dp"
         android:id="@+id/section33"
         android:layout_below="@+id/section32"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/light_blue"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp">
 
         <LinearLayout
 
             android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:orientation="horizontal">
+            android:layout_height="85dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="15sp"
+            android:layout_marginEnd="15sp">
 
             <Button
                 android:id="@+id/date_button"
-                android:layout_width="165dp"
+                android:layout_width="175dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:background="@drawable/cloud2"
+                android:fontFamily="@font/blockletters1"
                 android:text="Date:"
-                android:textSize="15sp"
-                android:background="@drawable/button_bg_rounded_corners"/>
+                android:textAllCaps="false"
+                android:textColor="@color/dark_blue"
+                android:textSize="13sp" />
 
             <TextView
                 android:id="@+id/meal_date_field"
-                android:layout_width="165dp"
+                android:layout_width="155dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="Tap on date"
+                android:fontFamily="@font/blockletters2"
+                android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textAlignment="center"
-                android:gravity="center_horizontal" />
+                android:gravity="center_horizontal|center_vertical"
+                android:backgroundTint="@color/black"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:orientation="horizontal">
+            android:layout_height="85dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="15sp"
+            android:layout_marginEnd="15sp">
 
             <TextView
                 android:id="@+id/textView6"
-                android:layout_width="165dp"
-                android:layout_height="match_parent"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Small Portions:"
-                android:textSize="15sp" />
+                android:background="@drawable/cloud2"
+                android:fontFamily="@font/blockletters1"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Small:"
+                android:textAlignment="center"
+                android:textColor="@color/dark_blue"
+                android:textSize="13sp" />
 
             <EditText
                 android:id="@+id/editTextNumber"
-                android:layout_width="165dp"
+                android:layout_width="155dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:fontFamily="@font/blockletters2"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/black"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:orientation="horizontal">
+            android:layout_height="85dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="15sp"
+            android:layout_marginEnd="15sp">
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="157dp"
+                android:layout_width="175dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Medium Portions:"
-                android:textSize="15sp" />
+                android:background="@drawable/cloud2"
+                android:fontFamily="@font/blockletters1"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Medium:"
+                android:textAlignment="center"
+                android:textColor="@color/dark_blue"
+                android:textSize="13sp" />
 
             <EditText
                 android:id="@+id/editTextNumber3"
-                android:layout_width="165dp"
+                android:layout_width="155dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:ems="10"
-                android:inputType="number" />
+                android:fontFamily="@font/blockletters2"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/black"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:orientation="horizontal">
+            android:layout_height="85dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="15sp"
+            android:layout_marginEnd="15sp">
 
             <TextView
                 android:id="@+id/textView5"
-                android:layout_width="165dp"
+                android:layout_width="175dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Large Portions:"
-                android:textSize="15sp" />
+                android:background="@drawable/cloud2"
+                android:fontFamily="@font/blockletters1"
+                android:gravity="center_horizontal|center_vertical"
+                android:text="Large:"
+                android:textAlignment="center"
+                android:textColor="@color/dark_blue"
+                android:textSize="13sp" />
 
             <EditText
                 android:id="@+id/editTextNumber2"
-                android:layout_width="165dp"
+                android:layout_width="155dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
+                android:fontFamily="@font/blockletters2"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/black"
+                />
         </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/section34"
         android:layout_width="match_parent"
-        android:layout_height="80sp"
+        android:layout_height="60sp"
         android:layout_below="@+id/section33"
         android:orientation="horizontal"
-        android:gravity="center_horizontal|center_vertical">
+        android:gravity="center_horizontal|center_vertical|bottom"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp">
 
         <Button
             android:id="@+id/button_choose_recipe"
             android:text="Choose recipe"
-            android:background="@drawable/button_bg_rounded_corners"
             android:layout_width="120sp"
             android:layout_height="50sp"
+            android:fontFamily="@font/pomiere"
             android:clickable="true"
             android:focusable="true"
             android:textColor="@color/white"
-            android:textSize="12sp"
+            android:textSize="20sp"
             android:textAllCaps="false"
             />
 
@@ -176,16 +223,16 @@
             android:layout_height="wrap_content" />
 
         <Button
-            android:id="@+id/button_add_recipe"
-            android:text="Add recipe"
-            android:background="@drawable/button_bg_rounded_corners"
+            android:id="@+id/button_create_recipe"
             android:layout_width="120sp"
-            android:layout_height="50sp"
+            android:layout_height="wrap_content"
             android:clickable="true"
             android:focusable="true"
+            android:fontFamily="@font/pomiere"
+            android:text="Create recipe"
+            android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="12sp"
-            android:textAllCaps="false" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 

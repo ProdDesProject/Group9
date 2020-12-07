@@ -7,24 +7,25 @@
     tools:context=".MainActivity"
     android:layout_marginStart="25sp"
     android:layout_marginLeft="25sp"
-    android:layout_marginTop="25dp"
+    android:layout_marginTop="0dp"
     android:layout_marginEnd="25sp"
     android:layout_marginRight="25sp"
-    android:layout_marginBottom="25sp">
+    android:layout_marginBottom="25sp"
+    android:background="@color/background">
 
 
     <LinearLayout
         android:id="@+id/section11"
         android:layout_width="match_parent"
-        android:layout_height="100sp"
+        android:layout_height="180sp"
         android:orientation="horizontal"
         android:gravity="center|center_vertical">
 
         <ImageView
             android:id="@+id/logo1"
-            android:layout_width="80sp"
-            android:layout_height="80sp"
-            app:srcCompat="@mipmap/ic_launcher" />
+            android:layout_width="180sp"
+            android:layout_height="180sp"
+            app:srcCompat="@drawable/logo" />
     </LinearLayout>
 
 
@@ -35,49 +36,55 @@
         android:layout_height="100sp"
         android:gravity="center_horizontal|center_vertical">
 
-        <TextView
-            android:id="@+id/welcome_text"
-            android:layout_width="match_parent"
-            android:layout_height="80sp"
-            android:layout_marginStart="15sp"
-            android:layout_marginEnd="15sp"
-            android:fontFamily="casual"
-            android:gravity="center_horizontal"
-            android:text="Hi there! Welcome to dinner is readydo!"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-            android:textSize="25sp" />
+    <TextView
+        android:id="@+id/welcome_text"
+        android:layout_width="match_parent"
+        android:layout_height="80sp"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp"
+        android:fontFamily="@font/kalam"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Hi there! Welcome to dinner is readydo!"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:background="@drawable/text_view_bg"
+        android:textColor="@color/text_view_font"
+        android:textSize="23sp" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="80sp"
         android:layout_below="@+id/section12"
-        android:layout_marginTop="200sp"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal|center_vertical">
+        android:layout_marginTop="160sp"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="horizontal">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/name_field"
             android:layout_width="170sp"
             android:layout_height="50sp"
-            android:textSize="12sp"
-            android:hint="Type your name" />
+            android:backgroundTint="@color/text_view_font"
+            android:hint="Type your name"
+            android:fontFamily="@font/blockletters1"
+            android:textColor="@color/text_view_font"
+            android:textColorHint="@color/text_view_font"
+            android:textSize="14sp" />
 
         <Space
             android:layout_width="20sp"
             android:layout_height="wrap_content" />
+
         <Button
             android:id="@+id/button_next"
-            android:text="Next"
-            android:background="@drawable/button_bg_rounded_corners"
             android:layout_width="120sp"
-            android:layout_height="50sp"
+            android:layout_height="wrap_content"
             android:clickable="true"
             android:focusable="true"
-            android:textColor="@color/white"
-            android:textSize="12sp"
+            android:fontFamily="@font/pomiere"
+            android:text="Next"
             android:textAllCaps="false"
-            />
+            android:textSize="20sp" />
 
 
     </LinearLayout>

@@ -1,11 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="button_color">#0eb077</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    /background -vanilla ice cream-
+    <color name="background">#fdfaf1</color>
+    /status bar -chocolate-
+    <color name="status_bar">#200000</color>
+
+    /button default -raspberry-
+    <color name="button_default_middle">#e2085a</color>
+    <color name="button_default_edges">#c50049</color>
+    <color name="button_default_stroke">#980035</color>
+
+    /button pressed -frozen raspberry-
+    <color name="button_pressed_middle">#de63ab</color>
+    <color name="button_pressed_edges">#bd357a</color>
+    <color name="button_pressed_stroke">#872657</color>
+
+    /text views -avocado-
+    <color name="text_view">#f2e880</color>
+    <color name="text_view_font">#356211</color>
+
+    /plan meal view
+
+    <color name="light_blue">#ccbdecf3</color>
+    <color name="medium_blue">#cc8fdfeb</color>
+    <color name="dark_blue">#006988</color>
+
+    /medium text views -lemon-
+    <color name="medium_text_view">#bbd915</color>
+    <color name="medium_text_view_font">#005c13</color>
+
+    /middle view menus -coffee-
+    <color name="middle_view">#4ddfccaf</color>/coffee
+    <color name="middle_view2">#dfccaf</color>/coffee
+    <color name="middle_view_font">#3e1404</color>/coffee
+
+    /green
+    <color name="light_green">#4dF7FFDC</color>
+    <color name="medium_green">#4dA0E989</color>
+    <color name="medium_dark_green">#6AB155</color>
+    <color name="dark_green">#136207</color>
+    <color name="text_green">#D9FFBF</color>
+
+
+
+
+    <color name="purple_500">#800020</color> /button, ok cancel calendar,
+    <color name="purple_700">#420c1a</color> /bar above everything
+    <color name="teal_200">#C23B21</color> /calendar, typing shit
+
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="text_color">#0d573c</color>
+    <color name="white">#ffffff</color>
+
+    <color name="transparent">#ccffffff</color>
+
+    <color name="input_text">#f9f9f9</color>
+
+    <color name="menu">#ccFF03DA</color>
 </resources>
