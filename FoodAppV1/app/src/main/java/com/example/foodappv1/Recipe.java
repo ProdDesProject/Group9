@@ -21,13 +21,15 @@ public class Recipe extends AppCompatActivity{
 	String date;
 	int[] portions;
 	String type;
+	String[] list;
 
-	public Recipe(String type, String name, int[] portions, String date) {
+	public Recipe(String type, String name, int[] portions, String date, String[] list) {
 
 		this.name = name;
 		this.date = date;
 		this.portions = portions;
 		this.type = type;
+		this.list = list;
 
 
 		for (int i = 0; i < 3; i++) {
@@ -71,7 +73,7 @@ public class Recipe extends AppCompatActivity{
 			//Shopping list creation
 			double[] shoppingList = new double[]{totVeggies, totCarbs, totDairy, totMeat, totCheese};
 
-			return ("You want to cook " + this.name + " on the " + this.date + ", you will need:\n\n" + this.totVeggies + " grams of Veggies/Fruits.\n" + totCarbs + " grams of Carbs.\n" + totDairy + " grams of Dairy products.\n" + totMeat + " grams of Meat/Fish.\n" + totCheese + " grams of Cheese.");
+			return ("You want to cook " + this.name + " on the " + this.date + ", you will need:\n\n" + this.totVeggies + " grams of " + list[0] + ".\n" + totCarbs + " grams of " + list[1] + ".\n" + totDairy + " grams of " + list[2] + ".\n" + totMeat + " grams of " + list[3] + ".\n" + totCheese + " grams of " + list[4] + ".");
 
 		}
 }

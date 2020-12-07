@@ -39,17 +39,14 @@ public class MainActivity5 extends AppCompatActivity {
         portions = getIntent().getExtras().getIntArray("portions");
         date = getIntent().getExtras().getString("date");
         mealType = getIntent().getExtras().getString("Meal name");
-        Recipe sandwich = new Recipe(mealType, "a sandwich", portions, date);
+        String[] list_ing = new String[]{"salad", "bread", "cream", "ham", "cheese"};
+        Recipe sandwich = new Recipe(mealType, "a sandwich", portions, date, list_ing);
 
         button =findViewById(R.id.button_save);
         list = findViewById(R.id.shopping_list_text);
         shopping_list = findViewById(R.id.shopping_list);
         shopping_list.setText(sandwich.info());
         other_ingredients = findViewById(R.id.other_ingredients);
-
-        /*intSmall=strgToInt(getIntent().getExtras().getString( "small value"));
-        intMedium=strgToInt(getIntent().getExtras().getString( "medium value"));
-        intLarge=strgToInt(getIntent().getExtras().getString( "big value"));*/
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
