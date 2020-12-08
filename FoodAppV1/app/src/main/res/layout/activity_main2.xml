@@ -80,7 +80,7 @@
                 android:onClick="checkButton"
                 android:text="Breakfast"
                 android:textAlignment="center"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="17sp" />
 
             <RadioButton
@@ -90,7 +90,7 @@
                 android:fontFamily="@font/blockletters1"
                 android:gravity="center_horizontal"
                 android:onClick="checkButton"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:text="Lunch"
                 android:textAlignment="center"
                 android:textSize="17sp" />
@@ -102,7 +102,7 @@
                 android:fontFamily="@font/blockletters1"
                 android:gravity="center_horizontal"
                 android:onClick="checkButton"
-                android:textColor="@color/background"
+                android:textColor="@color/black"
                 android:text="Dinner"
                 android:textAlignment="center"
                 android:textSize="17sp" />

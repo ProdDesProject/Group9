@@ -10,6 +10,10 @@
     <color name="button_default_edges">#c50049</color>
     <color name="button_default_stroke">#980035</color>
 
+    <color name="egg_font">#cc4404</color>
+    <color name="egg_bg">#fbcc52</color>
+    <color name="egg">#fcfcfc</color>
+
     /button pressed -frozen raspberry-
     <color name="button_pressed_middle">#de63ab</color>
     <color name="button_pressed_edges">#bd357a</color>

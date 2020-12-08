@@ -58,7 +58,7 @@
         android:layout_below="@+id/section32"
         android:layout_centerHorizontal="true"
         android:orientation="vertical"
-        android:background="@color/light_blue"
+        android:background="@color/egg"
         android:layout_marginStart="15sp"
         android:layout_marginEnd="15sp">
 
@@ -75,12 +75,12 @@
                 android:layout_width="175dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/cloud2"
+                android:background="@drawable/cute_egg"
                 android:fontFamily="@font/blockletters1"
                 android:text="Date:"
                 android:textAllCaps="false"
-                android:textColor="@color/dark_blue"
-                android:textSize="13sp" />
+                android:textColor="@color/egg_font"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/meal_date_field"
@@ -107,15 +107,15 @@
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="175dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/cloud2"
+                android:background="@drawable/cute_egg"
                 android:fontFamily="@font/blockletters1"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="Small:"
                 android:textAlignment="center"
-                android:textColor="@color/dark_blue"
-                android:textSize="13sp" />
+                android:textColor="@color/egg_font"
+                android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/editTextNumber"
@@ -141,13 +141,13 @@
                 android:layout_width="175dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/cloud2"
+                android:background="@drawable/cute_egg"
                 android:fontFamily="@font/blockletters1"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="Medium:"
                 android:textAlignment="center"
-                android:textColor="@color/dark_blue"
-                android:textSize="13sp" />
+                android:textColor="@color/egg_font"
+                android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/editTextNumber3"
@@ -173,13 +173,13 @@
                 android:layout_width="175dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@drawable/cloud2"
+                android:background="@drawable/cute_egg"
                 android:fontFamily="@font/blockletters1"
                 android:gravity="center_horizontal|center_vertical"
                 android:text="Large:"
                 android:textAlignment="center"
-                android:textColor="@color/dark_blue"
-                android:textSize="13sp" />
+                android:textColor="@color/egg_font"
+                android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/editTextNumber2"

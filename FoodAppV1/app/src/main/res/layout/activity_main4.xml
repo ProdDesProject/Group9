@@ -73,44 +73,6 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="40sp"
-            android:layout_marginTop="20sp"
-            android:gravity="center_horizontal|center_vertical"
-            android:orientation="horizontal">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/name_field"
-                android:layout_width="170sp"
-                android:layout_height="40sp"
-                android:backgroundTint="@color/dark_green"
-                android:fontFamily="@font/blockletters1"
-                android:hint="Recipe name"
-                android:textColor="@color/dark_green"
-                android:textColorHint="@color/dark_green"
-                android:textSize="12sp" />
-
-            <Space
-                android:layout_width="20sp"
-                android:layout_height="wrap_content" />
-
-            <Button
-                android:id="@+id/button_next"
-                android:layout_width="100sp"
-                android:layout_height="40sp"
-                android:backgroundTint="@color/dark_green"
-                android:clickable="true"
-                android:focusable="true"
-                android:fontFamily="@font/pomiere"
-                android:text="Add name"
-                android:textAllCaps="false"
-                android:textColor="@color/text_green"
-                android:textSize="20sp" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
             android:layout_height="280sp"
             android:gravity="center_horizontal|center_vertical"
             android:orientation="vertical">
@@ -133,13 +95,13 @@
 
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="210sp"
+                android:layout_height="240sp"
                 android:layout_gravity="center_vertical">
 
                 <TextView
                     android:id="@+id/ingredients_list_text"
                     android:layout_width="match_parent"
-                    android:layout_height="200sp"
+                    android:layout_height="220sp"
                     android:fontFamily="@font/solicious"
                     android:text="Add ingredients from database"
                     android:textColor="@color/dark_green"
