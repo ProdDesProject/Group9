@@ -67,6 +67,7 @@ public class MainActivity4 extends AppCompatActivity {
     String date;
     String mealType;
     String recipeName;
+    String[] ingredientsList = new String[10];
 
     public static int strgToInt(String strg){
         int e = Integer.parseInt(strg);
@@ -79,7 +80,7 @@ public class MainActivity4 extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
-        ingredients = findViewById(R.id.ingredients_text);
+        ingredients = findViewById(R.id.ingredients_list_text);
         recipeNameField = findViewById(R.id.name_field);
         Intent i = getIntent();
         intSmall=strgToInt(i.getStringExtra( "small value"));
@@ -87,6 +88,7 @@ public class MainActivity4 extends AppCompatActivity {
         intBig=strgToInt(i.getStringExtra( "big value"));
         date=i.getStringExtra("date");
         mealType=i.getStringExtra("Meal name");
+
 
         int[] portions = new int[]{intSmall, intMedium, intBig};
 
@@ -112,6 +114,9 @@ public class MainActivity4 extends AppCompatActivity {
             public void onClick(View v) {
                 PopUpIngredients popUp = new PopUpIngredients();
                 popUp.showPopupWindow(v);
+
+                ingredientsList[0] = PopUpIngredients.ingredient;
+                ingredients.setText(ingredientsList[0]);
             }
         });
     }

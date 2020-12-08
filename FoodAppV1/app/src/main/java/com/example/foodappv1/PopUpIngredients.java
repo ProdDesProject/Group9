@@ -15,36 +15,7 @@ import org.json.JSONArray;
 
 public class PopUpIngredients {
 
-    private static AcessDistant accessDistant;
-    private static Ingredient ingredient;
-    private static PopUpIngredients instance = null;
-    private static Context contexte;
-
-
-    PopUpIngredients() { super(); }
-
-
-    public static final PopUpIngredients getInstance(Context contexte) {
-        if (contexte != null){
-            PopUpIngredients.contexte=contexte;
-        }
-        if (PopUpIngredients.instance == null) {
-            PopUpIngredients.instance= new PopUpIngredients();
-            accessDistant = new AcessDistant();
-            accessDistant.send(  "chooseingredient", new JSONArray());
-        }
-        return PopUpIngredients.instance;
-    }
-
-    public void addIngredient(String ingredientName, String category){
-        ingredient = new Ingredient(ingredientName, category);
-        accessDistant.send(  "addingredient", ingredient.convertToJSONArray());
-    }
-
-    public void setIngredient(Ingredient ingredient){
-        PopUpIngredients.ingredient=ingredient;
-        //((MainActivity4).contexte).getIngredient();
-    }
+    public static String ingredient;
 
     public void showPopupWindow(final View view) {
 
@@ -67,7 +38,7 @@ public class PopUpIngredients {
 
         //Initialize the elements of our window, install the handler
         EditText txtIngredient = (EditText) popupView.findViewById(R.id.ingredient_name);
-        String ingredient = txtIngredient.getText().toString();
+        //ingredient = txtIngredient.getText().toString();
 
         RadioGroup radioGrp = (RadioGroup) popupView.findViewById(R.id.radioGroup_ingredients);
         int radioId = radioGrp.getCheckedRadioButtonId();
@@ -77,12 +48,12 @@ public class PopUpIngredients {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ingredient = txtIngredient.getText().toString();
                 //TODO
                 //close Window
                 popupWindow.dismiss();
             }
         });
-
     }
 
 
