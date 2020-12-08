@@ -13,6 +13,7 @@ public class MainActivity4 extends AppCompatActivity {
     private Button btn_addIngredient;
 
     private TextView ingredients;
+    private TextView listIngredients;
 
     int intSmall;
     int intMedium;
@@ -61,6 +62,9 @@ public class MainActivity4 extends AppCompatActivity {
                 popUp.showPopupWindow(v);
             }
         });
+
+        listIngredients = (TextView) findViewById(R.id.ingredients_list_text);
+        listIngredients.setText("New Text");
     }
     public void openActivity5() {
         Intent intent = new Intent (this, MainActivity5.class);
