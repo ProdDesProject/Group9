@@ -11,14 +11,17 @@ import android.widget.TextView;
 public class MainActivity4 extends AppCompatActivity {
     private Button btn_continue;
     private Button btn_addIngredient;
+    private Button addName;
 
     private TextView ingredients;
+    private TextView recipeNameField;
 
     int intSmall;
     int intMedium;
     int intBig;
     String date;
     String mealType;
+    String recipeName;
 
     public static int strgToInt(String strg){
         int e = Integer.parseInt(strg);
@@ -30,6 +33,7 @@ public class MainActivity4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
         ingredients = findViewById(R.id.ingredients_text);
+        recipeNameField = findViewById(R.id.name_field);
         Intent i = getIntent();
         intSmall=strgToInt(i.getStringExtra( "small value"));
         intMedium=strgToInt(i.getStringExtra( "medium value"));
@@ -44,9 +48,11 @@ public class MainActivity4 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i= new Intent( MainActivity4.this, MainActivity5.class);
+                recipeName=recipeNameField.getText().toString();
                 i.putExtra("portions", portions);
                 i.putExtra("date", date);
                 i.putExtra("Meal name", mealType);
+                i.putExtra("recipeName", recipeName);
                 startActivity(i);
                 finish();
                 openActivity5();
