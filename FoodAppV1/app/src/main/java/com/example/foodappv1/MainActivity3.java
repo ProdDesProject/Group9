@@ -42,8 +42,8 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
         setContentView(R.layout.activity_main3);
         Intent i = getIntent();
         mealType=i.getExtras().getString( "Meal name");
-        addRecipe = findViewById(R.id.button_choose_recipe);
-        chooseRecipe = findViewById(R.id.button_create_recipe);
+        addRecipe = findViewById(R.id.button_create_recipe);
+        chooseRecipe = findViewById(R.id.button_choose_recipe);
         meal_date= findViewById(R.id.date_button);
         show_meal_date=findViewById(R.id.meal_date_field);
         whatMeal=findViewById(R.id.plan_meal_text);
