@@ -17,10 +17,10 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
-public class AccessHTTP extends AsyncTask<String, Integer, Long > {
+public class AccessHTTP extends AsyncTask <String, Integer, Long> {
 
     private ArrayList<NameValuePair> parameters;
-    private String ret= null;
+    private String ret = null;
     public AsyncResponse delegate = null;
 
 
@@ -74,30 +74,8 @@ public class AccessHTTP extends AsyncTask<String, Integer, Long > {
 
     @Override
     protected void onPostExecute(Long result){
-        delegate.processFinish(ret.toString());
+        delegate.processFinish(ret);
+        //delegate.processFinish((ret.toString()));
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

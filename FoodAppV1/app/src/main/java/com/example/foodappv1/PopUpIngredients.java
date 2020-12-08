@@ -1,6 +1,5 @@
 package com.example.foodappv1;
 
-import android.content.Context;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,8 +9,6 @@ import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
-
-import org.json.JSONArray;
 
 public class PopUpIngredients {
 

@@ -8,20 +8,26 @@ import java.util.List;
 
 public class Meal {
 
-    private static AcessDistant accessDistant;
-    private String mealName;
+
+    private String recipeName;
     private String mealType;
     private Date date;
-    private static Meal meal;
+    //private static AcessDistant accessDistant;
+    //private static Meal meal;
 
-    public Meal(String mealName, String mealType, Date mealDate){
-        this.mealName= mealName;
+    public Meal(String recipeName, String mealType, Date date){
+        this.recipeName= recipeName;
         this.mealType=mealType;
-        this.date=mealDate;
+        this.date=date;
     }
-    public JSONArray convertToJSONArray() {
+
+    public String getRecipeName() { return recipeName;}
+    public String getMealType() { return mealType;}
+    public Date getMealDate() { return date;}
+
+    public JSONArray convertToJSONArrayM() {
         List theList = new ArrayList();
-        theList.add(mealName);
+        theList.add(recipeName);
         theList.add(mealType);
         theList.add(date);
         return new JSONArray(theList);

@@ -8,8 +8,11 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.sql.Date;
+
 
 public class MainActivity5 extends AppCompatActivity {
+    private Remote remote;
     private static TextView list; //nm = new modification
     private Button button;
     private Button button2;
@@ -24,6 +27,7 @@ public class MainActivity5 extends AppCompatActivity {
     int intMedium;
     int intLarge;
 
+
     public static int strgToInt(String strg){
         int e = Integer.parseInt(strg);
         return e;
@@ -32,9 +36,13 @@ public class MainActivity5 extends AppCompatActivity {
     public static TextView getList() {
         return list;
     }
+     private void init(){
+         this.remote = Remote.getInstance(this); //db
+     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        init();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
         portions = getIntent().getExtras().getIntArray("portions");
@@ -50,9 +58,15 @@ public class MainActivity5 extends AppCompatActivity {
         shopping_list.setText(sandwich.info());
 
         button.setOnClickListener(new View.OnClickListener() {
+            private Remote remote;
+
             @Override
             public void onClick(View v) {
                 openActivity6();
+            }
+            private void showResults(String recipeName, String typeMeal, Date date /*, String ingredientName, String category*/){
+                this.remote.addMeal(recipeName, typeMeal, date, this);
+                //this.remote.addIngredient(ingredientName,category);
             }
         });
 
@@ -64,8 +78,6 @@ public class MainActivity5 extends AppCompatActivity {
                 openActivity4();
             }
         });
-
-
     }
 
     public void openActivity6() {
@@ -77,4 +89,5 @@ public class MainActivity5 extends AppCompatActivity {
         Intent intent = new Intent (this, MainActivity4.class);
         startActivity(intent);
     }
+
 }

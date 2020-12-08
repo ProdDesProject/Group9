@@ -42,7 +42,7 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
         recipes = findViewById(R.id.recipes_button);
         meals = findViewById(R.id.meals_button);
         button = findViewById(R.id.button_apply);
-        name=getIntent().getExtras().getString("Name value");
+        name = getIntent().getExtras().getString("Name value");
 
 
         name_display.setText("What meal do you want to plan, " + String.valueOf(name) + "?");
