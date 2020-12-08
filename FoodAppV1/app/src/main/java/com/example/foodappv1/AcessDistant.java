@@ -8,9 +8,10 @@ import org.json.JSONArray;
 public class AcessDistant implements AsyncResponse {
     //constant
     private static final String SERVERADDR = "http://stulinux159.ipt.oamk.fi/data.php";
+    private Remote remote;
 
     public AcessDistant() {
-        super();
+        remote = Remote.getInstance(null);
     }
 
 

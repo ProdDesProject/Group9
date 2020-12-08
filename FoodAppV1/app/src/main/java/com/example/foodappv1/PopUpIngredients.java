@@ -1,5 +1,6 @@
 package com.example.foodappv1;
 
+import android.content.Context;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,8 +11,40 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 
+import org.json.JSONArray;
+
 public class PopUpIngredients {
 
+    private static AcessDistant accessDistant;
+    private static Ingredient ingredient;
+    private static PopUpIngredients instance = null;
+    private static Context contexte;
+
+
+    PopUpIngredients() { super(); }
+
+
+    public static final PopUpIngredients getInstance(Context contexte) {
+        if (contexte != null){
+            PopUpIngredients.contexte=contexte;
+        }
+        if (PopUpIngredients.instance == null) {
+            PopUpIngredients.instance= new PopUpIngredients();
+            accessDistant = new AcessDistant();
+            accessDistant.send(  "chooseingredient", new JSONArray());
+        }
+        return PopUpIngredients.instance;
+    }
+
+    public void addIngredient(String ingredientName, String category){
+        ingredient = new Ingredient(ingredientName, category);
+        accessDistant.send(  "addingredient", ingredient.convertToJSONArray());
+    }
+
+    public void setIngredient(Ingredient ingredient){
+        PopUpIngredients.ingredient=ingredient;
+        //((MainActivity4).contexte).getIngredient();
+    }
 
     public void showPopupWindow(final View view) {
 
@@ -51,5 +84,6 @@ public class PopUpIngredients {
         });
 
     }
+
 
 }

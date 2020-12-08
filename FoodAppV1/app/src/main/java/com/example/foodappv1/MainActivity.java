@@ -1,7 +1,6 @@
 package com.example.foodappv1;
 //SQLiteOpenHelper(Context context, String meal, SQLiteDatabase.CursorFactory factory, int mysql)
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,45 +10,9 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.json.JSONArray;
-
-import java.util.ArrayList;
-import java.util.List;
-
 
 public class MainActivity extends AppCompatActivity {
-    // Ouma's modification
-    private static AcessDistant accessDistant;
-    private static MainActivity instance = null;
 
-    /**
-     * builder private
-     */
-    // private MainActivity() { super(); }
-
-    /**
-     * instance creation
-     *
-     * @return instance
-     */
-
-   public static final MainActivity getInstance(Context context) {
-        if (MainActivity.instance == null) {
-            MainActivity.instance= new MainActivity();
-            accessDistant = new AcessDistant();
-            accessDistant.send(  "dernier", new JSONArray());
-        }
-        return MainActivity.instance;
-    }
-
-    public JSONArray convertToJSONArray() {
-        List theList = new ArrayList();
-        theList.add(name_fld);
-        return new JSONArray(theList);
-    }
-
-
-    // end modification
 
     //Date the user will enter
     public static final String mealDate = "com.example.foodappv1.meal_date_field";
