@@ -81,7 +81,7 @@ public class MainActivity4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
         ingredients = findViewById(R.id.ingredients_list_text);
-        recipeNameField = findViewById(R.id.name_field);
+        recipeNameField = findViewById(R.id.recipe_field);
         Intent i = getIntent();
         intSmall=strgToInt(i.getExtras().getString( "small value"));
         intMedium=strgToInt(i.getExtras().getString( "medium value"));

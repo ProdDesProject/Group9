@@ -144,7 +144,7 @@
             android:layout_height="40sp"
             android:background="@color/background"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/calendar5" />
+            app:srcCompat="@drawable/calendar5"/>
 
         <Space
             android:layout_width="70sp"
