@@ -100,44 +100,6 @@ public class Recipe extends AppCompatActivity{
 			}
 		}
 
-		for(int k=0; k<list.length; k++){
-			if (list[k] instanceof Carbs) {
-				if(nb_carbs!=0) {
-					for(int m = 0; m<nb_carbs; m++){
-						shopping = shopping + (totCarbs / nb_carbs) + " grams of " + carbsList.get(m).name + ".\n";
-					}
-				}
-			}
-			if(list[k] instanceof Veggies) {
-				if(nb_veggies!=0) {
-					for(int l = 0; l<nb_veggies; l++){
-						shopping = shopping + (totVeggies/nb_veggies) + " grams of " + veggieList.get(l).name + ".\n";
-					}
-				}
-			}
-			if(list[k] instanceof MeatFishEggs) {
-				if(nb_meat!=0) {
-					for (int n = 0; n < nb_meat; n++) {
-						shopping = shopping + (totMeat / nb_meat) + " grams of " + meatList.get(n).name + ".\n";
-					}
-				}
-			}
-			if(list[k] instanceof Dairy) {
-				if(nb_dairy!=0) {
-					for(int o = 0; o<nb_dairy; o++){
-						shopping = shopping + (totDairy/nb_dairy) + " grams of " + dairyList.get(o).name + ".\n";
-					}
-				}
-			}
-			if(list[k] instanceof Cheese) {
-				if(nb_cheese!=0) {
-					for(int p = 0; p<nb_cheese; p++){
-						shopping = shopping + (totCheese/nb_cheese) + " grams of " + cheeseList.get(p).name + ".\n";
-					}
-				}
-			}
-		}
-
 		if(nb_carbs==0){
 			shopping = shopping + "You don't have any carbs, you should add some to your meal.\n";
 		}
@@ -146,6 +108,49 @@ public class Recipe extends AppCompatActivity{
 		}
 		if(nb_veggies==0){
 			shopping = shopping + "You don't have any veggie or fruit, you should add some to your meal.\n";
+		}
+
+		for(int k=0; k<list.length; k++){
+			if (list[k] instanceof Carbs) {
+				if(nb_carbs!=0) {
+					for(int m = 0; m<nb_carbs; m++){
+						shopping = shopping + (totCarbs / nb_carbs) + " grams of " + carbsList.get(m).name + ".\n";
+						nb_carbs = 0;
+					}
+				}
+			}
+			if(list[k] instanceof Veggies) {
+				if(nb_veggies!=0) {
+					for(int l = 0; l<nb_veggies; l++){
+						shopping = shopping + (totVeggies/nb_veggies) + " grams of " + veggieList.get(l).name + ".\n";
+					}
+					nb_veggies = 0;
+				}
+			}
+			if(list[k] instanceof MeatFishEggs) {
+				if(nb_meat!=0) {
+					for (int n = 0; n < nb_meat; n++) {
+						shopping = shopping + (totMeat / nb_meat) + " grams of " + meatList.get(n).name + ".\n";
+					}
+					nb_meat = 0;
+				}
+			}
+			if(list[k] instanceof Dairy) {
+				if(nb_dairy!=0) {
+					for(int o = 0; o<nb_dairy; o++){
+						shopping = shopping + (totDairy/nb_dairy) + " grams of " + dairyList.get(o).name + ".\n";
+					}
+					nb_dairy = 0;
+				}
+			}
+			if(list[k] instanceof Cheese) {
+				if(nb_cheese!=0) {
+					for(int p = 0; p<nb_cheese; p++){
+						shopping = shopping + (totCheese/nb_cheese) + " grams of " + cheeseList.get(p).name + ".\n";
+					}
+					nb_cheese = 0;
+				}
+			}
 		}
 
 		return (shopping);

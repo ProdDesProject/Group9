@@ -39,6 +39,7 @@ public class MainActivity5 extends AppCompatActivity {
         mealType = getIntent().getExtras().getString("Meal name");
         recipeName = getIntent().getExtras().getString("recipeName");
         Veggies salad = new Veggies("salad");
+        //Veggies tomato = new Veggies("tomato");
         Carbs bread = new Carbs("bread");
         Dairy cream = new Dairy("cream");
         Cheese gouda = new Cheese("gouda");
@@ -46,7 +47,7 @@ public class MainActivity5 extends AppCompatActivity {
         Food[] list_ing = new Food[]{salad, bread, cream, ham, gouda};
         Recipe sandwich = new Recipe(mealType, recipeName, portions, date, list_ing);
 
-        button =findViewById(R.id.button_save);
+        button = findViewById(R.id.button_save);
         list = findViewById(R.id.shopping_list_text);
         shopping_list = findViewById(R.id.shopping_list_text);
         shopping_list.setText(sandwich.info());
