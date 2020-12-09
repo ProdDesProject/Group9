@@ -22,17 +22,6 @@ public class MainActivity5 extends AppCompatActivity {
     String date;
     String mealType;
     String recipeName;
-
-    int intSmall;
-    int intMedium;
-    int intLarge;
-
-
-    public static int strgToInt(String strg){
-        int e = Integer.parseInt(strg);
-        return e;
-    }
-
     public static TextView getList() {
         return list;
     }

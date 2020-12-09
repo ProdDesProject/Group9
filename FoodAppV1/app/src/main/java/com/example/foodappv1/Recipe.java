@@ -13,7 +13,7 @@ public class Recipe extends AppCompatActivity{
 
 	private double totVeggies = 0, totCarbs = 0, totDairy = 0, totMeat = 0, totCheese = 0;
 
-	private int nb_carbs = 0, nb_veggies = 0, nb_dairy = 0, nb_meat = 0, nb_cheese = 0;
+	int nb_carbs = 0, nb_veggies = 0, nb_dairy = 0, nb_meat = 0, nb_cheese = 0;
 
 	String name;
 	String date;
@@ -107,9 +107,6 @@ public class Recipe extends AppCompatActivity{
 						shopping = shopping + (totCarbs / nb_carbs) + " grams of " + carbsList.get(m).name + ".\n";
 					}
 				}
-				else{
-					shopping = shopping + "You don't have any carbs, you should add some to your meal.\n";
-				}
 			}
 			if(list[k] instanceof Veggies) {
 				if(nb_veggies!=0) {
@@ -117,18 +114,12 @@ public class Recipe extends AppCompatActivity{
 						shopping = shopping + (totVeggies/nb_veggies) + " grams of " + veggieList.get(l).name + ".\n";
 					}
 				}
-				else{
-					shopping = shopping + "You don't have any fruit or vegetable, you should add some to your meal.\n";
-				}
 			}
 			if(list[k] instanceof MeatFishEggs) {
 				if(nb_meat!=0) {
-					for(int n = 0; n<nb_meat; n++){
-						shopping = shopping + (totMeat/nb_meat) + " grams of " + meatList.get(n).name + ".\n";
+					for (int n = 0; n < nb_meat; n++) {
+						shopping = shopping + (totMeat / nb_meat) + " grams of " + meatList.get(n).name + ".\n";
 					}
-				}
-				else{
-					shopping = shopping + "You don't have any meat, fish or egg, you should add some to your meal.\n";
 				}
 			}
 			if(list[k] instanceof Dairy) {
@@ -145,6 +136,16 @@ public class Recipe extends AppCompatActivity{
 					}
 				}
 			}
+		}
+
+		if(nb_carbs==0){
+			shopping = shopping + "You don't have any carbs, you should add some to your meal.\n";
+		}
+		if(nb_meat==0){
+			shopping = shopping + "You don't have any meat, fish or egg, you should add some to your meal.\n";
+		}
+		if(nb_veggies==0){
+			shopping = shopping + "You don't have any veggie or fruit, you should add some to your meal.\n";
 		}
 
 		return (shopping);
