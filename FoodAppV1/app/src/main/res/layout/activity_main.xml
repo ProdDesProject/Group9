@@ -65,8 +65,9 @@
             android:layout_width="170sp"
             android:layout_height="50sp"
             android:backgroundTint="@color/text_view_font"
-            android:hint="Type your name"
             android:fontFamily="@font/blockletters1"
+            android:hint="Type your name"
+            android:singleLine="true"
             android:textColor="@color/text_view_font"
             android:textColorHint="@color/text_view_font"
             android:textSize="14sp" />

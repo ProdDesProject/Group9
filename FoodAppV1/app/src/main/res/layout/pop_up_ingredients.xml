@@ -47,7 +47,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:singleLine="true" />
 
             <Space
                 android:layout_width="20dp"

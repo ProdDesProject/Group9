@@ -76,6 +76,7 @@
             android:backgroundTint="@color/dark_green"
             android:fontFamily="@font/blockletters1"
             android:hint="Type the recipe name"
+            android:singleLine="true"
             android:textColor="@color/dark_green"
             android:textColorHint="@color/middle_view_font"
             android:textSize="14sp" />
