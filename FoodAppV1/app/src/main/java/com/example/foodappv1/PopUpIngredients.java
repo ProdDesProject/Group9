@@ -1,5 +1,7 @@
 package com.example.foodappv1;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,12 +11,17 @@ import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import org.json.JSONArray;
 
 public class PopUpIngredients {
 
     public static String ingredient;
+    String[] ingredientsList = new String[10];
 
     public void showPopupWindow(final View view) {
+
 
         //Create a View object yourself through inflater
         LayoutInflater inflater = (LayoutInflater) view.getContext().getSystemService(view.getContext().LAYOUT_INFLATER_SERVICE);
@@ -35,7 +42,9 @@ public class PopUpIngredients {
 
         //Initialize the elements of our window, install the handler
         EditText txtIngredient = (EditText) popupView.findViewById(R.id.ingredient_name);
+        //EditText ingredients = findViewById(R.id.ingredients_list_text);
         //ingredient = txtIngredient.getText().toString();
+
 
         RadioGroup radioGrp = (RadioGroup) popupView.findViewById(R.id.radioGroup_ingredients);
         int radioId = radioGrp.getCheckedRadioButtonId();
@@ -46,6 +55,7 @@ public class PopUpIngredients {
             @Override
             public void onClick(View v) {
                 ingredient = txtIngredient.getText().toString();
+                //ingredients.setText(ingredient);
                 //TODO
                 //close Window
                 popupWindow.dismiss();

@@ -115,8 +115,8 @@ public class MainActivity4 extends AppCompatActivity {
                 PopUpIngredients popUp = new PopUpIngredients();
                 popUp.showPopupWindow(v);
 
-                ingredientsList[0] = PopUpIngredients.ingredient;
-                ingredients.setText(ingredientsList[0]);
+                //ingredientsList[0] = PopUpIngredients.ingredient;
+                //ingredients.setText(ingredientsList[0]);
             }
         });
     }
