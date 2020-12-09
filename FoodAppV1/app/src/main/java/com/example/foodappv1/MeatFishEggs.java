@@ -2,7 +2,7 @@ package com.example.foodappv1;
 
 public class MeatFishEggs extends Food{
 
-	public static String name;
+	public String name;
 
 	public MeatFishEggs(String name) {
 
