@@ -64,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:checked="false"
                     android:fontFamily="@font/pomiere"
-                    android:text="Meat/Fish"
+                    android:text="Meat/Fish/Eggs"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="17sp" />
@@ -80,16 +80,6 @@
                     android:textColor="@color/black"
                     android:textSize="17sp" />
 
-                <RadioButton
-                    android:id="@+id/eggs"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:fontFamily="@font/pomiere"
-                    android:text="Eggs"
-                    android:textAllCaps="false"
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
 
                 <RadioButton
                     android:id="@+id/cheese"
