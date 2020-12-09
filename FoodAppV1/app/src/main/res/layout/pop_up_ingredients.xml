@@ -3,25 +3,55 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="#FFFFFFFF">
+    android:layout_height="match_parent"
+    android:layout_marginStart="25sp"
+    android:layout_marginTop="25dp"
+    android:layout_marginEnd="25sp"
+    android:layout_marginBottom="25sp"
+    android:background="@color/background">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:id="@+id/text_ingredients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/text_view_bg"
+            android:fontFamily="@font/kalam"
+            android:text="Add your ingredient here:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/text_view_font"
+            android:textSize="23sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
             <EditText
                 android:id="@+id/ingredient_name"
-                android:layout_width="wrap_content"
+                android:layout_width="175dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:ems="10"
                 android:inputType="textPersonName" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
 
             <RadioGroup
                 android:id="@+id/radioGroup_ingredients"
@@ -32,48 +62,79 @@
                     android:id="@+id/meat_fish"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Meat/Fish" />
+                    android:checked="false"
+                    android:fontFamily="@font/pomiere"
+                    android:text="Meat/Fish"
+                    android:textAllCaps="false"
+                    android:textSize="17sp" />
 
                 <RadioButton
                     android:id="@+id/fruits_veggies"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Fruits/Veggies" />
+                    android:checked="false"
+                    android:fontFamily="@font/pomiere"
+                    android:text="Fruits/Veggies"
+                    android:textAllCaps="false"
+                    android:textSize="17sp" />
 
                 <RadioButton
                     android:id="@+id/eggs"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Eggs" />
+                    android:checked="false"
+                    android:fontFamily="@font/pomiere"
+                    android:text="Eggs"
+                    android:textAllCaps="false"
+                    android:textSize="17sp" />
 
                 <RadioButton
                     android:id="@+id/cheese"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Cheese" />
+                    android:checked="false"
+                    android:fontFamily="@font/pomiere"
+                    android:text="Cheese"
+                    android:textAllCaps="false"
+                    android:textSize="17sp" />
 
                 <RadioButton
                     android:id="@+id/dairy"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Dairy" />
+                    android:checked="false"
+                    android:fontFamily="@font/pomiere"
+                    android:text="Dairy"
+                    android:textAllCaps="false"
+                    android:textSize="17sp" />
 
                 <RadioButton
                     android:id="@+id/carbs"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Pasta/Rice/Potato" />
+                    android:checked="false"
+                    android:fontFamily="@font/pomiere"
+                    android:text="Pasta/Rice/etc."
+                    android:textAllCaps="false"
+                    android:textSize="17sp" />
             </RadioGroup>
-
-
         </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
 
         <Button
             android:id="@+id/add_ingredient"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Add" />
+            android:fontFamily="@font/pomiere"
+            android:text="Add"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

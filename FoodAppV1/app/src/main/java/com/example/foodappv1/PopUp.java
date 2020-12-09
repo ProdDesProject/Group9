@@ -4,6 +4,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
@@ -38,14 +39,12 @@ public class PopUp {
 
 
         //Handler for clicking on the inactive zone of the window
-
-        popupView.setOnTouchListener(new View.OnTouchListener() {
+        ImageButton close = popupView.findViewById(R.id.imageButton3);
+        close.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onTouch(View v, MotionEvent event) {
-
-                //Close the window when clicked
+            public void onClick(View v) {
+                //close Window
                 popupWindow.dismiss();
-                return true;
             }
         });
     }
