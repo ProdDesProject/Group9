@@ -25,7 +25,6 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
     RadioButton radioButton;
     TextView textView;
     TextView name_display;
-    TextView name_display1;
     String meal;
     String name;
     String test;
@@ -37,7 +36,6 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
         setContentView(R.layout.activity_main2);
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
         name_display= findViewById(R.id.meal_text);
-        name_display1 = findViewById(R.id.ingredients_list_text);
         calendarButton= findViewById(R.id.calendar_button);
         recipes = findViewById(R.id.recipes_button);
         meals = findViewById(R.id.meals_button);
@@ -106,6 +104,7 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
     private void showDatePickerDialog() {
         DatePickerDialog datePickerDialog = new DatePickerDialog(
                 this,
+                R.style.DialogTheme,
                 this,
                 Calendar.getInstance().get(Calendar.YEAR),
                 Calendar.getInstance().get(Calendar.MONTH),

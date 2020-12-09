@@ -14,8 +14,24 @@
         <item name="android:textColor">#FFF</item>
     </style>
 
-    <style name="CalenderViewCustom" parent="Theme.AppCompat">
-        <item name="colorAccent">@color/black</item>
-        <item name="colorPrimary">@color/egg_font</item>
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/calendar_accent</item>
+        <!--selected Item color-->
+        <item name="colorControlActivated">@color/calendar_item</item>
+        <!-- Highlight item color-->
+        <item name="colorControlHighlight">@color/calendar_hl_color</item>
+        <!--Calender Background color -->
+        <item name="android:windowBackground">@color/calendar_bg</item>
+        <!-- Ok Cancel Color-->
+        <item name="android:textColor">@color/calendar_text</item>
+        <!-- Week TextColor-->
+        <item name="android:textColorSecondary">@color/calendar_week</item>
+        <!-- Calender Number color arrow color (< >) -->
+        <item name="android:textColorPrimary">@color/calendar_numbers</item>
+        <!--day , month-->
+        <item name="android:textColorPrimaryInverse">@color/calendar_day</item>
+        <!-- year-->
+        <item name="android:textColorSecondaryInverse">@color/calendar_year</item>
+
     </style>
 </resources>

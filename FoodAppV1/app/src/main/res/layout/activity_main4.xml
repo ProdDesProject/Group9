@@ -61,7 +61,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80sp"
+        android:layout_height="50sp"
         android:id="@+id/section43"
         android:layout_marginStart="15sp"
         android:layout_marginEnd="15sp"
@@ -71,11 +71,11 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/recipe_field"
-            android:layout_width="match_parent"
-            android:layout_height="50sp"
+            android:layout_width="250sp"
+            android:layout_height="64dp"
             android:backgroundTint="@color/dark_green"
-            android:hint="Type the recipe name"
             android:fontFamily="@font/blockletters1"
+            android:hint="Type the recipe name"
             android:textColor="@color/dark_green"
             android:textColorHint="@color/middle_view_font"
             android:textSize="14sp" />
@@ -87,7 +87,7 @@
     <LinearLayout
         android:id="@+id/section44"
         android:layout_width="match_parent"
-        android:layout_height="270dp"
+        android:layout_height="290dp"
         android:layout_below="@+id/section43"
         android:layout_marginStart="15sp"
         android:layout_marginEnd="15sp"
@@ -95,43 +95,102 @@
         android:gravity="center_horizontal|center_vertical"
         android:orientation="vertical">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/ingredients_text"
             android:layout_width="match_parent"
-            android:layout_height="280sp"
-            android:gravity="center_horizontal|center_vertical"
-            android:orientation="vertical">
+            android:layout_height="50dp"
+            android:background="@drawable/middle_view2_bg"
+            android:fontFamily="@font/playtime"
+            android:text="Ingredients:"
+            android:textAlignment="center"
+            android:textColor="@color/dark_green"
+            android:textSize="35sp"
+            tools:ignore="RtlCompat" />
 
-            <TextView
-                android:id="@+id/ingredients_text"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@drawable/middle_view2_bg"
-                android:fontFamily="@font/playtime"
-                android:text="Ingredients:"
-                android:textAlignment="center"
-                android:textColor="@color/dark_green"
-                android:textSize="35sp"
-                tools:ignore="RtlCompat" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10sp" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10sp" />
-
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="210sp"
-                android:layout_gravity="center_vertical">
-
-                <TextView
-                    android:id="@+id/ingredients_list_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="200sp"
-                    android:fontFamily="@font/solicious"
-                    android:text="Add ingredients from database"
-                    android:textColor="@color/dark_green"
-                    android:textSize="24sp" />
-            </ScrollView>
-        </LinearLayout>
+        <TextView
+            android:id="@+id/ingredient1"
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            android:fontFamily="@font/solicious"
+            android:text="Ingredient 1"
+            android:textColor="@color/dark_green"
+            android:textSize="19sp" />
+        <TextView
+            android:id="@+id/ingredient2"
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            android:fontFamily="@font/solicious"
+            android:text="Ingredient 2"
+            android:textColor="@color/dark_green"
+            android:textSize="19sp" />
+        <TextView
+            android:id="@+id/ingredient3"
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            android:fontFamily="@font/solicious"
+            android:text="Ingredient 3"
+            android:textColor="@color/dark_green"
+            android:textSize="19sp" />
+        <TextView
+            android:id="@+id/ingredient4"
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            android:fontFamily="@font/solicious"
+            android:text="Ingredient 4"
+            android:textColor="@color/dark_green"
+            android:textSize="19sp" />
+        <TextView
+            android:id="@+id/ingredient5"
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            android:fontFamily="@font/solicious"
+            android:text="Ingredient 5"
+            android:textColor="@color/dark_green"
+            android:textSize="19sp" />
+        <TextView
+            android:id="@+id/ingredient6"
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            android:fontFamily="@font/solicious"
+            android:text="Ingredient 6"
+            android:textColor="@color/dark_green"
+            android:textSize="19sp" />
+        <TextView
+            android:id="@+id/ingredient7"
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            android:fontFamily="@font/solicious"
+            android:text="Ingredient 7"
+            android:textColor="@color/dark_green"
+            android:textSize="19sp" />
+        <TextView
+            android:id="@+id/ingredient8"
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            android:fontFamily="@font/solicious"
+            android:text="Ingredient 8"
+            android:textColor="@color/dark_green"
+            android:textSize="19sp" />
+        <TextView
+            android:id="@+id/ingredient9"
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            android:fontFamily="@font/solicious"
+            android:text="Ingredient 9"
+            android:textColor="@color/dark_green"
+            android:textSize="19sp" />
+        <TextView
+            android:id="@+id/ingredient10"
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            android:fontFamily="@font/solicious"
+            android:text="Ingredient 10"
+            android:textColor="@color/dark_green"
+            android:textSize="19sp" />
     </LinearLayout>
 
     <LinearLayout

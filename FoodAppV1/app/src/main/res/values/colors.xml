@@ -45,6 +45,20 @@
     <color name="dark_green">#136207</color>
     <color name="text_green">#D9FFBF</color>
 
+    /calendar
+    <color name="calendar_accent">#fdfaf1</color>
+    <color name="calendar_item">#799424</color>
+    <color name="calendar_hl_color">#613f51</color>
+    <color name="calendar_bg">#fdfaf1</color>
+    <color name="calendar_text">#4a2b47</color>
+    <color name="calendar_week">#4a2b47</color>
+    <color name="calendar_numbers">#251230</color>
+    <color name="calendar_day">#4a2b47</color>
+    <color name="calendar_year">#4a2b47</color>
+
+
+
+
 
 
 
