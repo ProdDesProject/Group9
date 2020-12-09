@@ -83,11 +83,11 @@ public class MainActivity4 extends AppCompatActivity {
         ingredients = findViewById(R.id.ingredients_list_text);
         recipeNameField = findViewById(R.id.name_field);
         Intent i = getIntent();
-        intSmall=strgToInt(i.getStringExtra( "small value"));
-        intMedium=strgToInt(i.getStringExtra( "medium value"));
-        intBig=strgToInt(i.getStringExtra( "big value"));
-        date=i.getStringExtra("date");
-        mealType=i.getStringExtra("Meal name");
+        intSmall=strgToInt(i.getExtras().getString( "small value"));
+        intMedium=strgToInt(i.getExtras().getString( "medium value"));
+        intBig=strgToInt(i.getExtras().getString( "big value"));
+        date=i.getExtras().getString("date");
+        mealType=i.getExtras().getString("Meal name");
 
 
         int[] portions = new int[]{intSmall, intMedium, intBig};
@@ -103,8 +103,8 @@ public class MainActivity4 extends AppCompatActivity {
                 i.putExtra("Meal name", mealType);
                 i.putExtra("recipeName", recipeName);
                 startActivity(i);
-                finish();
-                openActivity5();
+                //finish();
+                //openActivity5();
             }
         });
 

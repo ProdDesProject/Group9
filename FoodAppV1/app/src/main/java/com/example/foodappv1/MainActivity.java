@@ -54,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
                 st=name_fld.getText().toString();
                 i.putExtra( "Name value",st);
                 startActivity(i);
-                finish();
-                openActivity2();
+                //finish();
+                //openActivity2();
             }
         });
     }

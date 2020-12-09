@@ -70,8 +70,8 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
                     }
                     i.putExtra("Meal name", meal);
                     startActivity(i);
-                    finish();
-                    openActivity3();
+                    //finish();
+                    //openActivity3();
 
             }
         });

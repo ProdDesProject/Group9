@@ -88,8 +88,8 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
                 i.putExtra( "date", dateString);
                 i.putExtra( "Meal name", mealType);
                 startActivity(i);
-                finish();
-                openActivity4();
+                //finish();
+                //openActivity4();
             }
         });
         meal_date.setOnClickListener(new View.OnClickListener(){
