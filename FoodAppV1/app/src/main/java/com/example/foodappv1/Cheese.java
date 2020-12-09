@@ -1,9 +1,10 @@
 package com.example.foodappv1;
 
-public class Cheese extends Dairy {
+public class Cheese extends Food {
 
-    public Cheese(){
+    public Cheese(String name) {
 
+        super(name);
     }
 
 }

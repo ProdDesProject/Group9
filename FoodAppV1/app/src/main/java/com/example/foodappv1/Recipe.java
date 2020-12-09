@@ -17,13 +17,17 @@ public class Recipe extends AppCompatActivity{
 
 	private double totVeggies = 0, totCarbs = 0, totDairy = 0, totMeat = 0, totCheese = 0;
 
+	private int nb_carbs = 0, nb_veggies = 0, nb_dairy = 0, nb_meat = 0, nb_cheese = 0;
+
 	String name;
 	String date;
 	int[] portions;
 	String type;
-	String[] list;
+	Food[] list;
 
-	public Recipe(String type, String name, int[] portions, String date, String[] list) {
+	String shopping;
+
+	public Recipe(String type, String name, int[] portions, String date, Food[] list) {
 
 		this.name = name;
 		this.date = date;
@@ -40,7 +44,7 @@ public class Recipe extends AppCompatActivity{
 				//lunch multiplied by the number of people eating this portion size to the
 				//previous total
 
-				this.totVeggies = this.totVeggies + this.veggiesFruits[i]*0.3*portions[i];
+				totVeggies = totVeggies + veggiesFruits[i]*0.3*portions[i];
 				totCarbs = totCarbs + carbs[i]*0.4*portions[i];
 				totDairy = totDairy + dairy[i]*0.33*portions[i];
 				totMeat = totMeat + meatFishEggs[i]*0.35*portions[i];
@@ -70,10 +74,64 @@ public class Recipe extends AppCompatActivity{
 
 	public String info() {		//Will print the amount of food needed
 
-			//Shopping list creation
-			double[] shoppingList = new double[]{totVeggies, totCarbs, totDairy, totMeat, totCheese};
+		shopping = "You want to cook " + this.name + " on the " + this.date + ", you will need:\n\n";
 
-			return ("You want to cook " + this.name + " on the " + this.date + ", you will need:\n\n" + this.totVeggies + " grams of " + list[0] + ".\n" + totCarbs + " grams of " + list[1] + ".\n" + totDairy + " grams of " + list[2] + ".\n" + totMeat + " grams of " + list[3] + ".\n" + totCheese + " grams of " + list[4] + ".");
+		for(int j=0; j<list.length; j++) {
+			if (list[j] instanceof Carbs) {
+				nb_carbs ++;
+			}
+			if(list[j] instanceof Veggies) {
+				nb_veggies ++;
+			}
+			if(list[j] instanceof MeatFishEggs) {
+				nb_meat ++;
+			}
+			if(list[j] instanceof Dairy) {
+				nb_dairy ++;
+			}
+			if(list[j] instanceof Cheese) {
+				nb_cheese ++;
+			}
+		}
+
+		for(int k=0; k<list.length; k++){
+			if (list[k] instanceof Carbs) {
+				if(nb_carbs!=0) {
+					shopping = shopping + (totCarbs / nb_carbs) + " grams of " + list[k].name + ".\n";
+				}
+				else{
+					shopping = shopping + "You don't have any carbs, you should add some to your meal.\n";
+				}
+			}
+			if(list[k] instanceof Veggies) {
+				if(nb_veggies!=0) {
+					shopping = shopping + (totVeggies/nb_veggies) + " grams of " + list[k].name + ".\n";
+				}
+				else{
+					shopping = shopping + "You don't have any fruit or vegetable, you should add some to your meal.\n";
+				}
+			}
+			if(list[k] instanceof MeatFishEggs) {
+				if(nb_meat!=0) {
+					shopping = shopping + (totMeat/nb_meat) + " grams of " + list[k].toString() + ".\n";
+				}
+				else{
+					shopping = shopping + "You don't have any meat, fish or egg, you should add some to your meal.\n";
+				}
+			}
+			if(list[k] instanceof Dairy) {
+				if(nb_dairy!=0) {
+					shopping = shopping + (totDairy/nb_dairy) + " grams of " + list[k].toString() + ".\n";
+				}
+			}
+			if(list[k] instanceof Cheese) {
+				if(nb_cheese!=0) {
+					shopping = shopping + (totCheese/nb_cheese) + " grams of " + list[k].toString() + ".\n";
+				}
+			}
+		}
+
+		return (shopping);
 
 		}
 }
