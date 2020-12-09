@@ -137,7 +137,7 @@
 
         <ImageButton
             android:id="@+id/calendar_button"
-            android:layout_width="29dp"
+            android:layout_width="40dp"
             android:layout_height="40sp"
             android:background="@color/background"
             android:scaleType="fitCenter"

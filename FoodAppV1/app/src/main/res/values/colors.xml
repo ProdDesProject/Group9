@@ -46,15 +46,15 @@
     <color name="text_green">#D9FFBF</color>
 
     /calendar
-    <color name="calendar_accent">#fdfaf1</color>
-    <color name="calendar_item">#799424</color>
-    <color name="calendar_hl_color">#613f51</color>
-    <color name="calendar_bg">#fdfaf1</color>
-    <color name="calendar_text">#4a2b47</color>
-    <color name="calendar_week">#4a2b47</color>
-    <color name="calendar_numbers">#251230</color>
-    <color name="calendar_day">#4a2b47</color>
-    <color name="calendar_year">#4a2b47</color>
+    <color name="calendar_accent">#401551</color>
+    <color name="calendar_item">#a746ce</color>
+    <color name="calendar_hl_color">#70258d</color>
+    <color name="calendar_bg">#ffffff</color>
+    <color name="calendar_text">#401551</color>
+    <color name="calendar_week">#401551</color>
+    <color name="calendar_numbers">#805492</color>
+    <color name="calendar_day">#f0dff6</color>
+    <color name="calendar_year">#e4c7f0</color>
 
 
 
