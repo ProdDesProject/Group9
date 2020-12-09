@@ -2,9 +2,10 @@ package com.example.foodappv1;
 
 public class Dairy extends Food{
 
-	public Dairy(String name) {
+	public static String name;
 
-		super(name);
+	public Dairy(String name) {
+		this.name = name;
 	}
 
 }

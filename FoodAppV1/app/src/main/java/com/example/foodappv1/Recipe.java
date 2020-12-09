@@ -1,12 +1,8 @@
 package com.example.foodappv1;
 
-import android.widget.TextView;
-
-
+import java.net.CookieHandler;
+import java.util.ArrayList;
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.text.Format;
-import java.text.SimpleDateFormat;
 
 public class Recipe extends AppCompatActivity{
 
@@ -24,6 +20,11 @@ public class Recipe extends AppCompatActivity{
 	int[] portions;
 	String type;
 	Food[] list;
+	ArrayList<Carbs> carbsList = new ArrayList<Carbs>(4);
+	ArrayList<Veggies> veggieList = new ArrayList<Veggies>(6);
+	ArrayList<MeatFishEggs> meatList = new ArrayList<MeatFishEggs>(4);
+	ArrayList<Dairy> dairyList = new ArrayList<Dairy>(3);
+	ArrayList<Cheese> cheeseList = new ArrayList<Cheese>(4);
 
 	String shopping;
 
@@ -79,25 +80,32 @@ public class Recipe extends AppCompatActivity{
 		for(int j=0; j<list.length; j++) {
 			if (list[j] instanceof Carbs) {
 				nb_carbs ++;
+				carbsList.add((Carbs) list[j]);
 			}
 			if(list[j] instanceof Veggies) {
 				nb_veggies ++;
+				veggieList.add((Veggies) list[j]);
 			}
 			if(list[j] instanceof MeatFishEggs) {
 				nb_meat ++;
+				meatList.add((MeatFishEggs) list[j]);
 			}
 			if(list[j] instanceof Dairy) {
 				nb_dairy ++;
+				dairyList.add((Dairy) list[j]);
 			}
 			if(list[j] instanceof Cheese) {
 				nb_cheese ++;
+				cheeseList.add((Cheese) list[j]);
 			}
 		}
 
 		for(int k=0; k<list.length; k++){
 			if (list[k] instanceof Carbs) {
 				if(nb_carbs!=0) {
-					shopping = shopping + (totCarbs / nb_carbs) + " grams of " + list[k].name + ".\n";
+					for(int m = 0; m<nb_carbs; m++){
+						shopping = shopping + (totCarbs / nb_carbs) + " grams of " + carbsList.get(m).name + ".\n";
+					}
 				}
 				else{
 					shopping = shopping + "You don't have any carbs, you should add some to your meal.\n";
@@ -105,7 +113,9 @@ public class Recipe extends AppCompatActivity{
 			}
 			if(list[k] instanceof Veggies) {
 				if(nb_veggies!=0) {
-					shopping = shopping + (totVeggies/nb_veggies) + " grams of " + list[k].name + ".\n";
+					for(int l = 0; l<nb_veggies; l++){
+						shopping = shopping + (totVeggies/nb_veggies) + " grams of " + veggieList.get(l).name + ".\n";
+					}
 				}
 				else{
 					shopping = shopping + "You don't have any fruit or vegetable, you should add some to your meal.\n";
@@ -113,7 +123,9 @@ public class Recipe extends AppCompatActivity{
 			}
 			if(list[k] instanceof MeatFishEggs) {
 				if(nb_meat!=0) {
-					shopping = shopping + (totMeat/nb_meat) + " grams of " + list[k].toString() + ".\n";
+					for(int n = 0; n<nb_meat; n++){
+						shopping = shopping + (totMeat/nb_meat) + " grams of " + meatList.get(n).name + ".\n";
+					}
 				}
 				else{
 					shopping = shopping + "You don't have any meat, fish or egg, you should add some to your meal.\n";
@@ -121,12 +133,16 @@ public class Recipe extends AppCompatActivity{
 			}
 			if(list[k] instanceof Dairy) {
 				if(nb_dairy!=0) {
-					shopping = shopping + (totDairy/nb_dairy) + " grams of " + list[k].toString() + ".\n";
+					for(int o = 0; o<nb_dairy; o++){
+						shopping = shopping + (totDairy/nb_dairy) + " grams of " + dairyList.get(o).name + ".\n";
+					}
 				}
 			}
 			if(list[k] instanceof Cheese) {
 				if(nb_cheese!=0) {
-					shopping = shopping + (totCheese/nb_cheese) + " grams of " + list[k].toString() + ".\n";
+					for(int p = 0; p<nb_cheese; p++){
+						shopping = shopping + (totCheese/nb_cheese) + " grams of " + cheeseList.get(p).name + ".\n";
+					}
 				}
 			}
 		}
