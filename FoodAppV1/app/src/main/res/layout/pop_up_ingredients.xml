@@ -13,8 +13,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_centerInParent="true">
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/text_ingredients"
@@ -46,9 +46,15 @@
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:backgroundTint="@color/text_view_font"
                 android:ems="10"
+                android:fontFamily="@font/blockletters1"
+                android:hint="add Ingredient"
                 android:inputType="textPersonName"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:textColor="@color/text_view_font"
+                android:textColorHint="#A8356211"
+                android:textSize="14sp" />
 
             <Space
                 android:layout_width="20dp"
@@ -99,7 +105,7 @@
                     android:layout_height="wrap_content"
                     android:checked="false"
                     android:fontFamily="@font/pomiere"
-                    android:text="Dairy"
+                    android:text="Dairy (except cheese)"
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="17sp" />
@@ -114,8 +120,18 @@
                     android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="17sp" />
+
             </RadioGroup>
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="300"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:gravity="right"
+            android:text="The last category includes all ingredients containing carbohydrates such as bread, all sorts of grain, potatoes etc."
+            android:textColor="#E1888383" />
 
         <Space
             android:layout_width="match_parent"
@@ -134,5 +150,19 @@
             android:textStyle="bold" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button_more"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
+        android:layout_marginStart="320dp"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="430dp"
+        android:cursorVisible="false"
+        android:fontFamily="@font/pomiere"
+        android:text="?"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
