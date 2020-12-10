@@ -26,6 +26,7 @@ public class PopUpIngredients {
         //Create a View object yourself through inflater
         LayoutInflater inflater = (LayoutInflater) view.getContext().getSystemService(view.getContext().LAYOUT_INFLATER_SERVICE);
         View popupView = inflater.inflate(R.layout.pop_up_ingredients, null);
+        View popupView1 = inflater.inflate(R.layout.activity_main4, null);
 
         //Specify the length and width through constants
         int width = RelativeLayout.LayoutParams.MATCH_PARENT;
@@ -42,7 +43,7 @@ public class PopUpIngredients {
 
         //Initialize the elements of our window, install the handler
         EditText txtIngredient = (EditText) popupView.findViewById(R.id.ingredient_name);
-        //EditText ingredients = findViewById(R.id.ingredients_list_text);
+        //TextView ingredients = popupView1.findViewById(R.id.ingredients_list_text);
         //ingredient = txtIngredient.getText().toString();
 
 
@@ -55,7 +56,7 @@ public class PopUpIngredients {
             @Override
             public void onClick(View v) {
                 ingredient = txtIngredient.getText().toString();
-                //ingredients.setText(ingredient);
+                //ingredients.setText("cafwfww");
                 //TODO
                 //close Window
                 popupWindow.dismiss();

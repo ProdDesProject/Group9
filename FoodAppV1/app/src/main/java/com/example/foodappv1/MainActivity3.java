@@ -82,13 +82,12 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
                     big = "0";
                 }
                 dateString=show_meal_date.getText().toString();
-                i.putExtra( "small value", small);
-                i.putExtra( "medium value", medium);
-                i.putExtra( "big value", big);
+                int[] portions = new int[]{Integer.parseInt(small), Integer.parseInt(medium), Integer.parseInt(big)};
+                i.putExtra( "portions", portions);
                 i.putExtra( "date", dateString);
                 i.putExtra( "Meal name", mealType);
                 startActivity(i);
-                //finish();
+                finish();
                 //openActivity4();
             }
         });
