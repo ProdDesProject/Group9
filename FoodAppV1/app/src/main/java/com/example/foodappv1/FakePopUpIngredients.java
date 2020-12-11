@@ -23,11 +23,13 @@ public class FakePopUpIngredients extends AppCompatActivity {
     RadioButton radioButton;
     TextView ingredients;
     String [] ingredient = new String[10];
+    String [] ingredientCategory = new String[10];
     String[] test;
     int[] portions;
     String date;
     String mealType;
     String recipeName;
+    String mealCategory;
     int counter;
 
     @Override
@@ -64,8 +66,13 @@ public class FakePopUpIngredients extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent( FakePopUpIngredients.this, MainActivity4.class);
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+                radioButton = (RadioButton) findViewById(selectedId);
+                mealCategory = (String) radioButton.getText();
                 ingredient[counter-1] = ingredientName.getText().toString();
+                ingredientCategory[counter-1] = mealCategory;
                 i.putExtra( "ingredient", ingredient);
+                i.putExtra( "ingredientCategory", ingredientCategory);
                 i.putExtra( "portions", portions);
                 i.putExtra( "date", date);
                 i.putExtra( "Meal name", mealType);
