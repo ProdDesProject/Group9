@@ -159,7 +159,7 @@
         android:layout_marginTop="430dp"
         android:cursorVisible="false"
         android:fontFamily="@font/pomiere"
-        android:text="?"
+        android:text="\?"
         android:textColor="@color/white"
         android:textSize="10sp"
         android:textStyle="bold" />
