@@ -43,6 +43,7 @@ public class MainActivity4 extends AppCompatActivity {
     String recipeName;
     String[] ingredientName = new String[9];
     String[] test;
+    String[] mealCategory;
 
 
 
@@ -86,12 +87,12 @@ public class MainActivity4 extends AppCompatActivity {
             recipeName = i.getExtras().getString("recipeName");
         }
         catch(Exception e){
-            recipeName = "";
         }
 
 
         try {
             test = getIntent().getExtras().getStringArray("ingredient");
+            mealCategory = getIntent().getExtras().getStringArray("ingredientCategory");
             counter = getIntent().getExtras().getInt("counter");
             ingredients1.setText(test[0]);
             ingredients2.setText(test[1]);
@@ -133,6 +134,8 @@ public class MainActivity4 extends AppCompatActivity {
                 i.putExtra("date", date);
                 i.putExtra("Meal name", mealType);
                 i.putExtra("recipeName", recipeName);
+                i.putExtra("ingredientsArray", test);
+                i.putExtra("mealCategory", mealCategory);
                 startActivity(i);
                 //finish();
                 //openActivity5();
