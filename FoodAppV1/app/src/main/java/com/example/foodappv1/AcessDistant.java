@@ -26,7 +26,7 @@ public class AcessDistant implements AsyncResponse {
 
         Log.d("Server", "*********" + output);
         //%
-        String[] message = output.split("%");
+        String[] message = output.split("%%%");
         //message[0]=  "chooseingredient", "addingredient" ,"showmeal","addmeal", "Error  !"
         //message[1]=  The rest of the message
 
@@ -65,4 +65,15 @@ public class AcessDistant implements AsyncResponse {
         //Call to server
         accessData.execute(SERVERADDR);
     }
+    public void getIngredient(){
+        AccessHTTP accessData = new AccessHTTP();
+        //link of delegation
+        accessData.delegate = this;
+        //Add parameter
+        accessData.addParam("operation", "chooseingredient");
+
+        //Call to server
+        accessData.execute(SERVERADDR);
+    }
+
 }

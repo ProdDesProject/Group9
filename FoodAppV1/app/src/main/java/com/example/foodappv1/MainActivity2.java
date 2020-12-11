@@ -30,6 +30,7 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
     String test;
     ImageButton calendarButton;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,6 +88,7 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
             public void onClick(View v) {
                 PopUp popUp = new PopUp();
                 popUp.showPopupWindow(v, "List of meals from database");
+
 
             }
         });

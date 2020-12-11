@@ -2,10 +2,8 @@ package com.example.foodappv1;
 
 import android.view.Gravity;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -13,6 +11,7 @@ import android.widget.TextView;
 public class PopUp {
 
     public void showPopupWindow(final View view, String list) {
+
 
         //Create a View object yourself through inflater
         LayoutInflater inflater = (LayoutInflater) view.getContext().getSystemService(view.getContext().LAYOUT_INFLATER_SERVICE);
@@ -37,7 +36,6 @@ public class PopUp {
         text.setText(list);
 
 
-
         //Handler for clicking on the inactive zone of the window
         ImageButton close = popupView.findViewById(R.id.imageButton3);
         close.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +45,8 @@ public class PopUp {
                 popupWindow.dismiss();
             }
         });
+
     }
+
 
 }

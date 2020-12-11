@@ -17,13 +17,11 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 
-public class AccessHTTP extends AsyncTask <String, Integer, Long> {
+public class AccessHTTP extends AsyncTask<String, Integer, Long> {
 
     private ArrayList<NameValuePair> parameters;
     private String ret = null;
     public AsyncResponse delegate = null;
-
-
 
     /**
      * builder
@@ -57,7 +55,7 @@ public class AccessHTTP extends AsyncTask <String, Integer, Long> {
             paramCnx.setEntity(new UrlEncodedFormEntity(parameters));
             //connection and send of parameters and wait for response
             HttpResponse response = cnxHttp.execute(paramCnx);
-            // Transformation of the reponse
+            // Transformation of the response
             ret = EntityUtils.toString(response.getEntity());
 
         } catch (UnsupportedEncodingException e){
@@ -74,8 +72,8 @@ public class AccessHTTP extends AsyncTask <String, Integer, Long> {
 
     @Override
     protected void onPostExecute(Long result){
-        delegate.processFinish(ret);
-        //delegate.processFinish((ret.toString()));
+        //delegate.processFinish(ret);
+        delegate.processFinish((ret.toString()));
     }
 }
 

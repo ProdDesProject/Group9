@@ -1,18 +1,24 @@
 package com.example.foodappv1;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.sql.Date;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
 
 
 public class MainActivity5 extends AppCompatActivity {
-    private Remote remote;
+    //private Remote remote;
     private static TextView list; //nm = new modification
     private Button button;
     private Button button2;
@@ -22,16 +28,23 @@ public class MainActivity5 extends AppCompatActivity {
     String date;
     String mealType;
     String recipeName;
+
+    public static final String URL_ADD_MEAL = "http://stulinux159.ipt.oamk.fi/data.php?operation=addmeal";
+    public static final String URL_SHOW_MEAL = "http://stulinux159.ipt.oamk.fi/data.php?operation=showmeal";
+    public static final String URL_CHOOSE_INGREDIENT = "http://stulinux159.ipt.oamk.fi/data.php?operation=chooseingredient";
+    public static final String URL_ADD_INGREDIENT = "http://stulinux159.ipt.oamk.fi/data.php?operation=addingredient";
+
     public static TextView getList() {
         return list;
     }
-     private void init(){
+    /*
+    private void init(){
          this.remote = Remote.getInstance(this); //db
      }
-
+*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        init();
+        //init();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
         portions = getIntent().getExtras().getIntArray("portions");
@@ -51,18 +64,18 @@ public class MainActivity5 extends AppCompatActivity {
         list = findViewById(R.id.shopping_list_text);
         shopping_list = findViewById(R.id.shopping_list_text);
         shopping_list.setText(sandwich.info());
+        //AcessDistant a = new AcessDistant();
+        //a.getIngredient();
+
 
         button.setOnClickListener(new View.OnClickListener() {
-            private Remote remote;
+            //private Remote remote;
 
             @Override
             public void onClick(View v) {
                 openActivity6();
             }
-            private void showResults(String recipeName, String typeMeal, Date date /*, String ingredientName, String category*/){
-                this.remote.addMeal(recipeName, typeMeal, date, this);
-                //this.remote.addIngredient(ingredientName,category);
-            }
+
         });
 
         button2 = findViewById(R.id.button_modify);
@@ -73,6 +86,65 @@ public class MainActivity5 extends AppCompatActivity {
                 openActivity4();
             }
         });
+    }
+
+    //Add Meal
+    public void add_meal(View view){
+        //final String name = etName.getText().toString();
+        //final String price = etPrice.getText().toString();
+        //final String desc = etDesc.getText().toString();
+
+        class Product extends AsyncTask<Void, Void, String> {
+
+            ProgressDialog pdLoading = new ProgressDialog(MainActivity5.this);
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+
+                //this method will be running on UI thread
+                pdLoading.setMessage("\tLoading...");
+                pdLoading.setCancelable(false);
+                pdLoading.show();
+            }
+
+            @Override
+            protected String doInBackground(Void... voids) {
+                //creating request handler object
+                RequestHandler requestHandler = new RequestHandler();
+
+                //creating request parameters
+                HashMap<String, String> params = new HashMap<>();
+                params.put("meal_name", recipeName);
+                params.put("meal_type", mealType);
+                params.put("meal_date", date);
+
+                //returning the response
+                return requestHandler.sendPostRequest(URL_ADD_MEAL, params);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                pdLoading.dismiss();
+
+                try {
+                    //converting response to json object
+                    JSONObject obj = new JSONObject(s);
+                    //if no error in response
+                    if (!obj.getBoolean("error")) {
+                        Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_LONG).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(MainActivity5.this, "Exception: "+e, Toast.LENGTH_LONG).show();
+                }
+            }
+
+        }
+
+        Product prod_exec = new Product();
+        prod_exec.execute();
     }
 
     public void openActivity6() {

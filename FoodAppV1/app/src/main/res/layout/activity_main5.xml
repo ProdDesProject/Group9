@@ -55,7 +55,8 @@
             android:layout_height="10sp" />
 
         <ScrollView
-            android:layout_width="match_parent"
+            android:id="@+id/array_ingredient"
+            android:layout_width="318dp"
             android:layout_height="360sp"
             android:layout_gravity="center_vertical">
 

@@ -7,8 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import org.json.JSONArray;
 
-import java.sql.Date;
-
 public final class Remote extends AppCompatActivity {
 
     private static Remote instance = null;
@@ -22,13 +20,13 @@ public final class Remote extends AppCompatActivity {
 
 
     public static final Remote getInstance(Context context) {
-        /*if (context != null){
+        if (context != null){
             Remote.context=context;
-        }*/
+        }
         if (Remote.instance == null) {
             Remote.instance= new Remote();
             accessDistant = new AcessDistant();
-            //accessDistant.send(  "chooseingredient", new JSONArray());
+            accessDistant.send(  "chooseingredient", new JSONArray());
             accessDistant.send(  "showmeal", new JSONArray());
         }
         return Remote.instance;
@@ -39,8 +37,8 @@ public final class Remote extends AppCompatActivity {
         accessDistant.send(  "addingredient", ingredient.convertToJSONArrayI());
     }
 
-    public void addMeal(String recipeName, String mealType, Date date, View.OnClickListener context){
-        meal = new Meal(recipeName, mealType, date);
+    public void addMeal(String recipeName, String mealType,/*Date date*/ View.OnClickListener context){
+        meal = new Meal(recipeName, mealType/*, date*/);
         accessDistant.send(  "addmeal", meal.convertToJSONArrayM());
     }
 

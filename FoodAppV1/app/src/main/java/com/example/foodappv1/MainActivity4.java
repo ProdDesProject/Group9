@@ -1,58 +1,25 @@
 package com.example.foodappv1;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.json.JSONObject;
+
+import java.util.HashMap;
+
 public class MainActivity4 extends AppCompatActivity {
 
-    // Ouma's modification
-    private Remote remote;
-    private static AcessDistant accessDistant;
-    private static MainActivity4 instance = null;
-
-
-    /**
-     * builder private
-     */
-    //private MainActivity4() { super(); }
-
-    /**
-     * instance creation
-     *
-     * @return instance
-     */
-/*
-    public static final MainActivity4 getInstance(Context context) {
-        if (MainActivity4.instance == null) {
-            MainActivity4.instance= new MainActivity4();
-            accessDistant = new AcessDistant();
-            accessDistant.send(  "chooseingredient", new JSONArray());
-        }
-        return MainActivity4.instance;
-    }
-
-    public JSONArray convertToJSONArray() {
-        List theList = new ArrayList();
-        theList.add(ingredients);
-        //theList.add();
-        return new JSONArray(theList);
-    }
-
-    private String ingredientName;
-
-    public Ingredient(ingredientName){
-        this.ingredientName= ingredientName;
-    }
-
-    public void getIngredient(){
-
-    }*/
-    // end modification
+    public static final String URL_CHOOSE_INGREDIENT = "http://stulinux159.ipt.oamk.fi/chooseingredient.php";
+    private SearchView search_ingredient;
 
     private Button btn_continue;
     private Button btn_addIngredient;
@@ -76,6 +43,7 @@ public class MainActivity4 extends AppCompatActivity {
     String recipeName;
     String[] ingredientName = new String[9];
     String[] test;
+
 
 
     int counter = 0;
@@ -139,16 +107,16 @@ public class MainActivity4 extends AppCompatActivity {
 
         }
         catch(Exception e){
-                ingredients1.setText("");
-                ingredients2.setText("");
-                ingredients3.setText("");
-                ingredients4.setText("");
-                ingredients5.setText("");
-                ingredients6.setText("");
-                ingredients7.setText("");
-                ingredients8.setText("");
-                ingredients9.setText("");
-                ingredients10.setText("");
+            ingredients1.setText("");
+            ingredients2.setText("");
+            ingredients3.setText("");
+            ingredients4.setText("");
+            ingredients5.setText("");
+            ingredients6.setText("");
+            ingredients7.setText("");
+            ingredients8.setText("");
+            ingredients9.setText("");
+            ingredients10.setText("");
 
         }
 
@@ -191,6 +159,66 @@ public class MainActivity4 extends AppCompatActivity {
                 //ingredients.setText(ingredientsList[0]);
             }
         });
+    }
+
+    //Show Product
+    public void show_ingredient(View view){
+        final String igd_name = search_ingredient.getQuery().toString();
+
+        class show_prod extends AsyncTask<Void, Void, String> {
+
+            ProgressDialog pdLoading = new ProgressDialog(MainActivity4.this);
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+
+                //this method will be running on UI thread
+                pdLoading.setMessage("\tLoading...");
+                pdLoading.setCancelable(false);
+                pdLoading.show();
+            }
+
+            @Override
+            protected String doInBackground(Void... voids) {
+                //creating request handler object
+                RequestHandler requestHandler = new RequestHandler();
+
+                //creating request parameters
+                HashMap<String, String> params = new HashMap<>();
+                params.put("igd_name", igd_name);
+
+                //returing the response
+                return requestHandler.sendPostRequest(URL_CHOOSE_INGREDIENT, params);
+            }
+
+            @Override
+            protected void onPostExecute(String s){
+                super.onPostExecute(s);
+                pdLoading.dismiss();
+
+                try{
+                    //Converting response to JSON Object
+                    JSONObject obj = new JSONObject(s);
+
+                    //if no error in response
+                    if (!obj.getBoolean("error")){
+                        Toast.makeText(MainActivity4.this, obj.getString("message"), Toast.LENGTH_LONG).show();
+                        //Make TextViews Visible
+                        ingredients10.setVisibility(View.VISIBLE);
+
+                        //Set retrieved text to TextViews
+                        ingredients10.setText("Name: "+obj.getString("igd_name"));
+
+                    }
+                } catch (Exception e ){
+                    Toast.makeText(MainActivity4.this, "Exception: "+e, Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+
+        show_prod show = new show_prod();
+        show.execute();
     }
     public void openActivity5() {
         Intent intent = new Intent (this, MainActivity5.class);
