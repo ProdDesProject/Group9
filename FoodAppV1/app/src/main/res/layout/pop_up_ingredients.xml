@@ -35,7 +35,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <Space
                 android:layout_width="15dp"
@@ -43,7 +43,7 @@
 
             <EditText
                 android:id="@+id/ingredient_name"
-                android:layout_width="175dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:backgroundTint="@color/text_view_font"
@@ -126,10 +126,9 @@
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="right"
-            android:gravity="right"
+            android:gravity="left"
             android:text="The last category includes all ingredients containing carbohydrates such as bread, all sorts of grain, potatoes etc."
             android:textColor="#E1888383" />
 
