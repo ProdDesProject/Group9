@@ -129,7 +129,7 @@ public class MainActivity4 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i= new Intent( MainActivity4.this, MainActivity5.class);
-                recipeName=recipeNameField.getText().toString();
+                //recipeName=recipeNameField.getText().toString();
                 i.putExtra("portions", portions);
                 i.putExtra("date", date);
                 i.putExtra("Meal name", mealType);
@@ -147,6 +147,11 @@ public class MainActivity4 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i= new Intent( MainActivity4.this, FakePopUpIngredients.class);
+                if(recipeNameField.getText().toString().matches("")){
+
+                }else{
+                    recipeName=recipeNameField.getText().toString();
+                }
                 i.putExtra("portions", portions);
                 i.putExtra("date", date);
                 i.putExtra("Meal name", mealType);

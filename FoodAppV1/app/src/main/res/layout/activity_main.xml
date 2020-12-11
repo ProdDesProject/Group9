@@ -36,20 +36,20 @@
         android:layout_height="100sp"
         android:gravity="center_horizontal|center_vertical">
 
-    <TextView
-        android:id="@+id/welcome_text"
-        android:layout_width="match_parent"
-        android:layout_height="80sp"
-        android:layout_marginStart="15sp"
-        android:layout_marginEnd="15sp"
-        android:fontFamily="@font/kalam"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="Hi there! Welcome to dinner is readydo!"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:background="@drawable/text_view_bg"
-        android:textColor="@color/text_view_font"
-        android:textSize="23sp" />
+        <TextView
+            android:id="@+id/welcome_text"
+            android:layout_width="match_parent"
+            android:layout_height="80sp"
+            android:layout_marginStart="15sp"
+            android:layout_marginEnd="15sp"
+            android:background="@drawable/text_view_bg"
+            android:fontFamily="@font/kalam"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Hi there! Welcome to Lunchbox!"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/text_view_font"
+            android:textSize="23sp" />
     </LinearLayout>
 
     <LinearLayout
