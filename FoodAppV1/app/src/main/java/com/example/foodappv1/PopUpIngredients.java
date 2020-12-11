@@ -43,9 +43,6 @@ public class PopUpIngredients {
 
         //Initialize the elements of our window, install the handler
         EditText txtIngredient = (EditText) popupView.findViewById(R.id.ingredient_name);
-        //TextView ingredients = popupView1.findViewById(R.id.ingredients_list_text);
-        //ingredient = txtIngredient.getText().toString();
-
 
         RadioGroup radioGrp = (RadioGroup) popupView.findViewById(R.id.radioGroup_ingredients);
         int radioId = radioGrp.getCheckedRadioButtonId();
@@ -56,7 +53,6 @@ public class PopUpIngredients {
             @Override
             public void onClick(View v) {
                 ingredient = txtIngredient.getText().toString();
-                //ingredients.setText("cafwfww");
                 //TODO
                 //close Window
                 popupWindow.dismiss();

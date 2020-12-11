@@ -23,11 +23,14 @@ public class MainActivity5 extends AppCompatActivity {
     private Button button;
     private Button button2;
     TextView shopping_list;
-    private TextView other_ingredients;
     int[] portions;
     String date;
     String mealType;
     String recipeName;
+    String[] ingredients;
+    String[] categories;
+    Food[] ingredientList;
+    int nb_ingredients = 0;
 
     public static final String URL_ADD_MEAL = "http://stulinux159.ipt.oamk.fi/data.php?operation=addmeal";
     public static final String URL_SHOW_MEAL = "http://stulinux159.ipt.oamk.fi/data.php?operation=showmeal";
@@ -51,6 +54,35 @@ public class MainActivity5 extends AppCompatActivity {
         date = getIntent().getExtras().getString("date");
         mealType = getIntent().getExtras().getString("Meal name");
         recipeName = getIntent().getExtras().getString("recipeName");
+        ingredients = getIntent().getExtras().getStringArray("ingredientsArray");
+        categories = getIntent().getExtras().getStringArray("mealCategory");
+
+        /*for(int i=0; i<10; i++){
+            if(categories[i]=="Pasta/Rice/etc."){
+                Carbs newcarb = new Carbs(ingredients[i]);
+                ingredientList[i] = newcarb;
+            }
+            else if(categories[i]=="Cheese"){
+                Cheese newcheese = new Cheese(ingredients[i]);
+                ingredientList[i] = newcheese;
+            }
+            else if(categories[i]=="Dairy (except cheese)"){
+                Dairy newdairy = new Dairy(ingredients[i]);
+                ingredientList[i] = newdairy;
+            }
+            else if(categories[i]=="Fruits/Veggies"){
+                Veggies newfruit = new Veggies(ingredients[i]);
+                ingredientList[i] = newfruit;
+            }
+            else if(categories[i]=="Meat/Fish/Eggs"){
+                MeatFishEggs newmeat = new MeatFishEggs(ingredients[i]);
+                ingredientList[i] = newmeat;
+            }
+            else {
+                break;
+            }
+        }*/
+
         Veggies salad = new Veggies("salad");
         Veggies tomato = new Veggies("tomato");
         Carbs bread = new Carbs("bread");
