@@ -29,7 +29,7 @@ public class MainActivity5 extends AppCompatActivity {
     String recipeName;
     String[] ingredients;
     String[] categories;
-    Food[] ingredientList;
+    Food[] ingredientList = new Food[10];
     int nb_ingredients = 0;
 
     public static final String URL_ADD_MEAL = "http://stulinux159.ipt.oamk.fi/data.php?operation=addmeal";
@@ -57,45 +57,41 @@ public class MainActivity5 extends AppCompatActivity {
         ingredients = getIntent().getExtras().getStringArray("ingredientsArray");
         categories = getIntent().getExtras().getStringArray("mealCategory");
 
-        /*for(int i=0; i<10; i++){
-            if(categories[i]=="Pasta/Rice/etc."){
-                Carbs newcarb = new Carbs(ingredients[i]);
-                ingredientList[i] = newcarb;
-            }
-            else if(categories[i]=="Cheese"){
-                Cheese newcheese = new Cheese(ingredients[i]);
-                ingredientList[i] = newcheese;
-            }
-            else if(categories[i]=="Dairy (except cheese)"){
-                Dairy newdairy = new Dairy(ingredients[i]);
-                ingredientList[i] = newdairy;
-            }
-            else if(categories[i]=="Fruits/Veggies"){
-                Veggies newfruit = new Veggies(ingredients[i]);
-                ingredientList[i] = newfruit;
-            }
-            else if(categories[i]=="Meat/Fish/Eggs"){
-                MeatFishEggs newmeat = new MeatFishEggs(ingredients[i]);
-                ingredientList[i] = newmeat;
-            }
-            else {
-                break;
-            }
-        }*/
-
-        Veggies salad = new Veggies("salad");
-        Veggies tomato = new Veggies("tomato");
-        Carbs bread = new Carbs("bread");
-        Dairy cream = new Dairy("cream");
-        Cheese gouda = new Cheese("gouda");
-        MeatFishEggs ham = new MeatFishEggs("ham");
-        Food[] list_ing = new Food[]{salad, bread, cream, ham, tomato, gouda};
-        Recipe sandwich = new Recipe(mealType, recipeName, portions, date, list_ing);
-
         button = findViewById(R.id.button_save);
         list = findViewById(R.id.shopping_list_text);
         shopping_list = findViewById(R.id.shopping_list_text);
-        shopping_list.setText(categories[0]);
+
+
+        for(int i=0; i<10; i++){
+            if(categories[i]!=null){
+            if((categories[i].compareToIgnoreCase("Pasta/Rice/etc."))==0){
+                Carbs newcarb = new Carbs(ingredients[i]);
+                ingredientList[i] = newcarb;
+            }
+            else if((categories[i].compareToIgnoreCase("Cheese"))==0){
+                Cheese newcheese = new Cheese(ingredients[i]);
+                ingredientList[i] = newcheese;
+            }
+            else if((categories[i].compareToIgnoreCase("Dairy (except cheese)"))==0){
+                Dairy newdairy = new Dairy(ingredients[i]);
+                ingredientList[i] = newdairy;
+            }
+            else if((categories[i].compareToIgnoreCase("Fruits/Veggies"))==0){
+                Veggies newfruit = new Veggies(ingredients[i]);
+                ingredientList[i] = newfruit;
+            }
+            else if((categories[i].compareToIgnoreCase("Meat/Fish/Eggs"))==0){
+                MeatFishEggs newmeat = new MeatFishEggs(ingredients[i]);
+                ingredientList[i] = newmeat;
+            }}
+            else {
+                break;
+            }
+        }
+
+        Recipe sandwich = new Recipe(mealType, recipeName, portions, date, ingredientList);
+        shopping_list.setText(sandwich.info());
+
         //AcessDistant a = new AcessDistant();
         //a.getIngredient();
 
