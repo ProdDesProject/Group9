@@ -159,6 +159,7 @@ public class MainActivity4 extends AppCompatActivity {
                 counter++;
                 i.putExtra("counter", counter);
                 i.putExtra("ingredientsArray", test);
+                i.putExtra("mealCategory", mealCategory);
                 startActivity(i);
                 //PopUpIngredients popUp = new PopUpIngredients();
                 //popUp.showPopupWindow(v);
