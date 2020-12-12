@@ -95,7 +95,7 @@ public class MainActivity5 extends AppCompatActivity {
         button = findViewById(R.id.button_save);
         list = findViewById(R.id.shopping_list_text);
         shopping_list = findViewById(R.id.shopping_list_text);
-        shopping_list.setText(sandwich.info());
+        shopping_list.setText(categories[0]);
         //AcessDistant a = new AcessDistant();
         //a.getIngredient();
 
