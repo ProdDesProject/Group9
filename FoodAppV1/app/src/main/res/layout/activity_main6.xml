@@ -5,13 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity6"
-    android:layout_marginStart="25sp"
-    android:layout_marginLeft="25sp"
-    android:layout_marginTop="25dp"
-    android:layout_marginEnd="25sp"
-    android:layout_marginRight="25sp"
-    android:layout_marginBottom="25sp"
     android:background="@color/background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="25sp"
+        android:layout_marginLeft="25sp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25sp"
+        android:layout_marginRight="25sp"
+        android:layout_marginBottom="25sp">
+
 
     <LinearLayout
         android:id="@+id/section61"
@@ -168,7 +173,5 @@
             app:srcCompat="@drawable/cooking_book" />
 
     </LinearLayout>
-
-
-
+    </RelativeLayout>
 </RelativeLayout>

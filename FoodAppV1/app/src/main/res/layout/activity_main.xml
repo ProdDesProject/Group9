@@ -5,14 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:layout_marginStart="25sp"
-    android:layout_marginLeft="25sp"
-    android:layout_marginTop="0dp"
-    android:layout_marginEnd="25sp"
-    android:layout_marginRight="25sp"
-    android:layout_marginBottom="25sp"
     android:background="@color/background">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="25sp"
+        android:layout_marginLeft="25sp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="25sp"
+        android:layout_marginRight="25sp"
+        android:layout_marginBottom="25sp">
 
     <LinearLayout
         android:id="@+id/section11"
@@ -89,4 +92,5 @@
 
 
     </LinearLayout>
+    </RelativeLayout>
 </RelativeLayout>
