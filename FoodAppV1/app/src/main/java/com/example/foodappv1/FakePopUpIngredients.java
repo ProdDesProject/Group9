@@ -25,6 +25,7 @@ public class FakePopUpIngredients extends AppCompatActivity {
     String [] ingredient = new String[10];
     String [] ingredientCategory = new String[10];
     String[] test;
+    String[] test1;
     int[] portions;
     String date;
     String mealType;
@@ -46,6 +47,7 @@ public class FakePopUpIngredients extends AppCompatActivity {
         recipeName = getIntent().getExtras().getString("recipeName");
         counter = getIntent().getExtras().getInt("counter");
         test = getIntent().getExtras().getStringArray("ingredientsArray");
+        test1 = getIntent().getExtras().getStringArray("mealCategory");
 
         try {
                 ingredient[0] = test[0];
@@ -58,6 +60,17 @@ public class FakePopUpIngredients extends AppCompatActivity {
                 ingredient[7] = test[7];
                 ingredient[8] = test[8];
                 ingredient[9] = test[9];
+
+                ingredientCategory[0] = test1[0];
+                ingredientCategory[1] = test1[1];
+                ingredientCategory[2] = test1[2];
+                ingredientCategory[3] = test1[3];
+                ingredientCategory[4] = test1[4];
+                ingredientCategory[5] = test1[5];
+                ingredientCategory[6] = test1[6];
+                ingredientCategory[7] = test1[7];
+                ingredientCategory[8] = test1[8];
+                ingredientCategory[9] = test1[9];
         }catch(Exception e){
 
         }
