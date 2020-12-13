@@ -15,10 +15,10 @@ public class Meal {
     //private static AcessDistant accessDistant;
     //private static Meal meal;
 
-    public Meal(String recipeName, String mealType, Date date){
+    public Meal(String recipeName, String mealType/*, Date date*/){
         this.recipeName= recipeName;
         this.mealType=mealType;
-        this.date=date;
+        //this.date=date;
     }
 
     public String getRecipeName() { return recipeName;}
@@ -29,7 +29,7 @@ public class Meal {
         List theList = new ArrayList();
         theList.add(recipeName);
         theList.add(mealType);
-        theList.add(date);
+        //theList.add(date);
         return new JSONArray(theList);
     }
 

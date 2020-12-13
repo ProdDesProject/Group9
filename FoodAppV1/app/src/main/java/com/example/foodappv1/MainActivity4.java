@@ -12,13 +12,16 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
 
 public class MainActivity4 extends AppCompatActivity {
 
-    public static final String URL_CHOOSE_INGREDIENT = "http://stulinux159.ipt.oamk.fi/chooseingredient.php";
+    public static final String URL_CHOOSE_INGREDIENT = "http://stulinux159.ipt.oamk.fi/chooseingredient.php?igd_name=Potato";
+    public static final String URL_ADD_RECIPE = "http://stulinux159.ipt.oamk.fi/chooseingredient.php?igd_name=Potato";
+
     private SearchView search_ingredient;
 
     private Button btn_continue;
@@ -44,13 +47,16 @@ public class MainActivity4 extends AppCompatActivity {
     String[] test;
     String[] mealCategory;
 
+    String ingredient;
+
 
 
     int counter = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //this.remote = Remote.getInstance(); //db
+        search_ingredient = findViewById(R.id.search_ingredient);
+        ingredient = getIntent().getExtras().getString("ingredient");
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
@@ -175,11 +181,11 @@ public class MainActivity4 extends AppCompatActivity {
         });
     }
 
-    //Show Product
+    //Show Ingredient
     public void show_ingredient(View view){
         final String igd_name = search_ingredient.getQuery().toString();
 
-        class show_prod extends AsyncTask<Void, Void, String> {
+        class show_ingredient extends AsyncTask<Void, Void, String> {
 
             ProgressDialog pdLoading = new ProgressDialog(MainActivity4.this);
 
@@ -187,6 +193,7 @@ public class MainActivity4 extends AppCompatActivity {
             protected void onPreExecute() {
                 super.onPreExecute();
 
+                System.out.println("calling onpre");
                 //this method will be running on UI thread
                 pdLoading.setMessage("\tLoading...");
                 pdLoading.setCancelable(false);
@@ -203,6 +210,7 @@ public class MainActivity4 extends AppCompatActivity {
                 params.put("igd_name", igd_name);
 
                 //returing the response
+                System.out.println("calling request");
                 return requestHandler.sendPostRequest(URL_CHOOSE_INGREDIENT, params);
             }
 
@@ -231,17 +239,68 @@ public class MainActivity4 extends AppCompatActivity {
             }
         }
 
-        show_prod show = new show_prod();
+        show_ingredient show = new show_ingredient();
         show.execute();
     }
+
+    //Add Recipe to db
+    public void add_recipe(){
+
+        class Recipedb extends AsyncTask<Void, Void, String> {
+
+            ProgressDialog pdLoading = new ProgressDialog(MainActivity4.this);
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+
+                //this method will be running on UI thread
+                System.out.println("recipe added");
+                pdLoading.setMessage("\tLoading...");
+                pdLoading.setCancelable(false);
+                pdLoading.show();
+            }
+
+            @Override
+            protected String doInBackground(Void... voids) {
+                //creating request handler object
+                RequestHandler requestHandler = new RequestHandler();
+
+                //creating request parameters
+                HashMap<String, String> params = new HashMap<>();
+                params.put("meal_name", recipeName);
+                params.put("igd_name", ingredient);
+                //params.put("meal_date", date);
+
+                //returning the response
+                return requestHandler.sendPostRequest(URL_ADD_RECIPE, params);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                pdLoading.dismiss();
+                System.out.println("s: " + s);
+                try {
+                    //converting response to json object
+                    JSONObject obj = new JSONObject(s);
+                    //if no error in response
+                    if (!obj.getBoolean("error")) {
+                        Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_LONG).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(MainActivity4.this, "Exception: "+e, Toast.LENGTH_LONG).show();
+                }
+            }
+        }
+        Recipedb prod_exec = new Recipedb();
+        prod_exec.execute();
+    }
+
     public void openActivity5() {
         Intent intent = new Intent (this, MainActivity5.class);
         startActivity(intent);
     }
 
-   /* private void showResults(String mealName,String typeMeal, Date date, String ingredientName, String category){
-        this.remote.addMeal(mealName,typeMeal,date);
-        this.remote.addIngredient(ingredientName,category);
-    }
-*/
 }
