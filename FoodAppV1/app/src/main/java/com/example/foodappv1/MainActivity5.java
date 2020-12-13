@@ -18,7 +18,7 @@ import java.util.HashMap;
 
 
 public class MainActivity5 extends AppCompatActivity {
-    private static TextView list; //nm = new modification
+    private static TextView list;
     private Button button;
     private Button button2;
     TextView shopping_list;
@@ -31,9 +31,6 @@ public class MainActivity5 extends AppCompatActivity {
     Food[] ingredientList = new Food[10];
 
     public static final String URL_ADD_MEAL = "http://stulinux159.ipt.oamk.fi/addmeal.php";
-    public static final String URL_SHOW_MEAL = "http://stulinux159.ipt.oamk.fi/data.php?operation=showmeal";
-    public static final String URL_CHOOSE_INGREDIENT = "http://stulinux159.ipt.oamk.fi/data.php?operation=chooseingredient";
-    public static final String URL_ADD_INGREDIENT = "http://stulinux159.ipt.oamk.fi/data.php?operation=addingredient";
 
     public static TextView getList() {
         return list;
@@ -41,7 +38,6 @@ public class MainActivity5 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //init();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main5);
         portions = getIntent().getExtras().getIntArray("portions");

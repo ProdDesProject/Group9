@@ -27,7 +27,6 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
     int month;
     int dayOfMonth;
     Calendar calendar;
-    String meal_name;
     TextView display_meal_name;
 
     ImageButton small_meal;
@@ -71,7 +70,7 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
             @Override
             public void onClick(View v) {
                 PopUp popUp = new PopUp();
-                popUp.showPopupWindow(v, "List of recipes from database");
+                popUp.showPopupWindow(v, "List of the previous recipes:");
             }
         });
 
@@ -149,7 +148,6 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
                 i.putExtra( "Meal name", mealType);
                 startActivity(i);
                 finish();
-                //openActivity4();
             }
         });
         meal_date.setOnClickListener(new View.OnClickListener(){
@@ -173,21 +171,6 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
         });
     }
 
-    /*private void showDatePickerDialog() {
-        DatePickerDialog datePickerDialog = new DatePickerDialog(
-                this,
-                this,
-                Calendar.getInstance().get(Calendar.YEAR),
-                Calendar.getInstance().get(Calendar.MONTH),
-                Calendar.getInstance().get(Calendar.DAY_OF_MONTH)
-
-        );
-        datePickerDialog.show();
-    }*/
-    public void openActivity4() {
-        Intent intent = new Intent (this, MainActivity4.class);
-        startActivity(intent);
-    }
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
