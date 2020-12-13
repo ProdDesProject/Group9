@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="25sp"
+    android:layout_marginTop="25dp"
+    android:layout_marginEnd="25sp"
+    android:layout_marginBottom="25sp"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_ingredients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/text_view_bg"
+            android:fontFamily="@font/kalam"
+            android:text="Add your ingredient here:"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/text_view_font"
+            android:textSize="23sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="15dp"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/ingredient_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:backgroundTint="@color/text_view_font"
+                android:ems="10"
+                android:fontFamily="@font/blockletters1"
+                android:hint="add Ingredient"
+                android:inputType="textPersonName"
+                android:singleLine="true"
+                android:textColor="@color/text_view_font"
+                android:textColorHint="#A8356211"
+                android:textSize="14sp" />
+
+            <Space
+                android:layout_width="20dp"
+                android:layout_height="wrap_content" />
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                android:background="@drawable/toast"
+                android:gravity="center">
+
+                <RadioGroup
+                    android:id="@+id/radioGroup_ingredients"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/meat_fish"
+                        android:layout_width="260dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center_horizontal"
+                        android:checked="false"
+                        android:fontFamily="@font/pomiere"
+                        android:text="Meat/Fish/Eggs"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <RadioButton
+                        android:id="@+id/fruits_veggies"
+                        android:layout_width="260dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center_horizontal"
+                        android:checked="false"
+                        android:fontFamily="@font/pomiere"
+                        android:text="Fruits/Veggies"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+
+                    <RadioButton
+                        android:id="@+id/cheese"
+                        android:layout_width="260dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center_horizontal"
+                        android:checked="false"
+                        android:fontFamily="@font/pomiere"
+                        android:text="Cheese"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <RadioButton
+                        android:id="@+id/dairy"
+                        android:layout_width="260dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center_horizontal"
+                        android:checked="false"
+                        android:fontFamily="@font/pomiere"
+                        android:text="Dairy (except cheese)"
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                    <RadioButton
+                        android:id="@+id/carbs"
+                        android:layout_width="260dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center_horizontal"
+                        android:checked="false"
+                        android:fontFamily="@font/pomiere"
+                        android:text="Pasta/Rice/etc."
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"
+                        android:textSize="17sp" />
+
+                </RadioGroup>
+
+                <Button
+                    android:id="@+id/button_more"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_alignBottom="@id/radioGroup_ingredients"
+                    android:layout_marginStart="167dp"
+                    android:layout_marginLeft="167dp"
+                    android:layout_marginBottom="17dp"
+                    android:cursorVisible="false"
+                    android:fontFamily="@font/pomiere"
+                    android:text="\?"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
+
+        <Button
+            android:id="@+id/add_ingredient"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/pomiere"
+            android:text="Add"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</RelativeLayout>

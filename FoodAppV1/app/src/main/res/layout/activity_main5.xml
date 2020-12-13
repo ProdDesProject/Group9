@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity5"
+    android:background="@color/background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="25sp"
+        android:layout_marginLeft="25sp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25sp"
+        android:layout_marginRight="25sp"
+        android:layout_marginBottom="25sp">
+
+    <LinearLayout
+        android:id="@+id/section51"
+        android:layout_width="match_parent"
+        android:layout_height="80sp"
+        android:gravity="start|center_vertical"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp">
+
+        <ImageView
+            android:id="@+id/logo1"
+            android:layout_width="80dp"
+            android:layout_height="80sp"
+            app:srcCompat="@drawable/logo" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/section52"
+        android:layout_below="@+id/section51"
+        android:layout_width="match_parent"
+        android:layout_height="400sp"
+        android:orientation="vertical"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp"
+        android:gravity="center_horizontal|center_vertical">
+
+        <TextView
+            android:id="@+id/shopping_list"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/middle_view2_bg"
+            android:fontFamily="@font/playtime"
+            android:text="Shopping list:"
+            android:textAlignment="center"
+            android:textColor="@color/dark_green"
+            android:textSize="35sp"
+            tools:ignore="RtlCompat" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10sp" />
+
+        <ScrollView
+            android:id="@+id/array_ingredient"
+            android:layout_width="318dp"
+            android:layout_height="350sp"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/shopping_list_text"
+                android:layout_width="match_parent"
+                android:layout_height="340sp"
+                android:fontFamily="@font/solicious"
+                android:text="Add ingredients from database"
+                android:textColor="@color/dark_green"
+                android:textSize="24sp" />
+        </ScrollView>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/section53"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:layout_below="@+id/section52"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal|center_vertical|bottom"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp">
+
+        <Button
+            android:id="@+id/button_modify"
+            android:text="Modify"
+            android:layout_width="120sp"
+            android:layout_height="50sp"
+            android:fontFamily="@font/pomiere"
+            android:clickable="true"
+            android:focusable="true"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textAllCaps="false"
+            />
+
+        <Space
+            android:layout_width="50sp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/button_save"
+            android:text="Save"
+            android:fontFamily="@font/pomiere"
+            android:layout_width="120sp"
+            android:layout_height="50sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

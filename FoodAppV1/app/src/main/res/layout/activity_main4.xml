@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity4"
+    android:background="@color/background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="25sp"
+        android:layout_marginLeft="25sp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="25sp"
+        android:layout_marginRight="25sp"
+        android:layout_marginBottom="25sp">
+
+    <LinearLayout
+        android:id="@+id/section41"
+        android:layout_width="match_parent"
+        android:layout_height="80sp"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/logo1"
+            android:layout_width="80dp"
+            android:layout_height="80sp"
+            app:srcCompat="@drawable/logo" />
+
+
+        <SearchView
+            android:id="@+id/search_ingredient"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/middle_view_bg"
+            android:hint="Search the ingredient" />
+    </LinearLayout>
+<LinearLayout
+    android:id="@+id/section42"
+    android:layout_below="@+id/section41"
+    android:layout_width="match_parent"
+    android:layout_height="60sp"
+    android:gravity="center_horizontal|center_vertical"
+    android:layout_marginStart="15sp"
+    android:layout_marginEnd="15sp">
+
+    <TextView
+        android:id="@+id/create_recipe_text"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:fontFamily="@font/kalam"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Create your recipe"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="23sp"
+        android:background="@drawable/text_view_bg"
+        android:textColor="@color/text_view_font"/>
+
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        android:id="@+id/section43"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp"
+        android:layout_below="@+id/section42"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/recipe_field"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/dark_green"
+            android:fontFamily="@font/blockletters1"
+            android:hint="Type the recipe name"
+            android:singleLine="true"
+            android:textColor="@color/dark_green"
+            android:textColorHint="@color/middle_view_font"
+            android:textSize="14sp" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/section44"
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:layout_below="@+id/section43"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp"
+        android:background="@drawable/middle_view_bg"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/ingredients_text"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/middle_view2_bg"
+            android:fontFamily="@font/playtime"
+            android:text="Ingredients:"
+            android:textAlignment="center"
+            android:textColor="@color/dark_green"
+            android:textSize="35sp"
+            tools:ignore="RtlCompat" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10sp" />
+
+        <TextView
+            android:id="@+id/ingredient1"
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            android:fontFamily="@font/solicious"
+            android:text="Ingredient 1"
+            android:textColor="@color/dark_green"
+            android:textSize="19sp" />
+        <TextView
+            android:id="@+id/ingredient2"
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            android:fontFamily="@font/solicious"
+            android:text="Ingredient 2"
+            android:textColor="@color/dark_green"
+            android:textSize="19sp" />
+        <TextView
+            android:id="@+id/ingredient3"
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            android:fontFamily="@font/solicious"
+            android:text="Ingredient 3"
+            android:textColor="@color/dark_green"
+            android:textSize="19sp" />
+        <TextView
+            android:id="@+id/ingredient4"
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            android:fontFamily="@font/solicious"
+            android:text="Ingredient 4"
+            android:textColor="@color/dark_green"
+            android:textSize="19sp" />
+        <TextView
+            android:id="@+id/ingredient5"
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            android:fontFamily="@font/solicious"
+            android:text="Ingredient 5"
+            android:textColor="@color/dark_green"
+            android:textSize="19sp" />
+        <TextView
+            android:id="@+id/ingredient6"
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            android:fontFamily="@font/solicious"
+            android:text="Ingredient 6"
+            android:textColor="@color/dark_green"
+            android:textSize="19sp" />
+        <TextView
+            android:id="@+id/ingredient7"
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            android:fontFamily="@font/solicious"
+            android:text="Ingredient 7"
+            android:textColor="@color/dark_green"
+            android:textSize="19sp" />
+        <TextView
+            android:id="@+id/ingredient8"
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            android:fontFamily="@font/solicious"
+            android:text="Ingredient 8"
+            android:textColor="@color/dark_green"
+            android:textSize="19sp" />
+        <TextView
+            android:id="@+id/ingredient9"
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            android:fontFamily="@font/solicious"
+            android:text="Ingredient 9"
+            android:textColor="@color/dark_green"
+            android:textSize="19sp" />
+        <TextView
+            android:id="@+id/ingredient10"
+            android:layout_width="match_parent"
+            android:layout_height="20sp"
+            android:fontFamily="@font/solicious"
+            android:text="Ingredient 10"
+            android:textColor="@color/dark_green"
+            android:textSize="19sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/section45"
+        android:layout_below="@+id/section44"
+        android:layout_width="match_parent"
+        android:layout_height="60sp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal|center_vertical|bottom"
+        android:layout_marginStart="15sp"
+        android:layout_marginEnd="15sp">
+
+        <Button
+            android:id="@+id/button_add_ingredient"
+            android:text="Add ingredient"
+            android:layout_width="120sp"
+            android:layout_height="50sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:textSize="12sp"
+            android:textAllCaps="false"
+             />
+
+        <Space
+            android:layout_width="50sp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/button_continue"
+            android:text="Continue"
+            android:layout_width="120sp"
+            android:layout_height="50sp"
+            android:clickable="true"
+            android:focusable="true"
+            android:textSize="12sp"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

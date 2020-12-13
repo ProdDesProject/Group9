@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/background">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="25sp"
+        android:layout_marginLeft="25sp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="25sp"
+        android:layout_marginRight="25sp"
+        android:layout_marginBottom="25sp">
+
+    <LinearLayout
+        android:id="@+id/section11"
+        android:layout_width="match_parent"
+        android:layout_height="180sp"
+        android:orientation="horizontal"
+        android:gravity="center|center_vertical">
+
+        <ImageView
+            android:id="@+id/logo1"
+            android:layout_width="180sp"
+            android:layout_height="180sp"
+            app:srcCompat="@drawable/logo" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/section12"
+        android:layout_below="@+id/section11"
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:gravity="center_horizontal|center_vertical">
+
+        <TextView
+            android:id="@+id/welcome_text"
+            android:layout_width="match_parent"
+            android:layout_height="80sp"
+            android:layout_marginStart="15sp"
+            android:layout_marginEnd="15sp"
+            android:background="@drawable/text_view_bg"
+            android:fontFamily="@font/kalam"
+            android:gravity="center_horizontal|center_vertical"
+            android:text="Hi there! Welcome to Lunchbox!"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/text_view_font"
+            android:textSize="23sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80sp"
+        android:layout_below="@+id/section12"
+        android:layout_marginTop="160sp"
+        android:gravity="center_horizontal|center_vertical"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name_field"
+            android:layout_width="170sp"
+            android:layout_height="50sp"
+            android:backgroundTint="@color/text_view_font"
+            android:fontFamily="@font/blockletters1"
+            android:hint="Type your name"
+            android:singleLine="true"
+            android:textColor="@color/text_view_font"
+            android:textColorHint="@color/text_view_font"
+            android:textSize="14sp" />
+
+        <Space
+            android:layout_width="20sp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/button_next"
+            android:layout_width="120sp"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/pomiere"
+            android:text="Next"
+            android:textAllCaps="false"
+            android:textSize="20sp" />
+
+
+    </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>
