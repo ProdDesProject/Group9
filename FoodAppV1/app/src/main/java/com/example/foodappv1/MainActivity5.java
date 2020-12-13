@@ -61,6 +61,8 @@ public class MainActivity5 extends AppCompatActivity {
         shopping_list = findViewById(R.id.shopping_list_text);
 
 
+        //For each ingredient, a new object is created and added to the ingredient list
+        //When there is no more ingredients, the for loop is broken
         for(int i=0; i<10; i++){
             if(categories[i]!=null){
             if((categories[i].compareToIgnoreCase("Pasta/Rice/etc."))==0){
@@ -88,7 +90,9 @@ public class MainActivity5 extends AppCompatActivity {
             }
         }
 
+        //Creation of a new object recipe with all the parameters needed
         Recipe newRecipe = new Recipe(mealType, recipeName, portions, date, ingredientList);
+        //Showing the shopping list
         shopping_list.setText(newRecipe.info());
 
         //AcessDistant a = new AcessDistant();
