@@ -85,6 +85,7 @@ public class MainActivity4 extends AppCompatActivity {
 
         try {
             recipeName = i.getExtras().getString("recipeName");
+            recipeNameField.setText(recipeName);
         }
         catch(Exception e){
         }
@@ -129,7 +130,7 @@ public class MainActivity4 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i= new Intent( MainActivity4.this, MainActivity5.class);
-                //recipeName=recipeNameField.getText().toString();
+                recipeName=recipeNameField.getText().toString();
                 i.putExtra("portions", portions);
                 i.putExtra("date", date);
                 i.putExtra("Meal name", mealType);
