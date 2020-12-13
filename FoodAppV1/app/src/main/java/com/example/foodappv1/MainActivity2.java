@@ -25,15 +25,12 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
     Button button;
     ImageButton recipes;
     ImageButton meals;
-    Button buttonApply;
     RadioGroup radioGroup;
     RadioButton radioButton;
-    //TextView textView;
     TextView name_display;
     String meal;
     String name;
     ImageButton calendarButton;
-    //Integer meal_id;
     public static final String URL_SHOW_MEAL = "http://stulinux159.ipt.oamk.fi/showmeals.php";
 
 
@@ -109,7 +106,6 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
         });
     }
 
-    // Roel and Zakhar are the best in the Routa dormitory
     private void showDatePickerDialog() {
         DatePickerDialog datePickerDialog = new DatePickerDialog(
                 this,
