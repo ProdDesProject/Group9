@@ -109,7 +109,7 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
         });
     }
 
-
+    // Roel and Zakhar are the best in the Routa dormitory
     private void showDatePickerDialog() {
         DatePickerDialog datePickerDialog = new DatePickerDialog(
                 this,
