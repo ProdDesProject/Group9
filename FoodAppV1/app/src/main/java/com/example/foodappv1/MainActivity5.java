@@ -18,7 +18,6 @@ import java.util.HashMap;
 
 
 public class MainActivity5 extends AppCompatActivity {
-    //private Remote remote;
     private static TextView list; //nm = new modification
     private Button button;
     private Button button2;
@@ -31,7 +30,7 @@ public class MainActivity5 extends AppCompatActivity {
     String[] categories;
     Food[] ingredientList = new Food[10];
 
-    public static final String URL_ADD_MEAL = "http://stulinux159.ipt.oamk.fi/data.php?operation=addmeal";
+    public static final String URL_ADD_MEAL = "http://stulinux159.ipt.oamk.fi/addmeal.php";
     public static final String URL_SHOW_MEAL = "http://stulinux159.ipt.oamk.fi/data.php?operation=showmeal";
     public static final String URL_CHOOSE_INGREDIENT = "http://stulinux159.ipt.oamk.fi/data.php?operation=chooseingredient";
     public static final String URL_ADD_INGREDIENT = "http://stulinux159.ipt.oamk.fi/data.php?operation=addingredient";
@@ -39,11 +38,7 @@ public class MainActivity5 extends AppCompatActivity {
     public static TextView getList() {
         return list;
     }
-    /*
-    private void init(){
-         this.remote = Remote.getInstance(this); //db
-     }
-*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //init();
@@ -98,16 +93,11 @@ public class MainActivity5 extends AppCompatActivity {
         //Showing the shopping list
         shopping_list.setText(newRecipe.info());
 
-        //AcessDistant a = new AcessDistant();
-        //a.getIngredient();
-
-
         button.setOnClickListener(new View.OnClickListener() {
-            //private Remote remote;
-
             @Override
             public void onClick(View v) {
                 openActivity6();
+                add_meal();
             }
 
         });
@@ -123,12 +113,9 @@ public class MainActivity5 extends AppCompatActivity {
     }
 
     //Add Meal
-    public void add_meal(View view){
-        //final String name = etName.getText().toString();
-        //final String price = etPrice.getText().toString();
-        //final String desc = etDesc.getText().toString();
+    public void add_meal(){
 
-        class Product extends AsyncTask<Void, Void, String> {
+        class Meal extends AsyncTask<Void, Void, String> {
 
             ProgressDialog pdLoading = new ProgressDialog(MainActivity5.this);
 
@@ -137,6 +124,7 @@ public class MainActivity5 extends AppCompatActivity {
                 super.onPreExecute();
 
                 //this method will be running on UI thread
+                System.out.println("meal added");
                 pdLoading.setMessage("\tLoading...");
                 pdLoading.setCancelable(false);
                 pdLoading.show();
@@ -151,7 +139,7 @@ public class MainActivity5 extends AppCompatActivity {
                 HashMap<String, String> params = new HashMap<>();
                 params.put("meal_name", recipeName);
                 params.put("meal_type", mealType);
-                params.put("meal_date", date);
+                //params.put("meal_date", date);
 
                 //returning the response
                 return requestHandler.sendPostRequest(URL_ADD_MEAL, params);
@@ -161,7 +149,7 @@ public class MainActivity5 extends AppCompatActivity {
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 pdLoading.dismiss();
-
+                System.out.println("s: " + s);
                 try {
                     //converting response to json object
                     JSONObject obj = new JSONObject(s);
@@ -174,12 +162,10 @@ public class MainActivity5 extends AppCompatActivity {
                     Toast.makeText(MainActivity5.this, "Exception: "+e, Toast.LENGTH_LONG).show();
                 }
             }
-
         }
-
-        Product prod_exec = new Product();
+        Meal prod_exec = new Meal();
         prod_exec.execute();
-    }
+}
 
     public void openActivity6() {
         Intent intent = new Intent (this, MainActivity6.class);

@@ -25,10 +25,11 @@ public class RequestHandler {
         StringBuilder sb = new StringBuilder();
         try {
             url = new URL(requestURL);
+            System.out.println("URL"+requestURL);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setReadTimeout(15000);
             conn.setConnectTimeout(15000);
-            conn.setRequestMethod("POST");
+            conn.setRequestMethod("GET");
             conn.setDoInput(true);
             conn.setDoOutput(true);
 
@@ -52,7 +53,10 @@ public class RequestHandler {
                 while ((response = br.readLine()) != null) {
                     sb.append(response);
                 }
+            } else {
+                System.out.println("response code ="+responseCode);
             }
+
 
         } catch (Exception e) {
             e.printStackTrace();
