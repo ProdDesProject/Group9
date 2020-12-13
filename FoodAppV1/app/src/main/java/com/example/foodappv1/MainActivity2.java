@@ -1,7 +1,9 @@
 package com.example.foodappv1;
 
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +16,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.json.JSONObject;
+
 import java.util.Calendar;
+import java.util.HashMap;
 
 public class MainActivity2 extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
     Button button;
@@ -23,11 +28,13 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
     Button buttonApply;
     RadioGroup radioGroup;
     RadioButton radioButton;
-    TextView textView;
+    //TextView textView;
     TextView name_display;
     String meal;
     String name;
     ImageButton calendarButton;
+    //Integer meal_id;
+    public static final String URL_SHOW_MEAL = "http://stulinux159.ipt.oamk.fi/showmeals.php";
 
 
     @Override
@@ -78,17 +85,18 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
             @Override
             public void onClick(View v) {
                 PopUp popUp = new PopUp();
-                popUp.showPopupWindow(v, "List of recipes from database");
+                popUp.showPopupWindow(v, "List of recipes planned:");
 
             }
         });
+
 
         meals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PopUp popUp = new PopUp();
-                popUp.showPopupWindow(v, "List of meals from database");
-
+                popUp.showPopupWindow(v, "List of meals planned:");
+                show_meal();
 
             }
         });
@@ -97,7 +105,6 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
             @Override
             public void onClick(View v) {
                 showDatePickerDialog();
-
             }
         });
     }
@@ -126,6 +133,67 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
 
+    }
+
+    //Show meal
+    public void show_meal(){
+        final String meal_id = "";
+
+        class ShowMeal extends AsyncTask<Void, Void, String> {
+
+            ProgressDialog pdLoading = new ProgressDialog(MainActivity2.this);
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+
+                System.out.println("calling onpre");
+                //this method will be running on UI thread
+                pdLoading.setMessage("\tLoading...");
+                pdLoading.setCancelable(false);
+                pdLoading.show();
+            }
+
+            @Override
+            protected String doInBackground(Void... voids) {
+                //creating request handler object
+                RequestHandler requestHandler = new RequestHandler();
+
+                //creating request parameters
+                HashMap<String, String> params = new HashMap<>();
+                params.put("meal_id", meal_id);
+
+                //returning the response
+                System.out.println("calling request");
+                return requestHandler.sendPostRequest(URL_SHOW_MEAL, params);
+            }
+
+            @Override
+            protected void onPostExecute(String s){
+                super.onPostExecute(s);
+                pdLoading.dismiss();
+
+                try{
+                    //Converting response to JSON Object
+                    JSONObject obj = new JSONObject(s);
+
+                    //if no error in response
+                    if (!obj.getBoolean("error")){
+                        Toast.makeText(MainActivity2.this, obj.getString("message"), Toast.LENGTH_LONG).show();
+                        //Make TextViews Visible
+                        meals.setVisibility(View.VISIBLE);
+
+                        //Set retrieved text to TextViews
+                       // meals.setText("Meal name: "+obj.getString("meal_name")+"for "+obj.getString("meal_type"));
+                    }
+                } catch (Exception e ){
+                    Toast.makeText(MainActivity2.this, "Exception: "+e, Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+
+        ShowMeal show = new ShowMeal();
+        show.execute();
     }
 
 }

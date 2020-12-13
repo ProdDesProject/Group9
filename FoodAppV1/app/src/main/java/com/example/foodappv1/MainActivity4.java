@@ -19,14 +19,12 @@ import java.util.HashMap;
 
 public class MainActivity4 extends AppCompatActivity {
 
-    public static final String URL_CHOOSE_INGREDIENT = "http://stulinux159.ipt.oamk.fi/chooseingredient.php?igd_name=Potato";
-    public static final String URL_ADD_RECIPE = "http://stulinux159.ipt.oamk.fi/chooseingredient.php?igd_name=Potato";
+    public static final String URL_ADD_RECIPE = "http://stulinux159.ipt.oamk.fi/addrecipe.php";
 
     private SearchView search_ingredient;
 
     private Button btn_continue;
     private Button btn_addIngredient;
-    private Button addName;
 
     private TextView ingredients1;
     private TextView ingredients2;
@@ -149,6 +147,7 @@ public class MainActivity4 extends AppCompatActivity {
                 i.putExtra("ingredientsArray", test);
                 i.putExtra("mealCategory", mealCategory);
                 startActivity(i);
+                add_recipe();
             }
         });
 
@@ -181,67 +180,6 @@ public class MainActivity4 extends AppCompatActivity {
         });
     }
 
-    //Show Ingredient
-    public void show_ingredient(View view){
-        final String igd_name = search_ingredient.getQuery().toString();
-
-        class show_ingredient extends AsyncTask<Void, Void, String> {
-
-            ProgressDialog pdLoading = new ProgressDialog(MainActivity4.this);
-
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-
-                System.out.println("calling onpre");
-                //this method will be running on UI thread
-                pdLoading.setMessage("\tLoading...");
-                pdLoading.setCancelable(false);
-                pdLoading.show();
-            }
-
-            @Override
-            protected String doInBackground(Void... voids) {
-                //creating request handler object
-                RequestHandler requestHandler = new RequestHandler();
-
-                //creating request parameters
-                HashMap<String, String> params = new HashMap<>();
-                params.put("igd_name", igd_name);
-
-                //returing the response
-                System.out.println("calling request");
-                return requestHandler.sendPostRequest(URL_CHOOSE_INGREDIENT, params);
-            }
-
-            @Override
-            protected void onPostExecute(String s){
-                super.onPostExecute(s);
-                pdLoading.dismiss();
-
-                try{
-                    //Converting response to JSON Object
-                    JSONObject obj = new JSONObject(s);
-
-                    //if no error in response
-                    if (!obj.getBoolean("error")){
-                        Toast.makeText(MainActivity4.this, obj.getString("message"), Toast.LENGTH_LONG).show();
-                        //Make TextViews Visible
-                        ingredients10.setVisibility(View.VISIBLE);
-
-                        //Set retrieved text to TextViews
-                        ingredients10.setText("Name: "+obj.getString("igd_name"));
-
-                    }
-                } catch (Exception e ){
-                    Toast.makeText(MainActivity4.this, "Exception: "+e, Toast.LENGTH_SHORT).show();
-                }
-            }
-        }
-
-        show_ingredient show = new show_ingredient();
-        show.execute();
-    }
 
     //Add Recipe to db
     public void add_recipe(){
@@ -296,11 +234,6 @@ public class MainActivity4 extends AppCompatActivity {
         }
         Recipedb prod_exec = new Recipedb();
         prod_exec.execute();
-    }
-
-    public void openActivity5() {
-        Intent intent = new Intent (this, MainActivity5.class);
-        startActivity(intent);
     }
 
 }

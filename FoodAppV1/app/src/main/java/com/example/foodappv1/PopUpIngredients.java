@@ -13,7 +13,7 @@ import android.widget.RelativeLayout;
 public class PopUpIngredients {
 
     public static String ingredient;
-    String[] ingredientsList = new String[10];
+   // String[] ingredientsList = new String[10];
 
     public void showPopupWindow(final View view) {
 

@@ -9,14 +9,7 @@ public class User {
 		name = n;
 		
 	}
-	
-	public void info() {
-		
-		System.out.println( this.getName());
-		
-		
-	}
-	
+
 	public String getName() {
 		
 		return this.name;
