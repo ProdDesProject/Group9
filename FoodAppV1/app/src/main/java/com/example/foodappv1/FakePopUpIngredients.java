@@ -1,6 +1,8 @@
 package com.example.foodappv1;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +20,7 @@ import java.util.Calendar;
 public class FakePopUpIngredients extends AppCompatActivity {
 
     Button add;
+    Button more;
     TextView ingredientName;
     RadioGroup radioGroup;
     RadioButton radioButton;
@@ -94,6 +97,21 @@ public class FakePopUpIngredients extends AppCompatActivity {
                 startActivity(i);
                 //finish();
                 //openActivity4();
+            }
+        });
+
+        more = (Button) findViewById(R.id.button_more);
+        more.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(FakePopUpIngredients.this, R.style.AlertDialog)
+                        .setTitle("Carbohydrates")
+                        .setMessage("This includes all ingredients containing carbohydrates such as bread, all sorts of grain, potatoes etc.")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        }).show();
             }
         });
     }
