@@ -106,6 +106,8 @@ public class FakePopUpIngredients extends AppCompatActivity {
             }
         });
 
+
+        // Display additional information for the carbohydrates
         more = (Button) findViewById(R.id.button_more);
         more.setOnClickListener(new View.OnClickListener() {
             @Override

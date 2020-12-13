@@ -74,6 +74,8 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
 
             }
         });
+
+        //Show pop up for the stored recipes
         recipes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,6 +85,7 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
             }
         });
 
+        //Show pop up for the planned meals
         meals.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
