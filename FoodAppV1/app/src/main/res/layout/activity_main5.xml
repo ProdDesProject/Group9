@@ -62,13 +62,13 @@
         <ScrollView
             android:id="@+id/array_ingredient"
             android:layout_width="318dp"
-            android:layout_height="360sp"
+            android:layout_height="350sp"
             android:layout_gravity="center_vertical">
 
             <TextView
                 android:id="@+id/shopping_list_text"
                 android:layout_width="match_parent"
-                android:layout_height="350sp"
+                android:layout_height="340sp"
                 android:fontFamily="@font/solicious"
                 android:text="Add ingredients from database"
                 android:textColor="@color/dark_green"
