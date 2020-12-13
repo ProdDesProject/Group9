@@ -49,6 +49,9 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
         setContentView(R.layout.activity_main3);
         Intent i = getIntent();
         mealType=i.getExtras().getString( "Meal name");
+
+        //we save the type of meal sent by the main2 in order to display afterwards "Plan your mealName"
+
         small_meal=findViewById(R.id.info_small_meal);
         medium_meal=findViewById(R.id.info_medium_meal);
         large_meal=findViewById(R.id.info_large_meal);
@@ -122,6 +125,9 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
                 small=nameFieldSmall.getText().toString();
                 medium=nameFieldMedium.getText().toString();
                 big=nameFieldBig.getText().toString();
+
+                //the following if's are used to set 0 by default in case the user doesn't enter any value
+
                 if(small.matches("")){
                     small = "0";
                 }
@@ -133,6 +139,11 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
                 }
                 dateString=show_meal_date.getText().toString();
                 int[] portions = new int[]{Integer.parseInt(small), Integer.parseInt(medium), Integer.parseInt(big)};
+
+                //we send to the main4 the array of int with the number of small, medium and large meals.
+                //as well as the date of the meal that the user selected and again the type of meal, cause it will be
+                //necessary in the calculation method inside Recipe
+
                 i.putExtra( "portions", portions);
                 i.putExtra( "date", dateString);
                 i.putExtra( "Meal name", mealType);

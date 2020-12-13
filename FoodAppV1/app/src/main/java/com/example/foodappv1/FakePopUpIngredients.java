@@ -1,6 +1,8 @@
 package com.example.foodappv1;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +20,7 @@ import java.util.Calendar;
 public class FakePopUpIngredients extends AppCompatActivity {
 
     Button add;
+    Button more;
     TextView ingredientName;
     RadioGroup radioGroup;
     RadioButton radioButton;
@@ -49,6 +52,8 @@ public class FakePopUpIngredients extends AppCompatActivity {
         test = getIntent().getExtras().getStringArray("ingredientsArray");
         test1 = getIntent().getExtras().getStringArray("mealCategory");
 
+        //first we save all the variables that will be dinamically updated between this activity and the previous one, as we said before
+
         try {
                 ingredient[0] = test[0];
                 ingredient[1] = test[1];
@@ -60,6 +65,8 @@ public class FakePopUpIngredients extends AppCompatActivity {
                 ingredient[7] = test[7];
                 ingredient[8] = test[8];
                 ingredient[9] = test[9];
+
+                //we update both arrays and afterwards we send them back to main4
 
                 ingredientCategory[0] = test1[0];
                 ingredientCategory[1] = test1[1];
@@ -84,6 +91,9 @@ public class FakePopUpIngredients extends AppCompatActivity {
                 mealCategory = (String) radioButton.getText();
                 ingredient[counter-1] = ingredientName.getText().toString();
                 ingredientCategory[counter-1] = mealCategory;
+
+                //we send back the updated arrays to main4 so the user can continue adding ingredients or just finish with his recipe
+
                 i.putExtra( "ingredient", ingredient);
                 i.putExtra( "ingredientCategory", ingredientCategory);
                 i.putExtra( "portions", portions);
@@ -92,8 +102,22 @@ public class FakePopUpIngredients extends AppCompatActivity {
                 i.putExtra( "recipeName", recipeName);
                 i.putExtra( "counter", counter);
                 startActivity(i);
-                //finish();
-                //openActivity4();
+
+            }
+        });
+
+        more = (Button) findViewById(R.id.button_more);
+        more.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(FakePopUpIngredients.this, R.style.AlertDialog)
+                        .setTitle("Carbohydrates")
+                        .setMessage("This includes all ingredients containing carbohydrates such as bread, all sorts of grain, potatoes etc.")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        }).show();
             }
         });
     }

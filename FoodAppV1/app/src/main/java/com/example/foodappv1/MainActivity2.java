@@ -42,6 +42,7 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
         button = findViewById(R.id.button_apply);
         name = getIntent().getExtras().getString("Name value");
 
+        //here we use the username we sent in the main1
 
         name_display.setText("What meal do you want to plan, " + String.valueOf(name) + "?");
 
@@ -50,10 +51,10 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
             @Override
             public void onClick(View v) {
                 Intent i= new Intent( MainActivity2.this, MainActivity3.class);
-                //meal=radioButton.getText().toString();
                 int selectedId = radioGroup.getCheckedRadioButtonId();
                     radioButton = (RadioButton) findViewById(selectedId);
                     meal = (String) radioButton.getText();
+                    //we first take the type of meal capturing the corresponding radio button string
                     switch (meal){
                         case "Lunch":
                             meal = "lunch";
@@ -64,12 +65,12 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
                         case "Dinner":
                             meal = "dinner";
                             break;
-
+                    //we change it to lower case because the calculation method of Recipe reads the strings like that
                     }
                     i.putExtra("Meal name", meal);
                     startActivity(i);
                     finish();
-                    //openActivity3();
+                    //Declaring an intent to share the type of meal with the main3 and then opening the main3
 
             }
         });
@@ -120,10 +121,6 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
         radioButton = findViewById(radioId);
         Toast.makeText(this, "Selected meal: " + radioButton.getText(),
                 Toast.LENGTH_SHORT).show();
-    }
-    public void openActivity3() {
-        Intent intent = new Intent (this, MainActivity3.class);
-        startActivity(intent);
     }
 
     @Override

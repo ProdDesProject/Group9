@@ -56,6 +56,9 @@ public class MainActivity5 extends AppCompatActivity {
         ingredients = getIntent().getExtras().getStringArray("ingredientsArray");
         categories = getIntent().getExtras().getStringArray("mealCategory");
 
+        //we save all variables sent by main4 that are needed to call the calculation method
+        //which is going to be called automatically after we save all variables and elements in the screen
+
         button = findViewById(R.id.button_save);
         list = findViewById(R.id.shopping_list_text);
         shopping_list = findViewById(R.id.shopping_list_text);

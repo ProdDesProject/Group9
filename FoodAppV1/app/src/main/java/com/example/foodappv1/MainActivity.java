@@ -34,15 +34,11 @@ public class MainActivity extends AppCompatActivity {
                 i.putExtra( "Name value",st);
                 startActivity(i);
                 finish();
-                //openActivity2();
+                //Declaring a new intent to send the username to main2, then opening main2
             }
         });
     }
 
-    public void openActivity2() {
-        Intent intent = new Intent (this, MainActivity2.class);
-        startActivity(intent);
-    }
         public static void main(String[] args) {
 
         }
