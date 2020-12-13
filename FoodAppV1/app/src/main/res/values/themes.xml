@@ -6,12 +6,11 @@
         <item name="buttonStyle">@style/CustomButton</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/status_bar</item>
-        <!-- Customize your theme here. -->
     </style>
         <!-- button style -->
     <style name="CustomButton" parent="Widget.AppCompat.Button">
         <item name="android:background">@drawable/custom_button</item>
-        <item name="android:textColor">#FFF</item>
+        <item name="android:textColor">#FFFFFF</item>
     </style>
 
     <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
@@ -32,6 +31,34 @@
         <item name="android:textColorPrimaryInverse">@color/calendar_day</item>
         <!-- year-->
         <item name="android:textColorSecondaryInverse">@color/calendar_year</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="MyTitleTextStyle">
+        <item name="android:textColor">@color/alert_font</item>
+        <item name="android:fontFamily">@font/kalam</item>
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="MessageStyle">
+        <item name="android:fontFamily">@font/pomiere</item>
+        <item name="android:textSize">15sp</item>
 
     </style>
+
+    <style name="AlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/alert_bg</item>
+        <item name="android:textColor">@color/alert_text</item>
+        <item name="android:textColorPrimary">@color/alert_font</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowMinWidthMajor">@android:dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@android:dimen/dialog_min_width_minor</item>
+        <item name="android:windowTitleStyle">@style/MyTitleTextStyle</item>
+        <item name="android:textAppearance">@style/MessageStyle</item>
+    </style>
+
+
 </resources>

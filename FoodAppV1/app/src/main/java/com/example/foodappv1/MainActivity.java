@@ -17,27 +17,9 @@ public class MainActivity extends AppCompatActivity {
     //Date the user will enter
     public static final String mealDate = "com.example.foodappv1.meal_date_field";
 
-
-    /*Ingredients and categories the user will enter
-    * public static final String[] ingredient = new String[4];
-    * public static final String[] category = new String[4];
-    * public static final String ingredient[0] = "com.example.foodappv1.text_ingredient0";
-    * public static final String category[0] = "com.example.foodappv1.text_category0";
-    * public static final String ingredient[1] = "com.example.foodappv1.text_ingredient1";
-    * public static final String category[1] = "com.example.foodappv1.text_category1";
-    * public static final String ingredient[2] = "com.example.foodappv1.text_ingredient2";
-    * public static final String category[2] = "com.example.foodappv1.text_category2";
-    * public static final String ingredient[3] = "com.example.foodappv1.text_ingredient3";
-    * public static final String category[3] = "com.example.foodappv1.text_category3";*/
-
     private Button button;
     EditText name_fld;
     String st;
-
-    public static int strgToInt(String strg){
-        int e = Integer.parseInt(strg);
-        return e;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,24 +47,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
         public static void main(String[] args) {
-
-            /*for(int i; i=0; i++){
-                if(category[i]=="Carbs"){
-                    Carbs ingredient[i] = new Carbs();
-                }
-                if(category[i]=="Cheese"){
-                    Cheese ingredient[i] = new Cheese();
-                }
-                if(category[i]=="Dairy"){
-                    Dairy ingredient[i] = new Dairy();
-                }
-                if(category[i]=="Veggies"){
-                    Veggies ingredient[i] = new Veggies();
-                }
-                if(category[i]=="MeatFishEggs"){
-                    MeatFishEggs ingredient[i] = new MeatFishEggs();
-                }
-            }*/
 
         }
 

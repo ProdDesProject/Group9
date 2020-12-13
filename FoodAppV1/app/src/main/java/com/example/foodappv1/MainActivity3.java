@@ -1,12 +1,15 @@
 package com.example.foodappv1;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +30,10 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
     String meal_name;
     TextView display_meal_name;
 
+    ImageButton small_meal;
+    ImageButton medium_meal;
+    ImageButton large_meal;
+
     EditText nameFieldSmall;
     EditText nameFieldMedium;
     EditText nameFieldBig;
@@ -42,6 +49,9 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
         setContentView(R.layout.activity_main3);
         Intent i = getIntent();
         mealType=i.getExtras().getString( "Meal name");
+        small_meal=findViewById(R.id.info_small_meal);
+        medium_meal=findViewById(R.id.info_medium_meal);
+        large_meal=findViewById(R.id.info_large_meal);
         addRecipe = findViewById(R.id.button_create_recipe);
         chooseRecipe = findViewById(R.id.button_choose_recipe);
         meal_date= findViewById(R.id.date_button);
@@ -62,6 +72,49 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
             public void onClick(View v) {
                 PopUp popUp = new PopUp();
                 popUp.showPopupWindow(v, "List of recipes from database");
+            }
+        });
+
+
+        small_meal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(MainActivity3.this, R.style.AlertDialog)
+                        .setTitle("Small portion")
+                        .setMessage("Portion size recommended for kids")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        }).show();
+            }
+        });
+
+        medium_meal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(MainActivity3.this, R.style.AlertDialog)
+                        .setTitle("Medium portion")
+                        .setMessage("Portion size recommended for females")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        }).show();
+            }
+        });
+
+        large_meal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(MainActivity3.this, R.style.AlertDialog)
+                        .setTitle("Large portion")
+                        .setMessage("Portion size recommended for males")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        }).show();
             }
         });
 
@@ -132,4 +185,6 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
 
     }
+
 }
+

@@ -58,7 +58,9 @@
 
 
 
-
+    <color name="alert_bg">#f5eff9</color>
+    <color name="alert_font">#3c1361</color>
+    <color name="alert_text">#7c5295</color>
 
 
 
@@ -66,10 +68,10 @@
     <color name="purple_700">#420c1a</color> /bar above everything
     <color name="teal_200">#C23B21</color> /calendar, typing shit
 
-    <color name="black">#FF000000</color>
+    <color name="black">#000000</color>
     <color name="white">#ffffff</color>
 
-    <color name="transparent">#ccffffff</color>
+    <color name="transparent">#00ffffff</color>
 
     <color name="input_text">#f9f9f9</color>
 

@@ -37,10 +37,10 @@ public final class Remote extends AppCompatActivity {
         accessDistant.send(  "addingredient", ingredient.convertToJSONArrayI());
     }
 
-    public void addMeal(String recipeName, String mealType,/*Date date*/ View.OnClickListener context){
-        meal = new Meal(recipeName, mealType/*, date*/);
-        accessDistant.send(  "addmeal", meal.convertToJSONArrayM());
-    }
+    //public void addMeal(String recipeName, String mealType,/*Date date*/ View.OnClickListener context){
+      //  meal = new Meal(recipeName, mealType/*, date*/);
+        //accessDistant.send(  "addmeal", meal.convertToJSONArrayM());
+    //}
 
     public void setIngredient(Ingredient ingredient){
         Remote.ingredient=ingredient;
