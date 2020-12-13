@@ -41,18 +41,12 @@ public class MainActivity4 extends AppCompatActivity {
     String date;
     String mealType;
     String recipeName;
-    String[] ingredientName = new String[9];
     String[] test;
     String[] mealCategory;
 
 
 
     int counter = 0;
-
-    public static int strgToInt(String strg){
-        int e = Integer.parseInt(strg);
-        return e;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,8 +65,6 @@ public class MainActivity4 extends AppCompatActivity {
         ingredients8 = findViewById(R.id.ingredient8);
         ingredients9 = findViewById(R.id.ingredient9);
         ingredients10 = findViewById(R.id.ingredient10);
-
-        TextView [] textViewArray = new TextView[]{ingredients1, ingredients2, ingredients3, ingredients4, ingredients5, ingredients6, ingredients7, ingredients8, ingredients9, ingredients10};
 
 
         recipeNameField = findViewById(R.id.recipe_field);

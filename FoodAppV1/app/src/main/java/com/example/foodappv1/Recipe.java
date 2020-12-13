@@ -27,6 +27,9 @@ public class Recipe extends AppCompatActivity{
 	ArrayList<Cheese> cheeseList = new ArrayList<Cheese>(4);
 
 	String shopping;
+	String nomeat = "";
+	String noveggies = "";
+	String nocarbs = "";
 
 	public Recipe(String type, String name, int[] portions, String date, Food[] list) {
 
@@ -101,13 +104,13 @@ public class Recipe extends AppCompatActivity{
 		}
 
 		if(nb_carbs==0){
-			shopping = shopping + "You don't have any carbs, you should add some to your meal.\n";
+			nocarbs = "You don't have any carbs, you should add some to your meal.\n";
 		}
 		if(nb_meat==0){
-			shopping = shopping + "You don't have any meat, fish or egg, you should add some to your meal.\n";
+			nomeat = "You don't have any meat, fish or egg, you should add some to your meal.\n";
 		}
 		if(nb_veggies==0){
-			shopping = shopping + "You don't have any veggie or fruit, you should add some to your meal.\n";
+			noveggies = "You don't have any veggie or fruit, you should add some to your meal.\n";
 		}
 
 		for(int k=0; k<list.length; k++){
@@ -153,7 +156,7 @@ public class Recipe extends AppCompatActivity{
 			}
 		}
 
-		return (shopping);
+		return (shopping + "\n" + nomeat + noveggies + nocarbs);
 
 		}
 }
