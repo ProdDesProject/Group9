@@ -52,6 +52,8 @@ public class FakePopUpIngredients extends AppCompatActivity {
         test = getIntent().getExtras().getStringArray("ingredientsArray");
         test1 = getIntent().getExtras().getStringArray("mealCategory");
 
+        //first we save all the variables that will be dinamically updated between this activity and the previous one, as we said before
+
         try {
                 ingredient[0] = test[0];
                 ingredient[1] = test[1];
@@ -63,6 +65,8 @@ public class FakePopUpIngredients extends AppCompatActivity {
                 ingredient[7] = test[7];
                 ingredient[8] = test[8];
                 ingredient[9] = test[9];
+
+                //we update both arrays and afterwards we send them back to main4
 
                 ingredientCategory[0] = test1[0];
                 ingredientCategory[1] = test1[1];
@@ -87,6 +91,9 @@ public class FakePopUpIngredients extends AppCompatActivity {
                 mealCategory = (String) radioButton.getText();
                 ingredient[counter-1] = ingredientName.getText().toString();
                 ingredientCategory[counter-1] = mealCategory;
+
+                //we send back the updated arrays to main4 so the user can continue adding ingredients or just finish with his recipe
+
                 i.putExtra( "ingredient", ingredient);
                 i.putExtra( "ingredientCategory", ingredientCategory);
                 i.putExtra( "portions", portions);
@@ -95,8 +102,7 @@ public class FakePopUpIngredients extends AppCompatActivity {
                 i.putExtra( "recipeName", recipeName);
                 i.putExtra( "counter", counter);
                 startActivity(i);
-                //finish();
-                //openActivity4();
+
             }
         });
 

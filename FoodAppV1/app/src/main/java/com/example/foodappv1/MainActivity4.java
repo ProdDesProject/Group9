@@ -70,12 +70,20 @@ public class MainActivity4 extends AppCompatActivity {
         recipeNameField = findViewById(R.id.recipe_field);
         Intent i = getIntent();
 
+        //we save the portions array, date and type of meal sent by the previous main, as always.
+
         portions = i.getExtras().getIntArray("portions");
         date = i.getExtras().getString("date");
         mealType = i.getExtras().getString("Meal name");
 
 
         try {
+
+            //we try to read the recipeName sent by the next activity. Which receives it from this one as well. So obviously in the first attempt
+            //it's going to enter the catch statement cause the user hasn't input any recipeName yet. But when the user does it for the first time
+            //both activities will start sharing between them this recipeName (as well as the ingredient array and category array),
+            // and won't enter the catch statement anymore.
+
             recipeName = i.getExtras().getString("recipeName");
             recipeNameField.setText(recipeName);
         }
@@ -84,6 +92,11 @@ public class MainActivity4 extends AppCompatActivity {
 
 
         try {
+
+            //we try to save the ingredient array and the category array, in its first attempt, it's going to enter the catch statement cause nothing
+            //is sent by the FakePopUpIngredients yet, it will start storing them in the moment that activity is open and the button add is clicked
+            //then both arrays will be sent here and won't enter the catch statement anymore.
+
             test = getIntent().getExtras().getStringArray("ingredient");
             mealCategory = getIntent().getExtras().getStringArray("ingredientCategory");
             counter = getIntent().getExtras().getInt("counter");
@@ -114,15 +127,15 @@ public class MainActivity4 extends AppCompatActivity {
 
         }
 
-
-        //int[] portions = new int[]{intSmall, intMedium, intBig};
-
         btn_continue = findViewById(R.id.button_continue);
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i= new Intent( MainActivity4.this, MainActivity5.class);
                 recipeName=recipeNameField.getText().toString();
+                //when the button continue is clicked it means the user has finished adding ingredients.
+                // All variables needed to create the recipe in main5 will be sent.
+                //portions array, date of the meal, meal name, name of the recipe and of course both arrays with the ingredients and their categories
                 i.putExtra("portions", portions);
                 i.putExtra("date", date);
                 i.putExtra("Meal name", mealType);
@@ -130,8 +143,6 @@ public class MainActivity4 extends AppCompatActivity {
                 i.putExtra("ingredientsArray", test);
                 i.putExtra("mealCategory", mealCategory);
                 startActivity(i);
-                //finish();
-                //openActivity5();
             }
         });
 
@@ -145,6 +156,12 @@ public class MainActivity4 extends AppCompatActivity {
                 }else{
                     recipeName=recipeNameField.getText().toString();
                 }
+
+                //Here it starts the dinamic sharing between this activity and the FakePopUpIngredients one.
+                //both will be sending the same variables while updating them, so, when the user is ready to click the continue button
+                //in order to see the quantities, all variables and especially both arrays of ingredients and cateogories will be
+                //updated to the last ingredient the user input.
+
                 i.putExtra("portions", portions);
                 i.putExtra("date", date);
                 i.putExtra("Meal name", mealType);
@@ -154,11 +171,6 @@ public class MainActivity4 extends AppCompatActivity {
                 i.putExtra("ingredientsArray", test);
                 i.putExtra("mealCategory", mealCategory);
                 startActivity(i);
-                //PopUpIngredients popUp = new PopUpIngredients();
-                //popUp.showPopupWindow(v);
-
-                //ingredientsList[0] = PopUpIngredients.ingredient;
-                //ingredients.setText(ingredientsList[0]);
             }
         });
     }
