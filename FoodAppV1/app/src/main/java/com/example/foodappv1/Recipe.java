@@ -11,8 +11,10 @@ public class Recipe extends AppCompatActivity{
 	private double[] dairy = new double[]{ 300, 345, 345};				//dairy[2] = quantity in g for a large portion in a day
 	private double[] meatFishEggs = new double[]{ 300, 420, 550};
 
+	//Total amount of food needed for each category
 	private double totVeggies = 0, totCarbs = 0, totDairy = 0, totMeat = 0, totCheese = 0;
 
+	//Amount of different ingredients for each category
 	int nb_carbs = 0, nb_veggies = 0, nb_dairy = 0, nb_meat = 0, nb_cheese = 0;
 
 	String name;
@@ -80,6 +82,8 @@ public class Recipe extends AppCompatActivity{
 
 		shopping = "You want to cook " + this.name + " on the " + this.date + ", you will need:\n\n";
 
+		//This for loop gives the amount of different ingredients in each category and adds
+		//these ingredients to the list of this category
 		for(int j=0; j<list.length; j++) {
 			if (list[j] instanceof Carbs) {
 				nb_carbs ++;
@@ -103,6 +107,7 @@ public class Recipe extends AppCompatActivity{
 			}
 		}
 
+		//If no ingredient of the "essential" categories, a warning will be printed
 		if(nb_carbs==0){
 			nocarbs = "You don't have any carbs, you should add some to your meal.\n";
 		}
@@ -113,6 +118,7 @@ public class Recipe extends AppCompatActivity{
 			noveggies = "You don't have any veggie or fruit, you should add some to your meal.\n";
 		}
 
+		//This for loop will show the amount needed for each ingredient
 		for(int k=0; k<list.length; k++){
 			if (list[k] instanceof Carbs) {
 				if(nb_carbs!=0) {

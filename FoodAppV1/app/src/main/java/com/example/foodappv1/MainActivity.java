@@ -14,9 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
 
-    //Date the user will enter
-    public static final String mealDate = "com.example.foodappv1.meal_date_field";
-
     private Button button;
     EditText name_fld;
     String st;
