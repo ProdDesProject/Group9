@@ -27,7 +27,6 @@ public class MainActivity2 extends AppCompatActivity implements DatePickerDialog
     TextView name_display;
     String meal;
     String name;
-    String test;
     ImageButton calendarButton;
 
 

@@ -64,9 +64,6 @@ public class MainActivity3 extends AppCompatActivity implements DatePickerDialog
         nameFieldMedium= findViewById(R.id.editTextNumber3);
         nameFieldBig= findViewById(R.id.editTextNumber2);
 
-        //meal_name=getIntent().getExtras().getString("Meal name");
-        //display_meal_name.setText("What meal do you want to plan, " + String.valueOf(meal_name));
-
         chooseRecipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
